@@ -1,1867 +1,1351 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INCONIGTO-MODE || Subscription </title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link rel="icon" href="https://raw.githubusercontent.com/AFRcloud/BG/main/icons8-film-noir-80.png"/>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCONIGTO-MODE || Subscription</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/AFRcloud/BG/main/icons8-film-noir-80.png"/>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+	
+	/* Common CSS styles shared across all pages */
 :root {
-    --color-bg: #050a18;
-    --color-bg-card: #0a1128;
-    --color-primary: #00ddff;
-    --color-secondary: #7700ff;
-    --color-accent: #ff00aa;
-    --color-text: #e0f7ff;
-    --color-text-dim: #8ba3b8;
-    --color-success: #00ffaa;
-    --color-error: #ff2266;
-    --color-input-bg: rgba(0, 221, 255, 0.05);
-    --color-input-border: rgba(0, 221, 255, 0.2);
-    --glow-primary: 0 0 10px rgba(0, 221, 255, 0.5), 0 0 20px rgba(0, 221, 255, 0.2);
-    --glow-secondary: 0 0 10px rgba(119, 0, 255, 0.5), 0 0 20px rgba(119, 0, 255, 0.2);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --card-width: 100%;
-    --card-max-width: 480px;
-    --card-padding: 1.5rem;
-    --card-border-radius: 12px;
+  /* Color variables */
+  --primary: #6a11cb;
+  --primary-dark: #4f46e5;
+  --primary-light: #a0a0ff;
+  --secondary: #2575fc;
+  --secondary-dark: #1e40af;
+  --accent: #ff6b6b;
+  --dark: #0f0c29;
+  --dark-light: #302b63;
+  --light: #ffffff;
+  --gray: #64748b;
+  --gray-light: #a0a0ff;
+  --gray-dark: #334155;
+  --primary-color: #6a11cb;
+  --secondary-color: #2575fc;
+  --accent-color: #ff6b6b;
+  --dark-bg: #0f0c29;
+  --dark-bg-gradient-1: #302b63;
+  --dark-bg-gradient-2: #24243e;
+  --card-bg: rgba(15, 14, 32, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0ff;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --success-color: #38ef7d;
+
+  /* Common UI elements */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-full: 9999px;
+
+  /* Shadows and effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --glow-primary: 0 0 10px rgba(106, 17, 203, 0.5), 0 0 20px rgba(106, 17, 203, 0.2);
+  --glow-secondary: 0 0 15px rgba(37, 117, 252, 0.5);
+
+  /* Animations */
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
 }
 
+/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Rajdhani', sans-serif;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 221, 255, 0.03) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(119, 0, 255, 0.03) 0%, transparent 20%),
-        linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-    background-attachment: fixed;
-    position: relative;
-    overflow-x: hidden;
-    padding: 1rem 0;
+  font-family: "Rajdhani", sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--dark-bg), var(--dark-bg-gradient-1), var(--dark-bg-gradient-2));
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
 }
 
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(90deg, var(--color-bg) 21px, transparent 1%) center,
-        linear-gradient(var(--color-bg) 21px, transparent 1%) center;
-    background-size: 22px 22px;
-    background-color: transparent;
-    opacity: 0.2;
-    z-index: -1;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(106, 17, 203, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(37, 117, 252, 0.15) 0%, transparent 40%);
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Common components */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  transition: var(--transition-normal);
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  background: rgba(106, 17, 203, 0.1);
+  border: 1px solid rgba(106, 17, 203, 0.2);
+  color: var(--text-secondary);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-button:hover {
+  background: rgba(106, 17, 203, 0.2);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-primary);
+}
+
+.nav-button.active {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  box-shadow: var(--glow-primary);
+}
+
+.nav-highlight {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white !important;
+  box-shadow: 0 3px 10px rgba(106, 17, 203, 0.3);
+}
+
+.nav-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.nav-highlight::after {
+  display: none;
+}
+
+/* Donation modal */
+.donation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.donation-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.donation-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.donation-content {
+  position: relative;
+  background: linear-gradient(to bottom right, #1e1e3f, #0f0c29);
+  border-radius: var(--border-radius-lg);
+  padding: 1px;
+  max-width: 90%;
+  width: 400px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.donation-modal.active .donation-content {
+  transform: scale(1);
+}
+
+.donation-border {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.donation-border-animation {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--primary-color));
+  animation: rotate 8s linear infinite;
+  opacity: 0.7;
+}
+
+.donation-body {
+  position: relative;
+  background: var(--dark-bg);
+  border-radius: calc(var(--border-radius-lg) - 1px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-donation {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-full);
+  transition: var(--transition-normal);
+}
+
+.close-donation:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.donation-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.donation-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.donation-small-text {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.qris-container {
+  position: relative;
+  padding: 3px;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.qris-border {
+  position: absolute;
+  inset: 0;
+}
+
+.qris-border-animation {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--primary-color));
+  animation: pulse 2s infinite;
+  opacity: 0.7;
+  border-radius: var(--border-radius-md);
+}
+
+.qris-image-container {
+  position: relative;
+  background: white;
+  padding: 10px;
+  border-radius: calc(var(--border-radius-md) - 2px);
+}
+
+.qris-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .nav-buttons {
+    gap: 8px;
+  }
+
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .nav-highlight {
+    margin-top: 10px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 480px) {
+  .donation-content {
+    width: 90%;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .nav-buttons {
+    gap: 5px;
+  }
+
+  .nav-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Current year script support */
+#current-year {
+  display: inline;
+}
+
+/* Floating Donation Button */
+.donate-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 20px rgba(106, 17, 203, 0.5);
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  animation: pulse-donate 2s infinite;
+}
+
+@keyframes pulse-donate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 17, 203, 0.7);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(106, 17, 203, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(106, 17, 203, 0);
+    transform: scale(1);
+  }
+}
+
+.donate-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .donate-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-buttons {
+    gap: 5px;
+  }
+
+  .nav-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Subscription page specific styles */
+:root {
+  --color-bg: #0f0c29;
+  --color-bg-card: rgba(15, 14, 32, 0.8);
+  --color-primary: #6a11cb;
+  --color-secondary: #2575fc;
+  --color-accent: #ff6b6b;
+  --color-text: #ffffff;
+  --color-text-dim: #a0a0ff;
+  --color-success: #38ef7d;
+  --color-error: #ff2266;
+  --color-input-bg: rgba(106, 17, 203, 0.05);
+  --color-input-border: rgba(106, 17, 203, 0.2);
+  --glow-primary: 0 0 10px rgba(106, 17, 203, 0.5), 0 0 20px rgba(106, 17, 203, 0.2);
+  --glow-secondary: 0 0 10px rgba(37, 117, 252, 0.5), 0 0 20px rgba(37, 117, 252, 0.2);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --card-width: 100%;
+  --card-max-width: 480px;
+  --card-padding: 1.5rem;
+  --card-border-radius: 12px;
+}
+
+body {
+  font-family: "Rajdhani", sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+  padding: 1rem 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 30%, rgba(106, 17, 203, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(37, 117, 252, 0.15) 0%, transparent 40%);
+  z-index: -1;
 }
 
 .container {
-    width: var(--card-width);
-    max-width: var(--card-max-width);
-    padding: 0 0.75rem;
-    margin-bottom: 1rem;
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  padding: 0 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .card {
-    background: var(--color-bg-card);
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 221, 255, 0.1);
-    width: 100%;
+  background: var(--color-bg-card);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(106, 17, 203, 0.1);
+  width: 100%;
 }
 
-.card::before, .footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+.card::before,
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
 }
 
-.card::after, .footer::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        rgba(0, 221, 255, 0.5), 
-        rgba(119, 0, 255, 0.5), 
-        rgba(255, 0, 170, 0.5));
-    filter: blur(1px);
+.card::after,
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(106, 17, 203, 0.5), rgba(37, 117, 252, 0.5), rgba(255, 107, 107, 0.5));
+  filter: blur(1px);
 }
 
 .title-container {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    margin: 0;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    display: inline-block;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin: 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
 }
 
 .title::after {
-    content: "SUB";
-    position: absolute;
-    top: -8px;
-    right: -30px;
-    font-size: 0.7rem;
-    font-weight: 400;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    padding: 2px 5px;
-    border-radius: 3px;
-    -webkit-text-fill-color: var(--color-bg);
-    transform: rotate(15deg);
+  content: "SUB";
+  position: absolute;
+  top: -8px;
+  right: -30px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 2px 5px;
+  border-radius: 3px;
+  -webkit-text-fill-color: var(--color-bg);
+  transform: rotate(15deg);
 }
 
 .subtitle {
-    font-size: 0.9rem;
-    color: var(--color-text-dim);
-    margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  margin-top: 0.3rem;
 }
 
 .form-group {
-    margin-bottom: 1.2rem;
-    position: relative;
+  margin-bottom: 1.2rem;
+  position: relative;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--color-text);
-    letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
 }
 
 .form-control {
-    width: 100%;
-    padding: 0.7rem 0.8rem;
-    background: var(--color-input-bg);
-    border: 1px solid var(--color-input-border);
-    border-radius: 8px;
-    color: var(--color-text);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: var(--transition);
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
 .form-control:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: var(--glow-primary);
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--glow-primary);
 }
 
 select.form-control {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300ddff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.8rem center;
-    background-size: 1rem;
-    padding-right: 2.2rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236a11cb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1rem;
+  padding-right: 2.2rem;
 }
 
 .btn {
-    width: 100%;
-    padding: 0.8rem;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    color: var(--color-bg);
-    border: none;
-    border-radius: 8px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    text-transform: uppercase;
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
 }
 
 .btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
 }
 
 .btn:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
 .btn:hover {
-    box-shadow: var(--glow-primary);
-    transform: translateY(-2px);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-2px);
 }
 
 .loading {
-    display: none;
-    text-align: center;
-    margin: 1.5rem 0;
-    color: var(--color-primary);
+  display: none;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--color-primary);
 }
 
 .spinner {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(0, 221, 255, 0.1);
-    border-radius: 50%;
-    border-top-color: var(--color-primary);
-    animation: spin 1s ease-in-out infinite;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(106, 17, 203, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-text {
-    margin-top: 0.8rem;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+  margin-top: 0.8rem;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 .result {
-    display: none;
-    margin-top: 1.5rem;
-    position: relative;
+  display: none;
+  margin-top: 1.5rem;
+  position: relative;
 }
 
 .result-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
 }
 
 .result-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-    color: var(--color-success);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-success);
 }
 
 .output-container {
-    position: relative;
-    margin-bottom: 0.8rem;
+  position: relative;
+  margin-bottom: 0.8rem;
 }
 
 .output {
-    width: 100%;
-    height: 180px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--color-input-border);
-    border-radius: 8px;
-    color: var(--color-text);
-    padding: 0.8rem;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.85rem;
-    resize: vertical;
-    line-height: 1.4;
+  width: 100%;
+  height: 180px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-input-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  padding: 0.8rem;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.85rem;
+  resize: vertical;
+  line-height: 1.4;
 }
 
 .output:focus {
-    outline: none;
-    border-color: var(--color-primary);
+  outline: none;
+  border-color: var(--color-primary);
 }
 
 .copy-btn {
-    background: linear-gradient(90deg, var(--color-success), var(--color-primary));
-    color: var(--color-bg);
-    border: none;
-    border-radius: 8px;
-    padding: 0.7rem 1rem;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
+  background: linear-gradient(90deg, var(--color-success), var(--color-primary));
+  color: var(--color-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .copy-btn:hover {
-    box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
-    transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+  transform: translateY(-2px);
 }
 
 .copy-icon {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .error-message {
-    color: var(--color-error);
-    text-align: center;
-    margin-top: 0.8rem;
-    font-weight: 500;
-    font-size: 0.9rem;
+  color: var(--color-error);
+  text-align: center;
+  margin-top: 0.8rem;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-    :root {
-        --card-padding: 1.2rem;
-    }
-    
-    .container {
-        padding: 0 0.5rem;
-    }
-    
-    .title {
-        font-size: 1.5rem;
-    }
-    
-    .subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .form-group label {
-        font-size: 0.9rem;
-    }
-    
-    .form-control {
-        padding: 0.6rem 0.7rem;
-        font-size: 0.9rem;
-    }
-    
-    .btn {
-        padding: 0.7rem;
-        font-size: 0.9rem;
-    }
+  :root {
+    --card-padding: 1.2rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* Cyberpunk details */
 .tech-detail {
-    position: absolute;
-    background: var(--color-primary);
-    opacity: 0.1;
-    z-index: -1;
+  position: absolute;
+  background: var(--color-primary);
+  opacity: 0.1;
+  z-index: -1;
 }
 
 .tech-detail-1 {
-    width: 40px;
-    height: 40px;
-    top: 20px;
-    right: 20px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px var(--color-primary);
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--color-primary);
 }
 
 .tech-detail-2 {
-    width: 80px;
-    height: 2px;
-    bottom: 40px;
-    left: -20px;
-    transform: rotate(45deg);
+  width: 80px;
+  height: 2px;
+  bottom: 40px;
+  left: -20px;
+  transform: rotate(45deg);
 }
 
 .tech-detail-3 {
-    width: 15px;
-    height: 15px;
-    bottom: 20px;
-    right: 40px;
-    transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+  bottom: 20px;
+  right: 40px;
+  transform: rotate(45deg);
 }
 
 /* Animated typing effect for loading */
 .typing {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid var(--color-primary);
-    width: 0;
-    animation: typing 3s steps(30, end) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--color-primary);
+  width: 0;
+  animation: typing 3s steps(30, end) infinite;
 }
 
 @keyframes typing {
-    0% { width: 0 }
-    80% { width: 100% }
-    100% { width: 100% }
+  0% {
+    width: 0;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .form-group.uuid-group {
-    position: relative;
+  position: relative;
 }
 
 .uuid-generate {
-    position: absolute;
-    right: 8px;
-    top: 36px;
-    background: rgba(0, 221, 255, 0.1);
-    border: none;
-    color: var(--color-primary);
-    padding: 4px 8px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.75rem;
-    transition: var(--transition);
+  position: absolute;
+  right: 8px;
+  top: 36px;
+  background: rgba(106, 17, 203, 0.1);
+  border: none;
+  color: var(--color-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: var(--transition);
 }
 
 .uuid-generate:hover {
-    background: rgba(0, 221, 255, 0.2);
+  background: rgba(106, 17, 203, 0.2);
 }
 
 .form-row {
-    display: flex;
-    gap: 0.8rem;
-    margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .form-row .form-group {
-    flex: 1;
-    margin-bottom: 0;
+  flex: 1;
+  margin-bottom: 0;
 }
 
 .info-badge {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    font-size: 0.65rem;
-    padding: 1px 5px;
-    border-radius: 3px;
-    margin-left: 5px;
-    vertical-align: middle;
-    font-weight: 600;
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 0.65rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+  vertical-align: middle;
+  font-weight: 600;
 }
 
 .custom-bug-container {
-    display: none;
+  display: none;
 }
 
 /* Footer styles */
 .footer {
-    width: var(--card-width);
-    max-width: var(--card-max-width);
-    background: var(--color-bg-card);
-    border-radius: var(--card-border-radius);
-    padding: 1.2rem;
-    position: relative;
-    border: 1px solid rgba(0, 221, 255, 0.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    margin: 0 0.75rem;
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  background: var(--color-bg-card);
+  border-radius: var(--card-border-radius);
+  padding: 1.2rem;
+  position: relative;
+  border: 1px solid rgba(106, 17, 203, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 0.75rem;
 }
 
 .footer-logo {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    display: inline-block;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
 }
 
 .footer-powered {
-    font-size: 0.8rem;
-    color: var(--color-text-dim);
-    margin-bottom: 0.6rem;
-    font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-bottom: 0.6rem;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 0.6rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .social-link {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.8rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    background: rgba(0, 221, 255, 0.05);
-    border: 1px solid rgba(0, 221, 255, 0.1);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(106, 17, 203, 0.05);
+  border: 1px solid rgba(106, 17, 203, 0.1);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .social-link:hover {
-    background: rgba(0, 221, 255, 0.1);
-    box-shadow: var(--glow-primary);
-    transform: translateY(-2px);
+  background: rgba(106, 17, 203, 0.1);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-2px);
 }
 
 .social-icon {
-    width: 14px;
-    height: 14px;
+  width: 14px;
+  height: 14px;
 }
 
 .footer-year {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: var(--color-accent);
-    margin-top: 0.4rem;
-    letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin-top: 0.4rem;
+  letter-spacing: 1px;
 }
 
 .circuit-line {
-    position: absolute;
-    background: var(--color-primary);
-    opacity: 0.1;
+  position: absolute;
+  background: var(--color-primary);
+  opacity: 0.1;
 }
 
 .circuit-line-1 {
-    width: 60px;
-    height: 1px;
-    top: 20px;
-    left: 20px;
+  width: 60px;
+  height: 1px;
+  top: 20px;
+  left: 20px;
 }
 
 .circuit-line-2 {
-    width: 1px;
-    height: 30px;
-    top: 20px;
-    left: 20px;
+  width: 1px;
+  height: 30px;
+  top: 20px;
+  left: 20px;
 }
 
 .circuit-line-3 {
-    width: 40px;
-    height: 1px;
-    bottom: 25px;
-    right: 30px;
+  width: 40px;
+  height: 1px;
+  bottom: 25px;
+  right: 30px;
 }
 
 .circuit-line-4 {
-    width: 1px;
-    height: 25px;
-    bottom: 25px;
-    right: 30px;
+  width: 1px;
+  height: 25px;
+  bottom: 25px;
+  right: 30px;
 }
 
 .circuit-dot {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    opacity: 0.2;
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.2;
 }
 
 .circuit-dot-1 {
-    top: 20px;
-    left: 20px;
+  top: 20px;
+  left: 20px;
 }
 
 .circuit-dot-2 {
-    top: 50px;
-    left: 20px;
+  top: 50px;
+  left: 20px;
 }
 
 .circuit-dot-3 {
-    bottom: 25px;
-    right: 30px;
+  bottom: 25px;
+  right: 30px;
 }
 
 .circuit-dot-4 {
-    bottom: 50px;
-    right: 30px;
+  bottom: 50px;
+  right: 30px;
 }
 
 /* Validation status styles */
 .validation-status {
-    display: none;
-    margin-top: 1rem;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--color-text-dim);
+  display: none;
+  margin-top: 1rem;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
 }
 
 .validation-progress {
-    margin-top: 0.5rem;
-    height: 6px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    overflow: hidden;
+  margin-top: 0.5rem;
+  height: 6px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .validation-bar {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    transition: width 0.3s ease;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.3s ease;
 }
 
 .validation-stats {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
 }
 
 .validation-check {
-    margin-right: 0.5rem;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
 }
 
 .form-group.validation-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .form-check {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .form-check-input {
-    margin-right: 0.5rem;
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-    accent-color: var(--color-primary);
+  margin-right: 0.5rem;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
 }
 
 .form-check-label {
-    font-size: 0.9rem;
-    cursor: pointer;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .select-info {
-    font-size: 0.75rem;
-    color: var(--color-text-dim);
-    margin-top: 0.3rem;
-    font-style: italic;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  margin-top: 0.3rem;
+  font-style: italic;
 }
-</style>
+
+
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="card">
-        <div class="tech-detail tech-detail-1"></div>
-        <div class="tech-detail tech-detail-2"></div>
-        <div class="tech-detail tech-detail-3"></div>
-        
-        <div class="title-container">
-            <h1 class="title">INCONIGTO - MODE</h1>
-            <p class="subtitle">Advanced Subscription Link Generator</p>
-        </div>
-        
-        <form id="subLinkForm">
-            <div class="form-group">
-                <label for="configType">PROTOCOL TYPE</label>
-                <select id="configType" class="form-control" required>
-                    <option value="vless">VLESS</option>
-                    <option value="vmess">VMESS</option>
-                    <option value="trojan">TROJAN</option>
-                    <option value="shadowsocks">SHADOWSOCKS</option>
-                    <option value="mix">MIX (ALL PROTOCOLS)</option>
-                </select>
+    <div class="container">
+        <div class="card">
+            <div class="tech-detail tech-detail-1"></div>
+            <div class="tech-detail tech-detail-2"></div>
+            <div class="tech-detail tech-detail-3"></div>
+            
+            <div class="title-container">
+                <h1 class="title">INCONIGTO - MODE</h1>
+                <p class="subtitle">Advanced Subscription Link Generator</p>
             </div>
 
-            <div class="form-group">
-                <label for="formatType">FORMAT TYPE</label>
-                <select id="formatType" class="form-control" required>
-                    <option value="v2ray">Link V2RAY</option>
-                    <option value="nekobox">Config NEKOBOX</option>
-                    <option value="clash">Proxy_Provider CLASH</option>
-                </select>
+            <div class="nav-buttons">
+                <a href="/" class="nav-button">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="sub" class="nav-button active">
+                    <i class="fas fa-rss"></i> Subscription
+                </a>
+                <a href="link" class="nav-button">
+                    <i class="fas fa-link"></i> Link Generator
+                </a>
+                <a href="converter" class="nav-button">
+                    <i class="fas fa-exchange-alt"></i> Converter
+                </a>
             </div>
             
-            <div class="form-group uuid-group">
-                <label for="uuid">UUID</label>
-                <input type="text" id="uuid" class="form-control" value="bbbbbbbb-cccc-4ddd-eeee-ffffffffffff" required>
-                <button type="button" id="generateUuid" class="uuid-generate">GENERATE</button>
-            </div>
-            
-            <div class="form-group">
-                <label for="bugType">BUG TYPE</label>
-                <select id="bugType" class="form-control" required>
-                    <option value="default">DIRECT</option>
-                    <option value="non-wildcard">WEBSOCKET</option>
-                    <option value="wildcard">WILDCARD WEBSOCKET</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="mainDomain">MAIN DOMAIN <span class="info-badge">SELECT</span></label>
-                <select id="mainDomain" class="form-control" required>
-                    <!-- Will be populated from MainDomains array -->
-                </select>
-            </div>
-            
-            <div id="customBugContainer" class="form-group custom-bug-container">
-                <label for="customBug">CUSTOM BUG</label>
-                <input type="text" id="customBug" class="form-control" placeholder="Example : BUG-WLG.COM, BUG-VIU.COM, BUG-ZOOM.COM">
-                <div class="select-info">Pisah Dengan Koma Jika Ingin Banyak BUG sekaligus</div>
-                <div class="select-info">Supported Wildcard : ava.game.naver.com, quiz.int.vidio.com ,graph.instagram.com, zaintest.vuclip.com, support.zoom.us, cache.netflix.com</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="tls">TLS ENCRYPTION</label>
-                <select id="tls" class="form-control">
-                    <option value="true">ENABLED</option>
-                    <option value="false">DISABLED</option>
-                </select>
-            </div>
-            
-            <div class="form-row">
+            <form id="subLinkForm">
                 <div class="form-group">
-                    <label for="country">REGION FILTER</label>
-                    <select id="country" class="form-control">
-                        <option value="">Loading regions...</option>
+                    <label for="configType">PROTOCOL TYPE</label>
+                    <select id="configType" class="form-control" required>
+                        <option value="vless">VLESS</option>
+                        <option value="vmess">VMESS</option>
+                        <option value="trojan">TROJAN</option>
+                        <option value="shadowsocks">SHADOWSOCKS</option>
+                        <option value="mix">MIX (ALL PROTOCOLS)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="formatType">FORMAT TYPE</label>
+                    <select id="formatType" class="form-control" required>
+                        <option value="v2ray">Link V2RAY</option>
+                        <option value="nekobox">Config NEKOBOX</option>
+                        <option value="clash">Proxy_Provider CLASH</option>
+                    </select>
+                </div>
+                
+                <div class="form-group uuid-group">
+                    <label for="uuid">UUID</label>
+                    <input type="text" id="uuid" class="form-control" value="bbbbbbbb-cccc-4ddd-eeee-ffffffffffff" required>
+                    <button type="button" id="generateUuid" class="uuid-generate">GENERATE</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bugType">BUG TYPE</label>
+                    <select id="bugType" class="form-control" required>
+                        <option value="default">DIRECT</option>
+                        <option value="non-wildcard">WEBSOCKET</option>
+                        <option value="wildcard">WILDCARD WEBSOCKET</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="limit">QUANTITY</label>
-                    <input type="number" id="limit" class="form-control" min="1" max="50" value="5" placeholder="Max 50" required>
+                    <label for="mainDomain">MAIN DOMAIN <span class="info-badge">SELECT</span></label>
+                    <select id="mainDomain" class="form-control" required>
+                        <!-- Will be populated from MainDomains array -->
+                    </select>
+                </div>
+                
+                <div id="customBugContainer" class="form-group custom-bug-container">
+                    <label for="customBug">CUSTOM BUG</label>
+                    <input type="text" id="customBug" class="form-control" placeholder="Example : BUG-WLG.COM, BUG-VIU.COM, BUG-ZOOM.COM">
+                    <div class="select-info">Pisah Dengan Koma Jika Ingin Banyak BUG sekaligus</div>
+                    <div class="select-info">Supported Wildcard : ava.game.naver.com, quiz.int.vidio.com, graph.instagram.com, zaintest.vuclip.com, support.zoom.us, cache.netflix.com</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tls">TLS ENCRYPTION</label>
+                    <select id="tls" class="form-control">
+                        <option value="true">ENABLED</option>
+                        <option value="false">DISABLED</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">REGION FILTER</label>
+                        <select id="country" class="form-control">
+                            <option value="">Loading regions...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="limit">QUANTITY</label>
+                        <input type="number" id="limit" class="form-control" min="1" max="50" value="5" placeholder="Max 50" required>
+                    </div>
+                </div>
+                
+                <div class="form-group validation-group">
+                    <label class="form-check">
+                        <input type="checkbox" id="validateProxies" class="form-check-input" checked>
+                        <span class="form-check-label">Filter ProxyIP ACTIVE Untuk Subscription?</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn">Generate Configuration</button>
+            </form>
+            
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <div class="loading-text typing">Fetching proxy data and generating configs...</div>
+            </div>
+            
+            <div id="validation-status" class="validation-status">
+                <div>Validating proxies... <span id="validation-count">0/0</span></div>
+                <div class="validation-progress">
+                    <div id="validation-bar" class="validation-bar"></div>
+                </div>
+                <div class="validation-stats">
+                    <div>Valid: <span id="valid-count">0</span></div>
+                    <div>Invalid: <span id="invalid-count">0</span></div>
                 </div>
             </div>
             
-            <div class="form-group validation-group">
-                <label class="form-check">
-                    <input type="checkbox" id="validateProxies" class="form-check-input" checked>
-                    <span class="form-check-label">Fiter ProxyIP ACTIVE Untuk Subscription ?</span>
-                </label>
-            </div>
+            <div id="error-message" class="error-message"></div>
             
-            <button type="submit" class="btn">Generate Configuration</button>
-        </form>
-        
-        <div id="loading" class="loading">
-            <div class="spinner"></div>
-            <div class="loading-text typing">Fetching proxy data and generating configs...</div>
-        </div>
-        
-        <div id="validation-status" class="validation-status">
-            <div>Validating proxies... <span id="validation-count">0/0</span></div>
-            <div class="validation-progress">
-                <div id="validation-bar" class="validation-bar"></div>
-            </div>
-            <div class="validation-stats">
-                <div>Valid: <span id="valid-count">0</span></div>
-                <div>Invalid: <span id="invalid-count">0</span></div>
+            <div id="result" class="result">
+                <div class="result-header">
+                    <div class="result-title">CONFIGURATION GENERATED</div>
+                </div>
+                <div class="output-container">
+                    <textarea id="output" class="output" readonly></textarea>
+                </div>
+                <button id="copyLink" class="copy-btn">
+                    <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    COPY CONFIGURATION
+                </button>
             </div>
         </div>
+    </div>
+
+    <footer class="footer">
+        <div class="circuit-line circuit-line-1"></div>
+        <div class="circuit-line circuit-line-2"></div>
+        <div class="circuit-line circuit-line-3"></div>
+        <div class="circuit-line circuit-line-4"></div>
+        <div class="circuit-dot circuit-dot-1"></div>
+        <div class="circuit-dot circuit-dot-2"></div>
+        <div class="circuit-dot circuit-dot-3"></div>
+        <div class="circuit-dot circuit-dot-4"></div>
         
-        <div id="error-message" class="error-message"></div>
-        
-        <div id="result" class="result">
-            <div class="result-header">
-                <div class="result-title">CONFIGURATION GENERATED</div>
-            </div>
-            <div class="output-container">
-                <textarea id="output" class="output" readonly></textarea>
-            </div>
-            <button id="copyLink" class="copy-btn">
-                <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        <div class="footer-logo">INCONIGTO-MODE</div>
+        <div class="footer-powered">POWERED BY SECURE TECHNOLOGY</div>
+        <div class="footer-social">
+            <a href="https://t.me/Noir7R" class="social-link" target="_blank">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
+                    <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
                 </svg>
-                COPY CONFIGURATION
-            </button>
+                @Noir7R
+            </a>
+        </div>    
+        <div class="footer-social">
+            <a href="https://t.me/inconigto_Mode" class="social-link" target="_blank">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
+                    <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
+                </svg>
+                @inconigto_Mode
+            </a>
+            <a href="https://t.me/InconigtoMode" class="social-link" target="_blank">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
+                    <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
+                </svg>
+                @InconigtoMode
+            </a>
         </div>
-    </div>
-</div>
+        <div class="footer-year">© <span id="current-year"></span></div>
+    </footer>
 
-<footer class="footer">
-    <div class="circuit-line circuit-line-1"></div>
-    <div class="circuit-line circuit-line-2"></div>
-    <div class="circuit-line circuit-line-3"></div>
-    <div class="circuit-line circuit-line-4"></div>
-    <div class="circuit-dot circuit-dot-1"></div>
-    <div class="circuit-dot circuit-dot-2"></div>
-    <div class="circuit-dot circuit-dot-3"></div>
-    <div class="circuit-dot circuit-dot-4"></div>
-    
-    <div class="footer-logo">INCONIGTO-MODE</div>
-    <div class="footer-powered">POWERED BY SECURE TECHNOLOGY</div>
-    <div class="footer-social">
-        <a href="https://t.me/Noir7R" class="social-link" target="_blank">
-            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
-                <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
-            </svg>
-            @Noir7R
-        </a>
-    </div>    
-    <div class="footer-social">
-        <a href="https://t.me/inconigto_Mode" class="social-link" target="_blank">
-            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
-                <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
-            </svg>
-            @inconigto_Mode
-        </a>
-        <a href="https://t.me/InconigtoMode" class="social-link" target="_blank">
-            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
-                <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
-            </svg>
-            @InconigtoMode
-        </a>
-    </div>
-    <div class="footer-year">© 2025</div>
-</footer>
-
-<script>
-    // Constants
-    const DEFAULT_PROXY_BANK_URL = 'https://raw.githubusercontent.com/InconigtoMode/proxylist/refs/heads/main/ProxyList.txt';
-    const PROXY_CHECK_API_URL = 'https://apicek.t-me-inconigto.workers.dev/proxy';
-    const PATH_PREFIX = 'Inconigto-Mode'; // Hardcoded path prefix
-    const MainDomains = [
-        'inconigto.web.id',
-        'inconigto.biz.id',
-    ];
-
-    const CustomBugs = [];
-    
-    // Helper Functions
-    function generateUUIDv4() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            const r = Math.random() * 16 | 0;
-            const v = c === 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
-    
-    // Safe base64 encoding function
-    function safeBase64Encode(str) {
-        try {
-            // Make sure we're working with a string
-            const stringToEncode = typeof str === 'object' ? JSON.stringify(str) : String(str);
-            return window.btoa(stringToEncode);
-        } catch (e) {
-            console.error("Base64 encoding error:", e);
-            return "";
-        }
-    }
-    
-    // Check if proxy is valid via API
-    async function checkProxyValidity(ip, port) {
-        try {
-            const response = await fetch(`${PROXY_CHECK_API_URL}?ip=${ip}&port=${port}`);
-            
-            if (!response.ok) {
-                console.error(`API error: ${response.status}`);
-                return false;
-            }
-            
-            const data = await response.json();
-            return data.proxyip === true;
-        } catch (error) {
-            console.error("Error checking proxy:", error);
-            return false;
-        }
-    }
-    
-    // Create VMess config object
-    function createVMessConfig(uuid, domain, host, sni, proxyHost, proxyPort, countryCode, isp, tls) {
-    return {
-        v: "2",
-        ps: `${countryCode} - ${isp} [ VMESS - ${tls ? 'TLS' : 'NTLS'} ]`,
-        add: domain,
-        port: tls ? 443 : 80,
-        id: uuid,
-        aid: "0",
-        net: "ws",
-        type: "none",
-        scy: "zero",
-        host: host,
-        path: `/${PATH_PREFIX}/${proxyHost}-${proxyPort}`,
-        tls: tls ? "tls" : "none",
-        sni: sni,
-        fp: "randomized"
-    };
-}
-    
-    // Format label with protocol and TLS info
-    function formatLabel(countryCode, isp, protocol, tls) {
-        return `${countryCode} - ${isp} [ ${protocol.toUpperCase()} - ${tls ? 'TLS' : 'NTLS'} ]`;
-    }
-
-    // Function to get country name from country code
-    function getCountryName(countryCode) {
-        return countryCode;
-    }
-
-    // Function to fetch and populate regions from GitHub
-    async function populateRegionsFromGitHub() {
-        try {
-            const response = await fetch(DEFAULT_PROXY_BANK_URL);
-            if (!response.ok) {
-                throw new Error(`Failed to fetch proxy data: ${response.status}`);
-            }
-            
-            const proxyList = (await response.text()).split('\n').filter(Boolean);
-            
-            // Extract unique country codes
-            const uniqueCountryCodes = new Set();
-            
-            proxyList.forEach(line => {
-                const parts = line.split(',');
-                if (parts.length >= 3) {
-                    const countryCode = parts[2];
-                    if (countryCode) {
-                        uniqueCountryCodes.add(countryCode);
-                    }
-                }
-            });
-            
-            // Sort country codes alphabetically
-            const sortedCountryCodes = [...uniqueCountryCodes].sort();
-            
-            // Get the country select element
-            const countrySelect = document.getElementById('country');
-            
-            // Keep the default options
-            const defaultOptions = `
-                <option value="random">RANDOM</option>
-                <option value="">GLOBAL (ALL)</option>
-            `;
-            
-            // Add the country codes from GitHub with their names
-            let regionOptions = '';
-            sortedCountryCodes.forEach(code => {
-                regionOptions += `<option value="${code}">${code}</option>`;
-            });
-            
-            // Update the select element
-            countrySelect.innerHTML = defaultOptions + regionOptions;
-            
-            console.log(`Successfully loaded ${sortedCountryCodes.length} regions from GitHub`);
-        } catch (error) {
-            console.error("Error loading regions:", error);
-        }
-    }
-    
-// Generate Clash YAML for VLESS
-function generateClashVLESS(name, uuid, domain, host, sni, proxyHost, proxyPort, tls) {
-    return `- name: ${name}
-  server: ${domain}
-  port: ${tls ? 443 : 80}
-  type: vless
-  uuid: ${uuid}
-  cipher: auto
-  tls: ${tls}
-  udp: false
-  skip-cert-verify: true
-  network: ws
-  servername: ${sni}
-  ws-opts:
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
-    headers:
-      Host: ${host}`;
-}
-
-// Generate Clash YAML for Trojan
-function generateClashTrojan(name, uuid, domain, host, sni, proxyHost, proxyPort, tls) {
-    return `- name: ${name}
-  server: ${domain}
-  port: ${tls ? 443 : 80}
-  type: trojan
-  password: ${uuid}
-  udp: false
-  skip-cert-verify: true
-  network: ws
-  sni: ${sni}
-  ws-opts:
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
-    headers:
-      Host: ${host}`;
-}
-
-// Generate Clash YAML for Shadowsocks
-function generateClashSS(name, uuid, domain, host, sni, proxyHost, proxyPort, tls) {
-    return `- name: ${name}
-  server: ${domain}
-  port: ${tls ? 443 : 80}
-  type: ss
-  cipher: none
-  password: ${uuid}
-  plugin: v2ray-plugin
-  client-fingerprint: chrome
-  udp: false
-  plugin-opts:
-    mode: websocket
-    host: ${host}
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
-    tls: ${tls}
-    mux: false
-    skip-cert-verify: true
-  headers:
-    custom: value
-    ip-version: dual
-    v2ray-http-upgrade: false
-    v2ray-http-upgrade-fast-open: false`;
-}
-
-// Generate Clash YAML for VMess
-function generateClashVMess(name, uuid, domain, host, sni, proxyHost, proxyPort, tls) {
-    return `- name: ${name}
-  server: ${domain}
-  port: ${tls ? 443 : 80}
-  type: vmess
-  uuid: ${uuid}
-  alterId: 0
-  cipher: zero
-  tls: ${tls}
-  skip-cert-verify: true
-  servername: ${sni}
-  network: ws
-  ws-opts:
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
-    headers:
-      Host: ${host}
-  udp: true`;
-}
-
-
-// Generate Nekobox configuration
-function generateNekoboxConfig(name, uuid, domain, host, sni, proxyHost, proxyPort, tls, type) {
-    const ports = tls ? '443' : '80';
-    const snio = tls ? `\n      "tls": {\n        "enabled": true,\n        "insecure": false,\n        "server_name": "${sni}",\n        "utls": {\n          "enabled": true,\n          "fingerprint": "randomized"\n        }\n      },` : '';
-
-    let config = '';
-    if (type === 'vless') {
-        config = `{
-      "domain_strategy": "ipv4_only",
-      "flow": "",
-      "multiplex": {
-        "enabled": false,
-        "max_streams": 32,
-        "protocol": "smux"
-      },
-      "packet_encoding": "xudp",
-      "server": "${domain}",
-      "server_port": ${ports},
-      "tag": "${name}",${snio}
-      "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "headers": {
-          "Host": "${host}"
-        },
-        "max_early_data": 0,
-        "path": "/${PATH_PREFIX}/${proxyHost}-${proxyPort}",
-        "type": "ws"
-      },
-      "type": "vless",
-      "uuid": "${uuid}"
-    }`;
-    } else if (type === 'trojan') {
-        config = `{
-      "domain_strategy": "ipv4_only",
-      "multiplex": {
-        "enabled": false,
-        "max_streams": 32,
-        "protocol": "smux"
-      },
-      "password": "${uuid}",
-      "server": "${domain}",
-      "server_port": ${ports},
-      "tag": "${name}",${snio}
-      "transport": {
-        "early_data_header_name": "Sec-WebSocket-Protocol",
-        "headers": {
-          "Host": "${host}"
-        },
-        "max_early_data": 0,
-        "path": "/${PATH_PREFIX}/${proxyHost}-${proxyPort}",
-        "type": "ws"
-      },
-      "type": "trojan"
-    }`;
-    } else if (type === 'ss') {
-        config = `{
-      "type": "shadowsocks",
-      "tag": "${name}",
-      "server": "${domain}",
-      "server_port": 443,
-      "method": "none",
-      "password": "${uuid}",
-      "plugin": "v2ray-plugin",
-      "plugin_opts": "mux=0;path=/${PATH_PREFIX}/${proxyHost}-${proxyPort};host=${host};tls=${tls ? '1' : '0'}"
-    }`;
-    } else if (type === 'vmess') {
-        config = `{
-  "alter_id": 0,
-  "packet_encoding": "",
-  "security": "zero",
-  "server": "${domain}",
-  "server_port": 443,${snio}
-  "transport": {
-    "headers": {
-      "Host": "${host}"
-    },
-    "path": "/${PATH_PREFIX}/${proxyHost}-${proxyPort}",
-    "type": "ws"
-  },
-  "uuid": "${uuid}",
-  "type": "vmess",
-  "domain_strategy": "prefer_ipv4",
-  "tag": "${name}"
-}`;
-    }
-    
-    return config;
-}
-
-// Main Function
-async function generateV2raySub(type, uuid, bugType, mainDomain, customBugs, tls, validateProxies, formatType, country = null, limit = null) {
-    try {
-        const response = await fetch(DEFAULT_PROXY_BANK_URL);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch proxy data: ${response.status}`);
-        }
-        
-        const proxyList = (await response.text()).split('\n').filter(Boolean);
-        let filteredProxies = proxyList;
-        
-        // Filter by country if specified
-        if (country) {
-            if (country.toLowerCase() === 'random') {
-                filteredProxies = proxyList.sort(() => Math.random() - 0.5);
-            } else {
-                filteredProxies = proxyList.filter(line => {
-                    const parts = line.split(',');
-                    return parts.length >= 3 && parts[2]?.toUpperCase() === country.toUpperCase();
-                });
-            }
-        }
-        
-        if (filteredProxies.length === 0) {
-            throw new Error("No proxies found matching your region criteria");
-        }
-        
-        // Apply limit to the filtered list before validation
-        let limitedProxies = filteredProxies;
-        if (limit && !isNaN(limit) && limit > 0) {
-            limitedProxies = filteredProxies.slice(0, parseInt(limit));
-        }
-        
-        // Use the first bug if available, otherwise use the main domain
-        const firstBug = customBugs && customBugs.length > 0 ? customBugs[0] : null;
-        
-        // Determine domain, host, and SNI based on bug type
-        let domain, host, sni;
-        
-        switch (bugType) {
-            case 'default':
-                domain = mainDomain;
-                host = mainDomain;
-                sni = mainDomain;
-                break;
-            case 'non-wildcard':
-                domain = firstBug || mainDomain;
-                host = mainDomain;
-                sni = mainDomain;
-                break;
-            case 'wildcard':
-                domain = firstBug || mainDomain;
-                host = `${firstBug}.${mainDomain}`;
-                sni = `${firstBug}.${mainDomain}`;
-                break;
-        }
-
-        const results = [];
-        let validProxies = [];
-        
-        // Check proxy validity if enabled
-        if (validateProxies) {
-            // Show validation status UI
-            document.getElementById('validation-status').style.display = 'block';
-            document.getElementById('loading').style.display = 'none';
-            
-            // Initialize validation UI
-            const validationBar = document.getElementById('validation-bar');
-            const validationCount = document.getElementById('validation-count');
-            const validCountEl = document.getElementById('valid-count');
-            const invalidCountEl = document.getElementById('invalid-count');
-            
-            validationBar.style.width = '0%';
-            validationCount.textContent = `0/${limitedProxies.length}`;
-            validCountEl.textContent = '0';
-            invalidCountEl.textContent = '0';
-            
-            // Prepare validation tasks in batches to avoid overwhelming the browser
-            const BATCH_SIZE = 5; // Process 10 proxies at a time
-            let validCount = 0;
-            let invalidCount = 0;
-            let processedCount = 0;
-            
-            // Process proxies in batches
-            for (let i = 0; i < limitedProxies.length; i += BATCH_SIZE) {
-                const batch = limitedProxies.slice(i, i + BATCH_SIZE);
-                const batchPromises = batch.map(async (line) => {
-                    const parts = line.split(',');
-                    if (parts.length < 3) {
-                        return { line, isValid: false };
-                    }
-                    
-                    const [proxyHost, proxyPort] = parts;
-                    const isValid = await checkProxyValidity(proxyHost, proxyPort);
-                    return { line, isValid };
-                });
-                
-                // Process batch in parallel
-                const batchResults = await Promise.all(batchPromises);
-                
-                // Update counts and UI
-                for (const result of batchResults) {
-                    processedCount++;
-                    
-                    if (result.isValid) {
-                        validCount++;
-                        validProxies.push(result.line);
-                    } else {
-                        invalidCount++;
-                    }
-                    
-                    // Update UI efficiently (using requestAnimationFrame to batch DOM updates)
-                    if (processedCount % 3 === 0 || processedCount === limitedProxies.length) {
-                        requestAnimationFrame(() => {
-                            const percentage = (processedCount / limitedProxies.length) * 100;
-                            validationBar.style.width = `${percentage}%`;
-                            validationCount.textContent = `${processedCount}/${limitedProxies.length}`;
-                            validCountEl.textContent = validCount;
-                            invalidCountEl.textContent = invalidCount;
-                        });
-                    }
-                }
-            }
-            
-            // Use valid proxies for configuration generation
-            if (validProxies.length === 0) {
-                // If no valid proxies found but we're only asking for a small number,
-                // just use some unvalidated ones to meet the minimum requirement
-                if (parseInt(limit) <= 5) {
-                    console.log("No valid proxies found, but using unvalidated ones to meet minimum requirement");
-                    validProxies = limitedProxies.slice(0, parseInt(limit));
-                } else {
-                    throw new Error("No valid proxies found matching your criteria");
-                }
-            }
-
-            // Hide validation status UI
-            document.getElementById('validation-status').style.display = 'none';
-
-            // Show loading again for config generation
-            document.getElementById('loading').style.display = 'block';
-
-            // If we have fewer valid proxies than requested, add some unvalidated ones to meet the requested limit
-            if (validProxies.length < parseInt(limit)) {
-                // Get all proxy hosts we've already validated (both valid and invalid)
-                const allValidatedHosts = new Set(limitedProxies.map(line => line.split(',')[0]));
-                
-                // Find completely new proxies that haven't been validated at all
-                const newProxies = proxyList.filter(line => {
-                    const host = line.split(',')[0];
-                    return !allValidatedHosts.has(host);
-                });
-                
-                // Add enough new proxies to reach the requested limit
-                const neededCount = parseInt(limit) - validProxies.length;
-                const additionalProxies = newProxies.slice(0, neededCount);
-                
-                // Combine valid proxies with new ones
-                limitedProxies = [...validProxies, ...additionalProxies];
-                
-                // Make sure we don't exceed the requested limit
-                limitedProxies = limitedProxies.slice(0, parseInt(limit));
-                
-                console.log(`Using ${validProxies.length} validated proxies and ${additionalProxies.length} new proxies`);
-            } else {
-                // Use just the valid proxies (might be fewer than requested if we don't have enough new ones)
-                limitedProxies = validProxies.slice(0, parseInt(limit));
-            }
-        }
-        
-        // For Clash format, we'll collect all proxies under a single header
-        if (formatType === 'clash') {
-            let allProxies = [];
-            
-            for (let i = 0; i < limitedProxies.length; i++) {
-                const line = limitedProxies[i];
-                const parts = line.split(',');
-                if (parts.length < 3) continue;
-                
-                const [proxyHost, proxyPort, countryCode, ...ispParts] = parts;
-                const isp = ispParts.join(' ') || 'Unknown';
-                
-                // If we have multiple bugs, create configs for each bug
-                const bugsToUse = customBugs && customBugs.length > 0 ? customBugs : [mainDomain];
-                
-                for (const bug of bugsToUse) {
-                    // Determine domain, host, and SNI for this specific bug
-                    let bugDomain, bugHost, bugSni;
-                    
-                    switch (bugType) {
-                        case 'default':
-                            bugDomain = mainDomain;
-                            bugHost = mainDomain;
-                            bugSni = mainDomain;
-                            break;
-                        case 'non-wildcard':
-                            bugDomain = bug;
-                            bugHost = mainDomain;
-                            bugSni = mainDomain;
-                            break;
-                        case 'wildcard':
-                            bugDomain = bug;
-                            bugHost = `${bug}.${mainDomain}`;
-                            bugSni = `${bug}.${mainDomain}`;
-                            break;
-                    }
-                    
-                    const bugLabel = bug !== mainDomain ? `[${bug}]` : '';
-                    const name = `${countryCode} - ${isp} ${bugLabel} ${i+1}`;
-                    
-                    switch (type) {
-                        case 'vless':
-                            allProxies.push(generateClashVLESS(`${name}-[VLESS-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            break;
-                        case 'vmess':
-                            allProxies.push(generateClashVMess(`${name}-[VMESS-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            break;
-                        case 'trojan':
-                            allProxies.push(generateClashTrojan(`${name}-[TROJAN-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            break;
-                        case 'shadowsocks':
-                            allProxies.push(generateClashSS(`${name}-[SS-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            break;
-                        case 'mix':
-                            const mixIndex = i + 1;
-                            allProxies.push(generateClashVLESS(`${countryCode} - ${isp} ${bugLabel}-[VLESS-${tls ? 'TLS' : 'NTLS'}] ${mixIndex}.1`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            allProxies.push(generateClashTrojan(`${countryCode} - ${isp} ${bugLabel}-[TROJAN-${tls ? 'TLS' : 'NTLS'}] ${mixIndex}.2`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            allProxies.push(generateClashSS(`${countryCode} - ${isp} ${bugLabel}-[SS-${tls ? 'TLS' : 'NTLS'}] ${mixIndex}.3`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            allProxies.push(generateClashVMess(`${countryCode} - ${isp} ${bugLabel}-[VMESS-${tls ? 'TLS' : 'NTLS'}] ${mixIndex}.4`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls));
-                            break;
-                    }
-                }
-            }
-            
-            // Return a single Clash configuration with all proxies
-            return `#Inconigto-Mode\nproxies:\n${allProxies.join('\n')}`;
-        } 
-        
-        // For Nekobox format
-        else if (formatType === 'nekobox') {
-            let allProxies = [];
-            let proxyTags = [];
-            
-            for (let i = 0; i < limitedProxies.length; i++) {
-                const line = limitedProxies[i];
-                const parts = line.split(',');
-                if (parts.length < 3) continue;
-                
-                const [proxyHost, proxyPort, countryCode, ...ispParts] = parts;
-                const isp = ispParts.join(' ') || 'Unknown';
-                const sanitizedIsp = isp.replace(/[\n\r]+/g, "").trim();
-                
-                // If we have multiple bugs, create configs for each bug
-                const bugsToUse = customBugs && customBugs.length > 0 ? customBugs : [mainDomain];
-                
-                for (const bug of bugsToUse) {
-                    // Determine domain, host, and SNI for this specific bug
-                    let bugDomain, bugHost, bugSni;
-                    
-                    switch (bugType) {
-                        case 'default':
-                            bugDomain = mainDomain;
-                            bugHost = mainDomain;
-                            bugSni = mainDomain;
-                            break;
-                        case 'non-wildcard':
-                            bugDomain = bug;
-                            bugHost = mainDomain;
-                            bugSni = mainDomain;
-                            break;
-                        case 'wildcard':
-                            bugDomain = bug;
-                            bugHost = `${bug}.${mainDomain}`;
-                            bugSni = `${bug}.${mainDomain}`;
-                            break;
-                    }
-                    
-                    const bugLabel = bug !== mainDomain ? `[${bug}]` : '';
-                    const name = `(${countryCode}) ${sanitizedIsp} ${bugLabel} ${i+1}`;
-                    
-                    switch (type) {
-    case 'vless':
-        proxyTags.push(`        "${name}",`);
-        allProxies.push(generateNekoboxConfig(name, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'vless'));
-        break;
-    case 'trojan':
-        proxyTags.push(`        "${name}",`);
-        allProxies.push(generateNekoboxConfig(name, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'trojan'));
-        break;
-    case 'shadowsocks':
-        proxyTags.push(`        "${name}",`);
-        allProxies.push(generateNekoboxConfig(name, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'ss'));
-        break;
-    case 'vmess':
-        proxyTags.push(`        "${name}",`);
-        allProxies.push(generateNekoboxConfig(name, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'vmess'));
-        break;
-    case 'mix':
-        proxyTags.push(`        "${name} -[VLESS-${tls ? 'TLS' : 'NTLS'}]",`);
-        proxyTags.push(`        "${name} -[TROJAN-${tls ? 'TLS' : 'NTLS'}]",`);
-        proxyTags.push(`        "${name} -[SS-${tls ? 'TLS' : 'NTLS'}]",`);
-        proxyTags.push(`        "${name} -[VMESS-${tls ? 'TLS' : 'NTLS'}]",`);
-
-        allProxies.push(generateNekoboxConfig(`${name} -[VLESS-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'vless'));
-        allProxies.push(generateNekoboxConfig(`${name} -[TROJAN-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'trojan'));
-        allProxies.push(generateNekoboxConfig(`${name} -[SS-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'ss'));
-        allProxies.push(generateNekoboxConfig(`${name} -[VMESS-${tls ? 'TLS' : 'NTLS'}]`, uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, tls, 'vmess'));  // Added vmess config
-        break;
-}
-                }
-            }
-            
-            // Remove trailing comma from the last proxy
-            if (allProxies.length > 0) {
-                const lastProxy = allProxies[allProxies.length - 1];
-                allProxies[allProxies.length - 1] = lastProxy.replace(/,\s*$/, '');
-            }
-            
-            // Create the full Nekobox configuration
-            return `##INCONIGTO-MODE##
-{
-  "dns": {
-    "final": "dns-final",
-    "independent_cache": true,
-    "rules": [
-      {
-        "disable_cache": false,
-        "domain": [
-          "family.cloudflare-dns.com",
-          "${mainDomain}"
-        ],
-        "server": "direct-dns"
-      }
-    ],
-    "servers": [
-      {
-        "address": "https://family.cloudflare-dns.com/dns-query",
-        "address_resolver": "direct-dns",
-        "strategy": "ipv4_only",
-        "tag": "remote-dns"
-      },
-      {
-        "address": "local",
-        "strategy": "ipv4_only",
-        "tag": "direct-dns"
-      },
-      {
-        "address": "local",
-        "address_resolver": "dns-local",
-        "strategy": "ipv4_only",
-        "tag": "dns-final"
-      },
-      {
-        "address": "local",
-        "tag": "dns-local"
-      },
-      {
-        "address": "rcode://success",
-        "tag": "dns-block"
-      }
-    ]
-  },
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "../cache/clash.db",
-      "store_fakeip": true
-    },
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "../files/yacd"
-    }
-  },
-  "inbounds": [
-    {
-      "listen": "0.0.0.0",
-      "listen_port": 6450,
-      "override_address": "8.8.8.8",
-      "override_port": 53,
-      "tag": "dns-in",
-      "type": "direct"
-    },
-    {
-      "domain_strategy": "",
-      "endpoint_independent_nat": true,
-      "inet4_address": [
-        "172.19.0.1/28"
-      ],
-      "mtu": 9000,
-      "sniff": true,
-      "sniff_override_destination": true,
-      "stack": "system",
-      "tag": "tun-in",
-      "type": "tun"
-    },
-    {
-      "domain_strategy": "",
-      "listen": "0.0.0.0",
-      "listen_port": 2080,
-      "sniff": true,
-      "sniff_override_destination": true,
-      "tag": "mixed-in",
-      "type": "mixed"
-    }
-  ],
-  "log": {
-    "level": "info"
-  },
-  "outbounds": [
-    {
-      "outbounds": [
-        "Best Latency",
-${proxyTags.join('\n')}
-        "direct"
-      ],
-      "tag": "Internet",
-      "type": "selector"
-    },
-    {
-      "interval": "1m0s",
-      "outbounds": [
-${proxyTags.join('\n')}
-        "direct"
-      ],
-      "tag": "Best Latency",
-      "type": "urltest",
-      "url": "https://detectportal.firefox.com/success.txt"
-    },
-${allProxies.join(',\n')},
-    {
-      "tag": "direct",
-      "type": "direct"
-    },
-    {
-      "tag": "bypass",
-      "type": "direct"
-    },
-    {
-      "tag": "block",
-      "type": "block"
-    },
-    {
-      "tag": "dns-out",
-      "type": "dns"
-    }
-  ],
-  "route": {
-    "auto_detect_interface": true,
-    "rules": [
-      {
-        "outbound": "dns-out",
-        "port": [
-          53
-        ]
-      },
-      {
-        "inbound": [
-          "dns-in"
-        ],
-        "outbound": "dns-out"
-      },
-      {
-        "network": [
-          "udp"
-        ],
-        "outbound": "block",
-        "port": [
-          443
-        ],
-        "port_range": []
-      },
-      {
-        "ip_cidr": [
-          "224.0.0.0/3",
-          "ff00::/8"
-        ],
-        "outbound": "block",
-        "source_ip_cidr": [
-          "224.0.0.0/3",
-          "ff00::/8"
-        ]
-      }
-    ]
-  }
-}`;
-        }
-        // V2Ray format - process each proxy individually
-        else {
-            for (const line of limitedProxies) {
-                const parts = line.split(',');
-                if (parts.length < 3) continue;
-                
-                const [proxyHost, proxyPort, countryCode, ...ispParts] = parts;
-                const isp = ispParts.join(' ') || 'Unknown';
-                
-                // If we have multiple bugs, create configs for each bug
-                const bugsToUse = customBugs && customBugs.length > 0 ? customBugs : [mainDomain];
-                
-                for (const bug of bugsToUse) {
-                    // Determine domain, host, and SNI for this specific bug
-                    let bugDomain, bugHost, bugSni;
-                    
-                    switch (bugType) {
-                        case 'default':
-                            bugDomain = mainDomain;
-                            bugHost = mainDomain;
-                            bugSni = mainDomain;
-                            break;
-                        case 'non-wildcard':
-                            bugDomain = bug;
-                            bugHost = mainDomain;
-                            bugSni = mainDomain;
-                            break;
-                        case 'wildcard':
-                            bugDomain = bug;
-                            bugHost = `${bug}.${mainDomain}`;
-                            bugSni = `${bug}.${mainDomain}`;
-                            break;
-                    }
-                    
-                    let config;
-                    // Remove bugLabel for V2Ray format
-                    
-                    switch (type) {
-                        case 'vless': 
-                            const vlessLabel = formatLabel(countryCode, isp, 'VLESS', tls);
-                            config = `vless://${uuid}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(vlessLabel)}`;
-                            break;
-                        
-                        case 'vmess': 
-                            const vmessConfig = createVMessConfig(uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, countryCode, isp, tls);
-                            const vmessString = JSON.stringify(vmessConfig);
-                            config = `vmess://${safeBase64Encode(vmessString)}`;
-                            break;
-                        
-                        case 'trojan': 
-                            const trojanLabel = formatLabel(countryCode, isp, 'TROJAN', tls);
-                            config = `trojan://${uuid}@${bugDomain}:${tls ? 443 : 80}?security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(trojanLabel)}`;
-                            break;
-                        
-                        case 'shadowsocks': 
-                            const ssLabel = formatLabel(countryCode, isp, 'SS', tls);
-                            const ssAuth = `none:${uuid}`;
-                            config = `ss://${safeBase64Encode(ssAuth)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabel)}`;
-                            break;
-                        
-                        case 'mix': 
-                            // For mix, we'll create all protocol types with appropriate labels
-                            const vmessConfigMix = createVMessConfig(uuid, bugDomain, bugHost, bugSni, proxyHost, proxyPort, countryCode, isp, tls);
-                            const vmessStringMix = JSON.stringify(vmessConfigMix);
-                            
-                            const vlessLabelMix = formatLabel(countryCode, isp, 'VLESS', tls);
-                            const trojanLabelMix = formatLabel(countryCode, isp, 'TROJAN', tls);
-                            const ssLabelMix = formatLabel(countryCode, isp, 'SS', tls);
-                            
-                            const ssAuthMix = `none:${uuid}`;
-
-                            config = [
-                                `vless://${uuid}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(vlessLabelMix)}`,
-                                `vmess://${safeBase64Encode(vmessStringMix)}`,
-                                `trojan://${uuid}@${bugDomain}:${tls ? 443 : 80}?security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(trojanLabelMix)}`,
-                                `ss://${safeBase64Encode(ssAuthMix)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabelMix)}`
-                            ].join('\n');
-                            break;
-                    }
-                    
-                    if (config) {
-                        results.push(config);
-                    }
-                }
-            }
-            
-            return results.join('\n');
-        }
-    } catch (error) {
-        console.error("Error generating subscription:", error);
-        throw error;
-    }
-}
-    
-    // UI Interaction
-    document.addEventListener('DOMContentLoaded', () => {
-        // Populate regions from GitHub when the page loads
-        populateRegionsFromGitHub();
-
-        // Populate main domains from the constant array
-        const mainDomainSelect = document.getElementById('mainDomain');
-        MainDomains.forEach(domain => {
-            const option = document.createElement('option');
-            option.value = domain;
-            option.textContent = domain;
-            mainDomainSelect.appendChild(option);
-        });
-
-    
-        const form = document.getElementById('subLinkForm');
-        const loadingEl = document.getElementById('loading');
-        const resultEl = document.getElementById('result');
-        const outputEl = document.getElementById('output');
-        const copyLinkBtn = document.getElementById('copyLink');
-        const errorMessageEl = document.getElementById('error-message');
-        const generateUuidBtn = document.getElementById('generateUuid');
-        const uuidInput = document.getElementById('uuid');
-        const bugTypeSelect = document.getElementById('bugType');
-        const customBugContainer = document.getElementById('customBugContainer');
-        const validationStatusEl = document.getElementById('validation-status');
-        
-        // Show/hide custom bug field based on bug type
-        bugTypeSelect.addEventListener('change', () => {
-            if (bugTypeSelect.value === 'default') {
-                customBugContainer.style.display = 'none';
-            } else {
-                customBugContainer.style.display = 'block';
-            }
-        });
-        
-        // UUID generator button
-        generateUuidBtn.addEventListener('click', () => {
-            uuidInput.value = generateUUIDv4();
-        });
-        
-        // Form submission handler
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const type = document.getElementById('configType').value;
-            const uuid = document.getElementById('uuid').value.trim();
-            const bugType = document.getElementById('bugType').value;
-            const mainDomain = document.getElementById('mainDomain').value;
-            
-            // Parse comma-separated custom bugs
-            const customBugInput = document.getElementById('customBug').value.trim();
-            const selectedBugs = customBugInput ? customBugInput.split(',').map(bug => bug.trim()) : [];
-            
-            const tls = document.getElementById('tls').value === 'true';
-            const country = document.getElementById('country').value.trim() || null;
-            const limit = document.getElementById('limit').value.trim() || null;
-            const validateProxies = document.getElementById('validateProxies').checked;
-            const formatType = document.getElementById('formatType').value;
-            
-            // Validation
-            if (!uuid || !mainDomain) {
-                errorMessageEl.textContent = 'ERROR: UUID and Main Domain are required';
-                return;
-            }
-            
-            if ((bugType === 'non-wildcard' || bugType === 'wildcard') && selectedBugs.length === 0) {
-                errorMessageEl.textContent = 'ERROR: At least one Custom Bug is required for Non-Wildcard and Wildcard modes';
-                return;
-            }
-            
-            try {
-                // Reset UI
-                validationStatusEl.style.display = 'none';
-                resultEl.style.display = 'none';
-                errorMessageEl.textContent = '';
-                
-                // Update loading text based on validation setting
-                const loadingTextEl = document.querySelector('.loading-text');
-                loadingTextEl.textContent = validateProxies ? 
-                    'Fetching proxy data and preparing to validate...' : 
-                    'Fetching proxy data and generating configs...';
-                
-                // Show loading
-                loadingEl.style.display = 'block';
-                
-                // Generate subscription
-                const result = await generateV2raySub(
-                    type, uuid, bugType, mainDomain, selectedBugs, tls, validateProxies, formatType, country, limit
-                );
-                
-                // Hide loading
-                loadingEl.style.display = 'none';
-                
-                // Display result
-                outputEl.value = result;
-                resultEl.style.display = 'block';
-            } catch (error) {
-                loadingEl.style.display = 'none';
-                validationStatusEl.style.display = 'none';
-                errorMessageEl.textContent = 'ERROR: ' + error.message;
-                console.error(error);
-            }
-        });
-        
-        // Copy functionality
-        copyLinkBtn.addEventListener('click', () => {
-            outputEl.select();
-            document.execCommand('copy');
-            
-            const originalText = copyLinkBtn.textContent;
-            copyLinkBtn.textContent = '✓ COPIED SUCCESSFULLY';
-            copyLinkBtn.style.background = 'linear-gradient(90deg, var(--color-success), var(--color-success))';
-            
-            setTimeout(() => {
-                copyLinkBtn.textContent = originalText;
-                copyLinkBtn.style.background = 'linear-gradient(90deg, var(--color-success), var(--color-primary))';
-            }, 2000);
-        });
-    });
-</script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"931600ff9fd3fcf0","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.3.0","token":"699b92b44d49410cb972cc556d389863"}' crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script> 
+	const _0x3d5dba=_0x7902;(function(_0x5041ef,_0x6954f5){const _0x4a38ee=_0x7902,_0x57a1e7=_0x5041ef();while(!![]){try{const _0x4d2239=parseInt(_0x4a38ee(0x20c))/0x1*(parseInt(_0x4a38ee(0x273))/0x2)+parseInt(_0x4a38ee(0x1de))/0x3+parseInt(_0x4a38ee(0x2a3))/0x4+-parseInt(_0x4a38ee(0x24b))/0x5*(parseInt(_0x4a38ee(0x2ab))/0x6)+parseInt(_0x4a38ee(0x1cc))/0x7+-parseInt(_0x4a38ee(0x2a8))/0x8*(-parseInt(_0x4a38ee(0x2b5))/0x9)+-parseInt(_0x4a38ee(0x289))/0xa;if(_0x4d2239===_0x6954f5)break;else _0x57a1e7['push'](_0x57a1e7['shift']());}catch(_0x388481){_0x57a1e7['push'](_0x57a1e7['shift']());}}}(_0x2668,0x707ac),document[_0x3d5dba(0x1d6)](_0x3d5dba(0x23f),()=>{const _0x4b3028=_0x3d5dba,_0x30a96c=document['querySelectorAll'](_0x4b3028(0x264)),_0x2e4547=new Date()['getFullYear']();_0x30a96c[_0x4b3028(0x25c)](_0x2798e5=>{const _0x60e34=_0x4b3028;_0x2798e5[_0x60e34(0x1e4)]=_0x2e4547;});}),document[_0x3d5dba(0x1d6)](_0x3d5dba(0x23f),()=>{const _0x35e608=_0x3d5dba,_0x5191b9=document['getElementById'](_0x35e608(0x2b6)),_0x90bb87=document[_0x35e608(0x254)](_0x35e608(0x20d)),_0x17d793=document[_0x35e608(0x254)]('close-donation'),_0xf1c987=document[_0x35e608(0x254)](_0x35e608(0x22e));_0x5191b9&&_0x90bb87&&(_0x5191b9[_0x35e608(0x1d6)](_0x35e608(0x248),()=>{const _0x428156=_0x35e608;_0x90bb87[_0x428156(0x209)][_0x428156(0x246)](_0x428156(0x2b4));}),_0x17d793&&_0x17d793[_0x35e608(0x1d6)](_0x35e608(0x248),()=>{const _0xe13805=_0x35e608;_0x90bb87[_0xe13805(0x209)][_0xe13805(0x1d2)](_0xe13805(0x2b4));}),_0xf1c987&&_0xf1c987[_0x35e608(0x1d6)]('click',()=>{const _0x456a44=_0x35e608;_0x90bb87[_0x456a44(0x209)][_0x456a44(0x1d2)](_0x456a44(0x2b4));}),document[_0x35e608(0x1d6)]('keydown',_0x394b61=>{const _0x5817a2=_0x35e608;_0x394b61['key']===_0x5817a2(0x244)&&_0x90bb87[_0x5817a2(0x209)]['contains'](_0x5817a2(0x2b4))&&_0x90bb87['classList'][_0x5817a2(0x1d2)]('active');}));}));function generateUUIDv4(){const _0x2bd7ff=_0x3d5dba;return _0x2bd7ff(0x281)[_0x2bd7ff(0x1fe)](/[xy]/g,_0x5be161=>{const _0x593b3c=_0x2bd7ff,_0x13c133=Math[_0x593b3c(0x2c1)]()*0x10|0x0,_0x21660d=_0x5be161==='x'?_0x13c133:_0x13c133&0x3|0x8;return _0x21660d[_0x593b3c(0x2a6)](0x10);});}function safeBase64Encode(_0x18a60d){const _0xd015b=_0x3d5dba;try{const _0x1b7d09=typeof _0x18a60d==='object'?JSON[_0xd015b(0x296)](_0x18a60d):String(_0x18a60d);return window[_0xd015b(0x222)](_0x1b7d09);}catch(_0x1f9838){return console[_0xd015b(0x276)]('Base64\x20encoding\x20error:',_0x1f9838),'';}}function formatDate(_0x43fde8){const _0xdc6b9a=_0x3d5dba,_0x1e6e48={'year':_0xdc6b9a(0x27b),'month':_0xdc6b9a(0x261),'day':_0xdc6b9a(0x27b),'hour':_0xdc6b9a(0x21d),'minute':_0xdc6b9a(0x21d)};return _0x43fde8[_0xdc6b9a(0x1db)](_0xdc6b9a(0x235),_0x1e6e48);}async function copyToClipboard(_0x410bd6){const _0x240569=_0x3d5dba;try{if(navigator['clipboard']&&navigator[_0x240569(0x1d5)][_0x240569(0x224)])return await navigator['clipboard'][_0x240569(0x224)](_0x410bd6),!![];else{const _0x3c2369=document[_0x240569(0x27c)](_0x240569(0x1c3));_0x3c2369[_0x240569(0x1da)]=_0x410bd6,_0x3c2369[_0x240569(0x25d)][_0x240569(0x293)]=_0x240569(0x1c2),_0x3c2369['style'][_0x240569(0x228)]=_0x240569(0x25b),_0x3c2369[_0x240569(0x25d)][_0x240569(0x217)]=_0x240569(0x25b),document['body'][_0x240569(0x20a)](_0x3c2369),_0x3c2369[_0x240569(0x258)](),_0x3c2369['select']();const _0x2e06ba=document[_0x240569(0x24c)](_0x240569(0x1d9));return document[_0x240569(0x20b)][_0x240569(0x21c)](_0x3c2369),_0x2e06ba;}}catch(_0x1d3f2c){return console[_0x240569(0x276)](_0x240569(0x25e),_0x1d3f2c),![];}}function showToast(_0x2517a6,_0x477f84=_0x3d5dba(0x247),_0xdfa23=0xbb8){const _0xda32ed=_0x3d5dba;let _0x3ffa2e=document[_0xda32ed(0x254)]('toast-container');!_0x3ffa2e&&(_0x3ffa2e=document['createElement'](_0xda32ed(0x1f0)),_0x3ffa2e['id']=_0xda32ed(0x259),_0x3ffa2e[_0xda32ed(0x25d)][_0xda32ed(0x293)]=_0xda32ed(0x1c2),_0x3ffa2e[_0xda32ed(0x25d)][_0xda32ed(0x1e7)]=_0xda32ed(0x25f),_0x3ffa2e[_0xda32ed(0x25d)][_0xda32ed(0x1cd)]=_0xda32ed(0x25f),_0x3ffa2e[_0xda32ed(0x25d)][_0xda32ed(0x2b8)]=_0xda32ed(0x1ca),document[_0xda32ed(0x20b)][_0xda32ed(0x20a)](_0x3ffa2e));const _0x1fdba9=document['createElement']('div');_0x1fdba9[_0xda32ed(0x29a)]='toast\x20toast-'+_0x477f84,_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x28e)]=_0xda32ed(0x283),_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x2bd)]=_0xda32ed(0x240),_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x295)]='15px',_0x1fdba9[_0xda32ed(0x25d)]['borderRadius']=_0xda32ed(0x26b),_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x226)]=_0xda32ed(0x1c0),_0x1fdba9[_0xda32ed(0x25d)]['display']=_0xda32ed(0x27f),_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x1d4)]='center',_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x1c4)]='space-between',_0x1fdba9[_0xda32ed(0x25d)]['animation']='fadeIn\x200.3s,\x20fadeOut\x200.3s\x20'+(_0xdfa23/0x3e8-0.3)+'s\x20forwards';switch(_0x477f84){case _0xda32ed(0x245):_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x26c)]=_0xda32ed(0x1c7);break;case _0xda32ed(0x276):_0x1fdba9[_0xda32ed(0x25d)][_0xda32ed(0x26c)]='rgba(239,\x2068,\x2068,\x200.9)';break;default:_0x1fdba9['style'][_0xda32ed(0x26c)]='rgba(99,\x20102,\x20241,\x200.9)';}let _0xbaa456='';switch(_0x477f84){case'success':_0xbaa456=_0xda32ed(0x1d7);break;case _0xda32ed(0x276):_0xbaa456=_0xda32ed(0x204);break;default:_0xbaa456=_0xda32ed(0x28c);}_0x1fdba9[_0xda32ed(0x2ba)]=_0xda32ed(0x284)+_0xbaa456+_0xda32ed(0x2a2)+_0x2517a6+_0xda32ed(0x2af);const _0x3ea468=_0x1fdba9[_0xda32ed(0x22a)](_0xda32ed(0x257));_0x3ea468[_0xda32ed(0x1d6)](_0xda32ed(0x248),()=>{const _0x558b5f=_0xda32ed;_0x3ffa2e[_0x558b5f(0x21c)](_0x1fdba9);}),_0x3ffa2e[_0xda32ed(0x20a)](_0x1fdba9);if(!document['getElementById'](_0xda32ed(0x1d8))){const _0x490056=document[_0xda32ed(0x27c)](_0xda32ed(0x25d));_0x490056['id']=_0xda32ed(0x1d8),_0x490056[_0xda32ed(0x1e4)]=_0xda32ed(0x223),document[_0xda32ed(0x292)][_0xda32ed(0x20a)](_0x490056);}setTimeout(()=>{const _0x2ee656=_0xda32ed;_0x3ffa2e[_0x2ee656(0x274)](_0x1fdba9)&&_0x3ffa2e['removeChild'](_0x1fdba9);},_0xdfa23);}function generateUUID(_0x3e9a7d){const _0x1a3e39=_0x3d5dba;document['getElementById'](_0x3e9a7d)[_0x1a3e39(0x1da)]=generateUUIDv4();}function _0x7902(_0x35f08d,_0x5620d8){const _0x266811=_0x2668();return _0x7902=function(_0x790280,_0x5348cb){_0x790280=_0x790280-0x1be;let _0x340f83=_0x266811[_0x790280];return _0x340f83;},_0x7902(_0x35f08d,_0x5620d8);}function generatePassword(_0x54d66d){const _0x5ea770=_0x3d5dba;document[_0x5ea770(0x254)](_0x54d66d)[_0x5ea770(0x1da)]=generateUUIDv4();}const CONFIG={'proxyListUrl':_0x3d5dba(0x299),'apiCheckUrl':'https://api.jb8fd7grgd.workers.dev/','mainDomains':[_0x3d5dba(0x242),_0x3d5dba(0x2c0),_0x3d5dba(0x2b7),_0x3d5dba(0x28f)],'defaultUuid':_0x3d5dba(0x231),'maxProxies':0x32,'defaultProxyCount':0x5,'pathTemplate':_0x3d5dba(0x262)};let proxyList=[],filteredProxyList=[],validatedProxies=[],validationInProgress=![],totalValidated=0x0,validCount=0x0,invalidCount=0x0;const form=document['getElementById'](_0x3d5dba(0x205)),configTypeSelect=document[_0x3d5dba(0x254)]('configType'),formatTypeSelect=document[_0x3d5dba(0x254)](_0x3d5dba(0x1f2)),uuidInput=document[_0x3d5dba(0x254)]('uuid'),generateUuidBtn=document[_0x3d5dba(0x254)](_0x3d5dba(0x2b0)),bugTypeSelect=document[_0x3d5dba(0x254)](_0x3d5dba(0x29f)),mainDomainSelect=document[_0x3d5dba(0x254)](_0x3d5dba(0x29b)),customBugContainer=document[_0x3d5dba(0x254)](_0x3d5dba(0x266)),customBugInput=document[_0x3d5dba(0x254)]('customBug'),tlsSelect=document[_0x3d5dba(0x254)](_0x3d5dba(0x1e2)),countrySelect=document[_0x3d5dba(0x254)]('country'),limitInput=document[_0x3d5dba(0x254)](_0x3d5dba(0x2b9)),validateProxiesCheckbox=document[_0x3d5dba(0x254)](_0x3d5dba(0x1fc)),loadingElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x22f)),validationStatusElement=document['getElementById'](_0x3d5dba(0x1dd)),validationCountElement=document['getElementById'](_0x3d5dba(0x250)),validationBarElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x1f5)),validCountElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x225)),invalidCountElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x241)),errorMessageElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x26d)),resultElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x1e9)),outputElement=document[_0x3d5dba(0x254)](_0x3d5dba(0x243)),copyLinkBtn=document[_0x3d5dba(0x254)](_0x3d5dba(0x275));function generateUUIDv4(){const _0x504f93=_0x3d5dba;return crypto[_0x504f93(0x270)]();}async function copyToClipboard(_0x2d1cb1){const _0x8f0cd=_0x3d5dba;try{return await navigator[_0x8f0cd(0x1d5)]['writeText'](_0x2d1cb1),!![];}catch(_0x15ef07){return console['error']('Failed\x20to\x20copy:\x20',_0x15ef07),![];}}function safeBase64Encode(_0x5bc7dd){const _0x23e0ec=_0x3d5dba;try{return btoa(unescape(encodeURIComponent(_0x5bc7dd)));}catch(_0x3646a2){return console[_0x23e0ec(0x276)](_0x23e0ec(0x1fa),_0x3646a2),'';}}document['addEventListener']('DOMContentLoaded',()=>{populateMainDomains(),setupEventListeners(),loadProxyList();});function populateMainDomains(){const _0x50d418=_0x3d5dba;CONFIG[_0x50d418(0x1fb)][_0x50d418(0x25c)](_0x249ba9=>{const _0x3ba15a=_0x50d418,_0x4b3f83=document[_0x3ba15a(0x27c)](_0x3ba15a(0x210));_0x4b3f83[_0x3ba15a(0x1da)]=_0x249ba9,_0x4b3f83['textContent']=_0x249ba9,mainDomainSelect[_0x3ba15a(0x20a)](_0x4b3f83);});}function _0x2668(){const _0x4fe0a1=['body','157835MGhkqP','donation-modal','\x20[VMESS-','slice','option','maxProxies','\x0a\x20\x20\x20\x20\x20\x20headers:\x0a\x20\x20\x20\x20\x20\x20\x20\x20Host:\x20','latency','\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_early_data\x22:\x200,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22','Error\x20loading\x20proxy\x20list:','password','top','includes','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22ws\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22uuid\x22:\x20\x22','submit','type','removeChild','2-digit','\x22\x0a\x20\x20\x20\x20}','Error\x20validating\x20proxy:','\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20','All\x20Countries','btoa','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20fadeIn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20from\x20{\x20opacity:\x200;\x20transform:\x20translateY(20px);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20to\x20{\x20opacity:\x201;\x20transform:\x20translateY(0);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20fadeOut\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20from\x20{\x20opacity:\x201;\x20transform:\x20translateY(0);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20to\x20{\x20opacity:\x200;\x20transform:\x20translateY(-20px);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20','writeText','valid-count','boxShadow','&security=','left','\x22\x0a\x20\x20\x20\x20type:\x20vless\x0a\x20\x20\x20\x20server:\x20','querySelector','sort','\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20servername:\x20','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22','donation-backdrop','loading','v2ray','bbbbbbbb-cccc-4ddd-eeee-ffffffffffff','\x20-\x20','Disabled','Asia/Jakarta','en-US','\x0a#\x20TLS:\x20','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22ws\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22vless\x22,\x0a\x20\x20\x20\x20\x20\x20\x22uuid\x22:\x20\x22','\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22alter_id\x22:\x200,\x0a\x20\x20\x20\x20\x20\x20\x22packet_encoding\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22security\x22:\x20\x22zero\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22','\x20[VLESS-','\x0a\x20\x20\x20\x20\x20\x20path:\x20','\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22shadowsocks\x22,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22','&type=ws&host=','text','\x0a\x20\x20\x20\x20cipher:\x20none\x0a\x20\x20\x20\x20password:\x20','DOMContentLoaded','10px\x200','invalid-count','afrcloud.xyz','output','Escape','success','add','info','click','map','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20class=\x22copy-icon\x22\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<polyline\x20points=\x2220\x206\x209\x2017\x204\x2012\x22></polyline>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20COPIED\x20SUCCESSFULLY\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','225kAtwda','execCommand',',\x0a\x20\x20\x20\x20\x20\x20\x22method\x22:\x20\x22none\x22,\x0a\x20\x20\x20\x20\x20\x20\x22password\x22:\x20\x22','shadowsocks','wsHost','validation-count','Failed\x20to\x20fetch\x20proxy\x20list','&sni=','\x0a\x20\x20\x20\x20\x20\x20mux:\x20false\x0a','getElementById','\x0a\x20\x20\x20\x20\x20\x20\x22transport\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22early_data_header_name\x22:\x20\x22Sec-WebSocket-Protocol\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22headers\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22Host\x22:\x20\x22','?encryption=none&security=','button','focus','toast-container','uuid','-999999px','forEach','style','Failed\x20to\x20copy\x20text:\x20','20px','\x0a\x20\x20\x20\x20port:\x20','short','/Inconigto-Mode/{ip}-{port}','##INCONIGTO-MODE##\x0a{\x0a\x20\x20\x22dns\x22:\x20{\x0a\x20\x20\x20\x20\x22final\x22:\x20\x22dns-final\x22,\x0a\x20\x20\x20\x20\x22independent_cache\x22:\x20true,\x0a\x20\x20\x20\x20\x22rules\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22disable_cache\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22domain\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22family.cloudflare-dns.com\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22direct-dns\x22\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x22servers\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22https://family.cloudflare-dns.com/dns-query\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address_resolver\x22:\x20\x22direct-dns\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22remote-dns\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22direct-dns\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address_resolver\x22:\x20\x22dns-local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-final\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-local\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22rcode://success\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-block\x22\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20]\x0a\x20\x20},\x0a\x20\x20\x22experimental\x22:\x20{\x0a\x20\x20\x20\x20\x22cache_file\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22../cache/clash.db\x22,\x0a\x20\x20\x20\x20\x20\x20\x22store_fakeip\x22:\x20true\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x22clash_api\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x22external_controller\x22:\x20\x22127.0.0.1:9090\x22,\x0a\x20\x20\x20\x20\x20\x20\x22external_ui\x22:\x20\x22../files/yacd\x22\x0a\x20\x20\x20\x20}\x0a\x20\x20},\x0a\x20\x20\x22inbounds\x22:\x20[\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22listen\x22:\x20\x220.0.0.0\x22,\x0a\x20\x20\x20\x20\x20\x20\x22listen_port\x22:\x206450,\x0a\x20\x20\x20\x20\x20\x20\x22override_address\x22:\x20\x228.8.8.8\x22,\x0a\x20\x20\x20\x20\x20\x20\x22override_port\x22:\x2053,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-in\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22direct\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22endpoint_independent_nat\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22inet4_address\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22172.19.0.1/28\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22mtu\x22:\x209000,\x0a\x20\x20\x20\x20\x20\x20\x22endpoint_independent_nat\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22inet4_address\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22172.19.0.1/28\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22mtu\x22:\x209000,\x0a\x20\x20\x20\x20\x20\x20\x22sniff\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22sniff_override_destination\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22stack\x22:\x20\x22system\x22,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22tun-in\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22tun\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22listen\x22:\x20\x220.0.0.0\x22,\x0a\x20\x20\x20\x20\x20\x20\x22listen_port\x22:\x202080,\x0a\x20\x20\x20\x20\x20\x20\x22sniff\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22sniff_override_destination\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22mixed-in\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22mixed\x22\x0a\x20\x20\x20\x20}\x0a\x20\x20],\x0a\x20\x20\x22log\x22:\x20{\x0a\x20\x20\x20\x20\x22level\x22:\x20\x22info\x22\x0a\x20\x20},\x0a\x20\x20\x22outbounds\x22:\x20[\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22outbounds\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22Best\x20Latency\x22,\x0a','#current-year','name','customBugContainer','port','checked','wsPath','\x20[Trojan-','8px','backgroundColor','error-message','json','non-wildcard','randomUUID','TLS','smooth','8XdTplH','contains','copyLink','error','Proxy\x20count\x20must\x20be\x20between\x201\x20and\x20','\x20[TROJAN-','\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20tls:\x20','trim','numeric','createElement','\x20[SS-','filter','flex','change','xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx','min','250px','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20align-items:\x20center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22margin-right:\x2010px;\x20font-size:\x2018px;\x22>','\x20\x20\x20\x20\x20\x20\x20\x20\x22direct\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22Internet\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22selector\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22interval\x22:\x20\x221m0s\x22,\x0a\x20\x20\x20\x20\x20\x20\x22outbounds\x22:\x20[\x0a','ss://','wildcard','scrollIntoView','13558450uecAfA','display','Unsupported\x20format\x20type','<i\x20class=\x22fas\x20fa-info-circle\x22></i>','indexOf','minWidth','afrcloud.my.id','Failed\x20to\x20load\x20proxy\x20list.\x20Please\x20try\x20again\x20later.','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22vmess\x22,\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22prefer_ipv4\x22,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22','head','position','&path=','padding','stringify','\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20sni:\x20','width','https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt','className','mainDomain','country','\x20\x20\x20\x20\x20\x20\x20\x20\x22direct\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22Best\x20Latency\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22urltest\x22,\x0a\x20\x20\x20\x20\x20\x20\x22url\x22:\x20\x22https://detectportal.firefox.com/success.txt\x22\x0a\x20\x20\x20\x20},\x0a','\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20plugin:\x20v2ray-plugin\x0a\x20\x20\x20\x20plugin-opts:\x0a\x20\x20\x20\x20\x20\x20mode:\x20websocket\x0a\x20\x20\x20\x20\x20\x20tls:\x20','bugType','Generating\x20configuration...','\x22\x0a\x20\x20\x20\x20type:\x20vmess\x0a\x20\x20\x20\x20server:\x20','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22color:\x20white;\x22>','162688JQpHeg','mix','clash','toString',']\x20(','840nOMDpq','\x22\x0a\x20\x20\x20\x20type:\x20trojan\x0a\x20\x20\x20\x20server:\x20','.loading-text','49974gwBtaf','pathTemplate','Unknown\x20Provider','Fetching\x20proxy\x20list...','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20style=\x22background:\x20none;\x20border:\x20none;\x20color:\x20white;\x20cursor:\x20pointer;\x20font-size:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-times\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20','generateUuid','length','block','#\x20Clash\x20Proxy\x20Provider\x20Configuration\x0a#\x20Generated\x20by\x20Inconigto-Mode\x0a#\x20Date:\x20','active','66141LRRcQb','donation-button','afrcloud.web.id','zIndex','limit','innerHTML','\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x22flow\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22multiplex\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_streams\x22:\x2032,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22protocol\x22:\x20\x22smux\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22packet_encoding\x22:\x20\x22xudp\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22','none','margin','provider','?encryption=none&type=ws&host=','afrcloud.site','random','vmess','push','0\x204px\x2012px\x20rgba(0,\x200,\x200,\x200.15)','\x0a\x20\x20\x20\x20uuid:\x20','fixed','textarea','justifyContent',',\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22','Unknown','rgba(16,\x20185,\x20129,\x200.9)','\x0a#\x20Protocol:\x20',';tls=','9999','floor','4446610ZSTYEm','right','server','\x0a\x20\x20\x20\x20alterId:\x200\x0a\x20\x20\x20\x20cipher:\x20zero\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20tls:\x20','{port}','vless://','remove','true','alignItems','clipboard','addEventListener','<i\x20class=\x22fas\x20fa-check-circle\x22></i>','toast-styles','copy','value','toLocaleDateString','\x0a\x20\x20\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20\x20\x20host:\x20','validation-status','337437RhKPSF','\x0a\x0aproxies:\x0a','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22ws\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22trojan\x22\x0a\x20\x20\x20\x20}','vmess://','tls','then','textContent','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22utls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22fingerprint\x22:\x20\x22randomized\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20},','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server_port\x22:\x20','bottom','\x22\x0a\x20\x20\x20\x20type:\x20ss\x0a\x20\x20\x20\x20server:\x20','result','\x20\x20\x20\x20\x20\x20\x20\x20\x22','sni',';host=','proxyip','\x0a\x20\x20-\x20name:\x20\x22','\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x22multiplex\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_streams\x22:\x2032,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22protocol\x22:\x20\x22smux\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22password\x22:\x20\x22','div','join','formatType',',\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22direct\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22direct\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22bypass\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22direct\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22block\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22block\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-out\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22dns\x22\x0a\x20\x20\x20\x20}\x0a\x20\x20],\x0a\x20\x20\x22route\x22:\x20{\x0a\x20\x20\x20\x20\x22auto_detect_interface\x22:\x20true,\x0a\x20\x20\x20\x20\x22rules\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22dns-out\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22port\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2053\x0a\x20\x20\x20\x20\x20\x20\x20\x20]\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22inbound\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22dns-in\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22dns-out\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22network\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22udp\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22block\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22port\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20443\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22port_range\x22:\x20[]\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22ip_cidr\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22224.0.0.0/3\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22ff00::/8\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22block\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22source_ip_cidr\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22224.0.0.0/3\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22ff00::/8\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20]\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20]\x0a\x20\x20}\x0a}','proxyListUrl','validation-bar','{ip}','\x20[VMess-','vless','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20class=\x22copy-icon\x22\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<rect\x20x=\x229\x22\x20y=\x229\x22\x20width=\x2213\x22\x20height=\x2213\x22\x20rx=\x222\x22\x20ry=\x222\x22></rect>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M5\x2015H4a2\x202\x200\x200\x201-2-2V4a2\x202\x200\x200\x201\x202-2h9a2\x202\x200\x200\x201\x202\x202v1\x22></path>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20COPY\x20CONFIGURATION\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Error\x20encoding\x20base64:','mainDomains','validateProxies','No\x20proxies\x20found\x20in\x20the\x20proxy\x20list.','replace','No\x20proxies\x20found\x20with\x20the\x20selected\x20criteria.','trojan://','split','\x0a\x20\x20\x20\x20\x20\x20\x22tls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22insecure\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22server_name\x22:\x20\x22','NTLS','<i\x20class=\x22fas\x20fa-exclamation-circle\x22></i>','subLinkForm','parseInt','\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20','apiCheckUrl','classList','appendChild'];_0x2668=function(){return _0x4fe0a1;};return _0x2668();}function setupEventListeners(){const _0x160906=_0x3d5dba;generateUuidBtn[_0x160906(0x1d6)](_0x160906(0x248),()=>{const _0x5480ae=_0x160906;uuidInput[_0x5480ae(0x1da)]=generateUUIDv4();}),bugTypeSelect['addEventListener'](_0x160906(0x280),()=>{const _0x262aa4=_0x160906;bugTypeSelect[_0x262aa4(0x1da)]===_0x262aa4(0x26f)||bugTypeSelect[_0x262aa4(0x1da)]===_0x262aa4(0x287)?customBugContainer['style'][_0x262aa4(0x28a)]=_0x262aa4(0x2b2):customBugContainer[_0x262aa4(0x25d)][_0x262aa4(0x28a)]=_0x262aa4(0x2bc);}),form[_0x160906(0x1d6)](_0x160906(0x21a),handleFormSubmit),copyLinkBtn[_0x160906(0x1d6)](_0x160906(0x248),()=>{const _0x8362ab=_0x160906;copyToClipboard(outputElement[_0x8362ab(0x1da)])['then'](_0x3b582e=>{const _0x48cdf3=_0x8362ab;_0x3b582e&&(copyLinkBtn[_0x48cdf3(0x2ba)]=_0x48cdf3(0x24a),setTimeout(()=>{const _0x3a8e47=_0x48cdf3;copyLinkBtn[_0x3a8e47(0x2ba)]=_0x3a8e47(0x1f9);},0x7d0));});});}function loadProxyList(){const _0x4c7116=_0x3d5dba;showLoading(_0x4c7116(0x2ae)),fetch(CONFIG[_0x4c7116(0x1f4)])[_0x4c7116(0x1e3)](_0x1d3990=>{const _0xc131dd=_0x4c7116;if(!_0x1d3990['ok'])throw new Error(_0xc131dd(0x251));return _0x1d3990[_0xc131dd(0x23d)]();})[_0x4c7116(0x1e3)](_0x4d0ab3=>{processProxyData(_0x4d0ab3),hideLoading();})['catch'](_0x11785c=>{const _0x41dca1=_0x4c7116;console['error'](_0x41dca1(0x215),_0x11785c),showError(_0x41dca1(0x290)),hideLoading();});}function processProxyData(_0x26923c){const _0x3c2965=_0x3d5dba,_0x493ec3=_0x26923c[_0x3c2965(0x201)](/\r?\n/)['filter'](_0x48d2a2=>_0x48d2a2[_0x3c2965(0x27a)]()!=='');if(_0x493ec3[_0x3c2965(0x2b1)]===0x0){showError(_0x3c2965(0x1fd));return;}let _0xe961dd=',';const _0x45914b=_0x493ec3[0x0];if(_0x45914b[_0x3c2965(0x218)]('\x09'))_0xe961dd='\x09';else{if(_0x45914b[_0x3c2965(0x218)]('|'))_0xe961dd='|';else _0x45914b[_0x3c2965(0x218)](';')&&(_0xe961dd=';');}proxyList=_0x493ec3['map'](_0x3fe7b8=>{const _0x2e1537=_0x3c2965,_0x24bda9=_0x3fe7b8['split'](_0xe961dd);if(_0x24bda9[_0x2e1537(0x2b1)]>=0x2)return{'ip':_0x24bda9[0x0][_0x2e1537(0x27a)](),'port':_0x24bda9[0x1][_0x2e1537(0x27a)](),'country':_0x24bda9['length']>=0x3?_0x24bda9[0x2][_0x2e1537(0x27a)]():_0x2e1537(0x1c6),'provider':_0x24bda9[_0x2e1537(0x2b1)]>=0x4?_0x24bda9[0x3]['trim']():_0x2e1537(0x2ad)};return null;})[_0x3c2965(0x27e)](_0x540ea5=>_0x540ea5&&_0x540ea5['ip']&&_0x540ea5[_0x3c2965(0x267)]),populateCountryDropdown();}function populateCountryDropdown(){const _0x38ef6e=_0x3d5dba,_0x5c06ba=[...new Set(proxyList['map'](_0x3b8609=>_0x3b8609[_0x38ef6e(0x29c)]))];_0x5c06ba[_0x38ef6e(0x22b)](),countrySelect[_0x38ef6e(0x2ba)]='';const _0x1bb971=document[_0x38ef6e(0x27c)](_0x38ef6e(0x210));_0x1bb971[_0x38ef6e(0x1da)]='',_0x1bb971['textContent']=_0x38ef6e(0x221),countrySelect[_0x38ef6e(0x20a)](_0x1bb971),_0x5c06ba[_0x38ef6e(0x25c)](_0xba6392=>{const _0x1829b5=_0x38ef6e,_0x131d68=document['createElement']('option');_0x131d68[_0x1829b5(0x1da)]=_0xba6392,_0x131d68[_0x1829b5(0x1e4)]=_0xba6392,countrySelect[_0x1829b5(0x20a)](_0x131d68);});}async function handleFormSubmit(_0x4bc45e){const _0x584747=_0x3d5dba;_0x4bc45e['preventDefault'](),errorMessageElement[_0x584747(0x1e4)]='',errorMessageElement[_0x584747(0x25d)][_0x584747(0x28a)]='none';const _0x486095=configTypeSelect[_0x584747(0x1da)],_0x31a3f5=formatTypeSelect[_0x584747(0x1da)],_0x373284=uuidInput['value'],_0x51f9e7=bugTypeSelect[_0x584747(0x1da)],_0x4db099=mainDomainSelect['value'],_0x2946aa=customBugInput[_0x584747(0x1da)],_0x6a0d45=tlsSelect[_0x584747(0x1da)]===_0x584747(0x1d3),_0xa2a099=countrySelect[_0x584747(0x1da)],_0x2fdebd=Number[_0x584747(0x206)](limitInput[_0x584747(0x1da)],0xa),_0x4eb920=validateProxiesCheckbox[_0x584747(0x268)];if(!_0x373284){showError('Please\x20enter\x20a\x20UUID.');return;}if(_0x2fdebd<0x1||_0x2fdebd>CONFIG[_0x584747(0x211)]){showError(_0x584747(0x277)+CONFIG[_0x584747(0x211)]+'.');return;}filteredProxyList=_0xa2a099?proxyList[_0x584747(0x27e)](_0x4637b9=>_0x4637b9['country']===_0xa2a099):[...proxyList];if(filteredProxyList['length']===0x0){showError(_0x584747(0x1ff));return;}shuffleArray(filteredProxyList),filteredProxyList=filteredProxyList['slice'](0x0,_0x2fdebd),showLoading(_0x584747(0x2a0));_0x4eb920&&await validateProxyList();const _0x2a58ab=generateConfiguration(_0x486095,_0x31a3f5,_0x373284,_0x51f9e7,_0x4db099,_0x2946aa,_0x6a0d45);showResult(_0x2a58ab);}async function validateProxyList(){const _0x4db14a=_0x3d5dba;validationInProgress=!![],validatedProxies=[],totalValidated=0x0,validCount=0x0,invalidCount=0x0,validationStatusElement['style'][_0x4db14a(0x28a)]=_0x4db14a(0x2b2),validationCountElement['textContent']='0/'+filteredProxyList[_0x4db14a(0x2b1)],validationBarElement['style'][_0x4db14a(0x298)]='0%',validCountElement[_0x4db14a(0x1e4)]='0',invalidCountElement[_0x4db14a(0x1e4)]='0',invalidCountElement[_0x4db14a(0x1e4)]='0';const _0x5de60b=[...filteredProxyList],_0x5f002a=0x5,_0x108778=Math['ceil'](_0x5de60b['length']/_0x5f002a);for(let _0x248f9e=0x0;_0x248f9e<_0x108778;_0x248f9e++){const _0x49b51a=_0x248f9e*_0x5f002a,_0x927d98=Math[_0x4db14a(0x282)](_0x49b51a+_0x5f002a,_0x5de60b['length']),_0x529f95=_0x5de60b[_0x4db14a(0x20f)](_0x49b51a,_0x927d98);await Promise['all'](_0x529f95['map'](async _0x3a003d=>{const _0x113ced=_0x4db14a,_0x54c8c3=await validateProxy(_0x3a003d);totalValidated++;const _0x3347d0=totalValidated/_0x5de60b[_0x113ced(0x2b1)]*0x64;validationCountElement[_0x113ced(0x1e4)]=totalValidated+'/'+_0x5de60b[_0x113ced(0x2b1)],validationBarElement[_0x113ced(0x25d)][_0x113ced(0x298)]=_0x3347d0+'%',_0x54c8c3?(validCount++,validCountElement[_0x113ced(0x1e4)]=validCount,validatedProxies[_0x113ced(0x1bf)](_0x3a003d)):(invalidCount++,invalidCountElement[_0x113ced(0x1e4)]=invalidCount);}));}validatedProxies[_0x4db14a(0x2b1)]>0x0&&(filteredProxyList=validatedProxies),validationInProgress=![];}async function validateProxy(_0x4be188){const _0x58d191=_0x3d5dba;try{const _0x3c9dc6=await fetch(CONFIG[_0x58d191(0x208)]+'/'+_0x4be188['ip']+':'+_0x4be188['port']),_0x27448a=await _0x3c9dc6[_0x58d191(0x26e)](),_0x1f0106=Array['isArray'](_0x27448a)?_0x27448a[0x0]:_0x27448a;return _0x1f0106&&_0x1f0106[_0x58d191(0x1ed)]===!![]?{..._0x4be188,'valid':!![],'latency':_0x1f0106[_0x58d191(0x213)]}:{..._0x4be188,'valid':![]};}catch(_0x26c545){return console[_0x58d191(0x276)](_0x58d191(0x21f),_0x26c545),{..._0x4be188,'valid':![]};}}function generateConfiguration(_0x2c7bba,_0xaee838,_0x142caf,_0x19541c,_0xf5de24,_0x362d85,_0x47c071){const _0x2b38cf=_0x3d5dba,_0x3be567=filteredProxyList;switch(_0xaee838){case _0x2b38cf(0x230):return generateV2rayLinks(_0x2c7bba,_0x3be567,_0x142caf,_0x19541c,_0xf5de24,_0x362d85,_0x47c071);case _0x2b38cf(0x2a5):return generateClashConfig(_0x2c7bba,_0x3be567,_0x142caf,_0x19541c,_0xf5de24,_0x362d85,_0x47c071);case'nekobox':const _0x54267c=[];_0x3be567[_0x2b38cf(0x25c)](_0x48014c=>{const _0x16778d=_0x2b38cf,_0x1a51ec=CONFIG[_0x16778d(0x2ac)]['replace'](_0x16778d(0x1f6),_0x48014c['ip'])['replace'](_0x16778d(0x1d0),_0x48014c[_0x16778d(0x267)]),_0x5e6b77=_0x47c071?0x1bb:0x50,_0x2c38e4=_0x362d85&&(_0x19541c===_0x16778d(0x26f)||_0x19541c===_0x16778d(0x287))?_0x362d85[_0x16778d(0x201)](',')[_0x16778d(0x249)](_0x251c7d=>_0x251c7d['trim']()):[_0xf5de24];_0x2c38e4['forEach'](_0x59628f=>{const _0x354423=_0x16778d;let _0x965de8,_0x2537b6,_0xc88e04;switch(_0x19541c){case'default':_0x965de8=_0xf5de24,_0x2537b6=_0xf5de24,_0xc88e04=_0xf5de24;break;case'non-wildcard':_0x965de8=_0x59628f,_0x2537b6=_0xf5de24,_0xc88e04=_0xf5de24;break;case'wildcard':_0x965de8=_0x59628f,_0x2537b6=_0x59628f+'.'+_0xf5de24,_0xc88e04=_0x59628f+'.'+_0xf5de24;break;}const _0x52beb1=_0x48014c[_0x354423(0x29c)],_0x18940a=_0x48014c[_0x354423(0x2be)];(_0x2c7bba===_0x354423(0x1be)||_0x2c7bba===_0x354423(0x2a4))&&_0x54267c[_0x354423(0x1bf)]({'type':_0x354423(0x1be),'name':'['+(_0x54267c[_0x354423(0x2b1)]+0x1)+_0x354423(0x2a7)+_0x52beb1+')\x20'+_0x18940a+_0x354423(0x20e)+(_0x47c071?'TLS':_0x354423(0x203))+']','server':_0x965de8,'port':_0x5e6b77,'uuid':_0x142caf,'tls':_0x47c071,'sni':_0xc88e04,'wsHost':_0x2537b6,'wsPath':_0x1a51ec}),(_0x2c7bba==='vless'||_0x2c7bba===_0x354423(0x2a4))&&_0x54267c[_0x354423(0x1bf)]({'type':'vless','name':'['+(_0x54267c[_0x354423(0x2b1)]+0x1)+_0x354423(0x2a7)+_0x52beb1+')\x20'+_0x18940a+_0x354423(0x239)+(_0x47c071?'TLS':_0x354423(0x203))+']','server':_0x965de8,'port':_0x5e6b77,'uuid':_0x142caf,'tls':_0x47c071,'sni':_0xc88e04,'wsHost':_0x2537b6,'wsPath':_0x1a51ec}),(_0x2c7bba==='trojan'||_0x2c7bba==='mix')&&_0x54267c[_0x354423(0x1bf)]({'type':'trojan','name':'['+(_0x54267c[_0x354423(0x2b1)]+0x1)+_0x354423(0x2a7)+_0x52beb1+')\x20'+_0x18940a+_0x354423(0x278)+(_0x47c071?'TLS':_0x354423(0x203))+']','server':_0x965de8,'port':_0x5e6b77,'password':_0x142caf,'tls':_0x47c071,'sni':_0xc88e04,'wsHost':_0x2537b6,'wsPath':_0x1a51ec}),(_0x2c7bba===_0x354423(0x24e)||_0x2c7bba==='mix')&&_0x54267c[_0x354423(0x1bf)]({'type':'ss','name':'['+(_0x54267c['length']+0x1)+_0x354423(0x2a7)+_0x52beb1+')\x20'+_0x18940a+_0x354423(0x27d)+(_0x47c071?_0x354423(0x271):_0x354423(0x203))+']','server':_0x965de8,'port':_0x5e6b77,'password':_0x142caf,'tls':_0x47c071,'wsHost':_0x2537b6,'wsPath':_0x1a51ec});});});return generateNekoboxConfig(_0x54267c);default:return _0x2b38cf(0x28b);}}function generateV2rayLinks(_0x1a3599,_0x1fcbd3,_0x23e44d,_0x965f70,_0x4b53fe,_0x2d3f5e,_0x5139db){const _0x1ce71b=_0x3d5dba,_0x2ae95e=[];let _0xb8d7ce=[];return _0x2d3f5e&&(_0x965f70===_0x1ce71b(0x26f)||_0x965f70==='wildcard')&&(_0xb8d7ce=_0x2d3f5e[_0x1ce71b(0x201)](',')['map'](_0x46295c=>_0x46295c[_0x1ce71b(0x27a)]())),_0x1fcbd3[_0x1ce71b(0x25c)](_0x2774af=>{const _0x3c113f=_0x1ce71b,_0x11baa5=CONFIG[_0x3c113f(0x2ac)]['replace'](_0x3c113f(0x1f6),_0x2774af['ip'])[_0x3c113f(0x1fe)](_0x3c113f(0x1d0),_0x2774af[_0x3c113f(0x267)]),_0x40e0d3=_0x5139db?0x1bb:0x50,_0x3c00a7=_0x5139db?_0x3c113f(0x1e2):_0x3c113f(0x2bc);if(_0x1a3599==='mix'||_0x1a3599===_0x3c113f(0x1be)){if(_0xb8d7ce[_0x3c113f(0x2b1)]>0x0)_0xb8d7ce[_0x3c113f(0x25c)]((_0x1ee3e2,_0x36b949)=>{const _0x1d5c52=_0x3c113f,_0x5bedc0=_0x1ee3e2,_0x2160ed=_0x965f70===_0x1d5c52(0x287)?_0x1ee3e2+'.'+_0x4b53fe:_0x4b53fe,_0x38265e=_0x965f70===_0x1d5c52(0x287)?_0x1ee3e2+'.'+_0x4b53fe:_0x4b53fe,_0x24ecb8={'v':'2','ps':'['+(_0x2ae95e[_0x1d5c52(0x2b1)]+0x1)+']\x20'+_0x2774af[_0x1d5c52(0x29c)]+_0x1d5c52(0x232)+_0x2774af['provider']+_0x1d5c52(0x1f7)+(_0x5139db?_0x1d5c52(0x271):_0x1d5c52(0x203))+']','add':_0x5bedc0,'port':_0x40e0d3,'id':_0x23e44d,'aid':'0','net':'ws','type':_0x1d5c52(0x2bc),'host':_0x2160ed,'path':_0x11baa5,'tls':_0x3c00a7,'sni':_0x38265e,'scy':'zero'};_0x2ae95e[_0x1d5c52(0x1bf)]('vmess://'+safeBase64Encode(JSON[_0x1d5c52(0x296)](_0x24ecb8)));});else{const _0x13dfb2={'v':'2','ps':'['+(_0x2ae95e[_0x3c113f(0x2b1)]+0x1)+']\x20'+_0x2774af[_0x3c113f(0x29c)]+_0x3c113f(0x232)+_0x2774af[_0x3c113f(0x2be)]+_0x3c113f(0x1f7)+(_0x5139db?_0x3c113f(0x271):_0x3c113f(0x203))+']','add':_0x4b53fe,'port':_0x40e0d3,'id':_0x23e44d,'aid':'0','net':'ws','type':_0x3c113f(0x2bc),'host':_0x4b53fe,'path':_0x11baa5,'tls':_0x3c00a7,'sni':_0x4b53fe,'scy':'zero'};_0x2ae95e[_0x3c113f(0x1bf)](_0x3c113f(0x1e1)+safeBase64Encode(JSON[_0x3c113f(0x296)](_0x13dfb2)));}}if(_0x1a3599==='mix'||_0x1a3599===_0x3c113f(0x1f8)){if(_0xb8d7ce[_0x3c113f(0x2b1)]>0x0)_0xb8d7ce['forEach'](_0x38a4ed=>{const _0x406ca4=_0x3c113f,_0x5b2f7a=_0x38a4ed,_0x4891e6=_0x965f70===_0x406ca4(0x287)?_0x38a4ed+'.'+_0x4b53fe:_0x4b53fe,_0x4910be=_0x965f70==='wildcard'?_0x38a4ed+'.'+_0x4b53fe:_0x4b53fe,_0x500de9=encodeURIComponent('['+(_0x2ae95e[_0x406ca4(0x2b1)]+0x1)+']\x20'+_0x2774af['country']+_0x406ca4(0x232)+_0x2774af[_0x406ca4(0x2be)]+_0x406ca4(0x239)+(_0x5139db?'TLS':_0x406ca4(0x203))+']'),_0x5c1a6f=encodeURIComponent(_0x11baa5);_0x2ae95e[_0x406ca4(0x1bf)](_0x406ca4(0x1d1)+_0x23e44d+'@'+_0x5b2f7a+':'+_0x40e0d3+'?encryption=none&security='+_0x3c00a7+_0x406ca4(0x23c)+_0x4891e6+_0x406ca4(0x294)+_0x5c1a6f+_0x406ca4(0x252)+_0x4910be+'#'+_0x500de9);});else{const _0x2765f6=encodeURIComponent('['+(_0x2ae95e['length']+0x1)+']\x20'+_0x2774af[_0x3c113f(0x29c)]+_0x3c113f(0x232)+_0x2774af[_0x3c113f(0x2be)]+_0x3c113f(0x239)+(_0x5139db?_0x3c113f(0x271):_0x3c113f(0x203))+']'),_0x57f22e=encodeURIComponent(_0x11baa5);_0x2ae95e[_0x3c113f(0x1bf)]('vless://'+_0x23e44d+'@'+_0x4b53fe+':'+_0x40e0d3+_0x3c113f(0x256)+_0x3c00a7+_0x3c113f(0x23c)+_0x4b53fe+'&path='+_0x57f22e+_0x3c113f(0x252)+_0x4b53fe+'#'+_0x2765f6);}}if(_0x1a3599===_0x3c113f(0x2a4)||_0x1a3599==='trojan'){if(_0xb8d7ce[_0x3c113f(0x2b1)]>0x0)_0xb8d7ce[_0x3c113f(0x25c)](_0x6a6d52=>{const _0x2320c5=_0x3c113f,_0x955a2f=_0x6a6d52,_0x91b1e5=_0x965f70===_0x2320c5(0x287)?_0x6a6d52+'.'+_0x4b53fe:_0x4b53fe,_0xbb8024=_0x965f70===_0x2320c5(0x287)?_0x6a6d52+'.'+_0x4b53fe:_0x4b53fe,_0x37f2d9=encodeURIComponent('['+(_0x2ae95e[_0x2320c5(0x2b1)]+0x1)+']\x20'+_0x2774af[_0x2320c5(0x29c)]+_0x2320c5(0x232)+_0x2774af['provider']+'\x20[Trojan-'+(_0x5139db?_0x2320c5(0x271):_0x2320c5(0x203))+']'),_0x53f4ce=encodeURIComponent(_0x11baa5);_0x2ae95e[_0x2320c5(0x1bf)]('trojan://'+_0x23e44d+'@'+_0x955a2f+':'+_0x40e0d3+'?security='+_0x3c00a7+_0x2320c5(0x23c)+_0x91b1e5+'&path='+_0x53f4ce+_0x2320c5(0x252)+_0xbb8024+'#'+_0x37f2d9);});else{const _0x3c08dc=encodeURIComponent('['+(_0x2ae95e[_0x3c113f(0x2b1)]+0x1)+']\x20'+_0x2774af[_0x3c113f(0x29c)]+_0x3c113f(0x232)+_0x2774af[_0x3c113f(0x2be)]+_0x3c113f(0x26a)+(_0x5139db?_0x3c113f(0x271):_0x3c113f(0x203))+']'),_0x164628=encodeURIComponent(_0x11baa5);_0x2ae95e[_0x3c113f(0x1bf)](_0x3c113f(0x200)+_0x23e44d+'@'+_0x4b53fe+':'+_0x40e0d3+'?security='+_0x3c00a7+'&type=ws&host='+_0x4b53fe+'&path='+_0x164628+_0x3c113f(0x252)+_0x4b53fe+'#'+_0x3c08dc);}}if(_0x1a3599==='mix'||_0x1a3599===_0x3c113f(0x24e)){if(_0xb8d7ce['length']>0x0)_0xb8d7ce[_0x3c113f(0x25c)](_0x447efb=>{const _0x533534=_0x3c113f,_0x549c20=_0x447efb,_0x4763f5=_0x965f70===_0x533534(0x287)?_0x447efb+'.'+_0x4b53fe:_0x4b53fe,_0x3da5a4=_0x965f70===_0x533534(0x287)?_0x447efb+'.'+_0x4b53fe:_0x4b53fe,_0x411f38=encodeURIComponent('['+(_0x2ae95e[_0x533534(0x2b1)]+0x1)+']\x20'+_0x2774af[_0x533534(0x29c)]+_0x533534(0x232)+_0x2774af[_0x533534(0x2be)]+_0x533534(0x27d)+(_0x5139db?'TLS':'NTLS')+']'),_0x30c420=encodeURIComponent(_0x11baa5),_0x3dc55c=_0x533534(0x2bc),_0x21823f=safeBase64Encode(_0x3dc55c+':'+_0x23e44d);_0x2ae95e[_0x533534(0x1bf)](_0x533534(0x286)+_0x21823f+'@'+_0x549c20+':'+_0x40e0d3+'?encryption=none&type=ws&host='+_0x4763f5+_0x533534(0x294)+_0x30c420+_0x533534(0x227)+_0x3c00a7+'&sni='+_0x3da5a4+'#'+_0x411f38);});else{const _0x3d2e7d=encodeURIComponent('['+(_0x2ae95e[_0x3c113f(0x2b1)]+0x1)+']\x20'+_0x2774af['country']+'\x20-\x20'+_0x2774af[_0x3c113f(0x2be)]+_0x3c113f(0x27d)+(_0x5139db?'TLS':_0x3c113f(0x203))+']'),_0x5db325=encodeURIComponent(_0x11baa5),_0x4d2fba=_0x3c113f(0x2bc),_0x3e2895=safeBase64Encode(_0x4d2fba+':'+_0x23e44d);_0x2ae95e[_0x3c113f(0x1bf)]('ss://'+_0x3e2895+'@'+_0x4b53fe+':'+_0x40e0d3+_0x3c113f(0x2bf)+_0x4b53fe+'&path='+_0x5db325+_0x3c113f(0x227)+_0x3c00a7+'&sni='+_0x4b53fe+'#'+_0x3d2e7d);}}}),_0x2ae95e[_0x1ce71b(0x1f1)]('\x0a');}function generateClashConfig(_0x1ff5ca,_0x2d9790,_0x871931,_0x57510f,_0x2fea63,_0x24fe1c,_0x3916e1){const _0xe768c6=_0x3d5dba;let _0x4073b7=_0xe768c6(0x2b3)+new Date()['toLocaleString'](_0xe768c6(0x235),{'timeZone':_0xe768c6(0x234)})+_0xe768c6(0x1c8)+_0x1ff5ca['toUpperCase']()+_0xe768c6(0x236)+(_0x3916e1?'Enabled':_0xe768c6(0x233))+_0xe768c6(0x1df),_0x12254c=[];return _0x24fe1c&&(_0x57510f==='non-wildcard'||_0x57510f===_0xe768c6(0x287))&&(_0x12254c=_0x24fe1c[_0xe768c6(0x201)](',')[_0xe768c6(0x249)](_0x5d67f8=>_0x5d67f8['trim']())),_0x2d9790[_0xe768c6(0x25c)](_0x518912=>{const _0x33873a=_0xe768c6,_0xc98bde=CONFIG['pathTemplate'][_0x33873a(0x1fe)](_0x33873a(0x1f6),_0x518912['ip'])[_0x33873a(0x1fe)]('{port}',_0x518912[_0x33873a(0x267)]),_0x15374f=_0x3916e1?0x1bb:0x50,_0x4f1100=_0x3916e1;if(_0x1ff5ca===_0x33873a(0x2a4)||_0x1ff5ca===_0x33873a(0x1be)){if(_0x12254c[_0x33873a(0x2b1)]>0x0)_0x12254c[_0x33873a(0x25c)]((_0x2a11fc,_0x572331)=>{const _0x43979b=_0x33873a,_0x35462f=_0x2a11fc,_0x3c4a73=_0x57510f==='wildcard'?_0x2a11fc+'.'+_0x2fea63:_0x2fea63,_0x4a4b6c=_0x57510f===_0x43979b(0x287)?_0x2a11fc+'.'+_0x2fea63:_0x2fea63,_0x3fbabb='['+(_0x2d9790[_0x43979b(0x28d)](_0x518912)*_0x12254c[_0x43979b(0x2b1)]+_0x572331+0x1)+']\x20'+_0x518912['country']+_0x43979b(0x232)+_0x518912['provider']+_0x43979b(0x1f7)+(_0x3916e1?_0x43979b(0x271):_0x43979b(0x203))+']';_0x4073b7+=_0x43979b(0x1ee)+_0x3fbabb+'\x22\x0a\x20\x20\x20\x20type:\x20vmess\x0a\x20\x20\x20\x20server:\x20'+_0x35462f+'\x0a\x20\x20\x20\x20port:\x20'+_0x15374f+'\x0a\x20\x20\x20\x20uuid:\x20'+_0x871931+_0x43979b(0x1cf)+_0x4f1100+_0x43979b(0x22c)+_0x4a4b6c+_0x43979b(0x220)+_0xc98bde+_0x43979b(0x212)+_0x3c4a73+'\x0a';});else{const _0x4697d7='['+(_0x2d9790[_0x33873a(0x28d)](_0x518912)+0x1)+']\x20'+_0x518912[_0x33873a(0x29c)]+_0x33873a(0x232)+_0x518912[_0x33873a(0x2be)]+'\x20[VMess-'+(_0x3916e1?'TLS':_0x33873a(0x203))+']';_0x4073b7+=_0x33873a(0x1ee)+_0x4697d7+_0x33873a(0x2a1)+_0x2fea63+_0x33873a(0x260)+_0x15374f+_0x33873a(0x1c1)+_0x871931+_0x33873a(0x1cf)+_0x4f1100+'\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20servername:\x20'+_0x2fea63+'\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20'+_0xc98bde+_0x33873a(0x212)+_0x2fea63+'\x0a';}}if(_0x1ff5ca===_0x33873a(0x2a4)||_0x1ff5ca===_0x33873a(0x1f8)){if(_0x12254c[_0x33873a(0x2b1)]>0x0)_0x12254c['forEach']((_0x3d69cf,_0xdce545)=>{const _0x207946=_0x33873a,_0x11dced=_0x3d69cf,_0x2e3c91=_0x57510f===_0x207946(0x287)?_0x3d69cf+'.'+_0x2fea63:_0x2fea63,_0xde0ede=_0x57510f==='wildcard'?_0x3d69cf+'.'+_0x2fea63:_0x2fea63,_0x4fd60b='['+(_0x2d9790['indexOf'](_0x518912)*_0x12254c[_0x207946(0x2b1)]+_0xdce545+0x1)+']\x20'+_0x518912['country']+_0x207946(0x232)+_0x518912[_0x207946(0x2be)]+_0x207946(0x239)+(_0x3916e1?_0x207946(0x271):_0x207946(0x203))+']';_0x4073b7+=_0x207946(0x1ee)+_0x4fd60b+'\x22\x0a\x20\x20\x20\x20type:\x20vless\x0a\x20\x20\x20\x20server:\x20'+_0x11dced+_0x207946(0x260)+_0x15374f+'\x0a\x20\x20\x20\x20uuid:\x20'+_0x871931+_0x207946(0x279)+_0x4f1100+_0x207946(0x22c)+_0xde0ede+_0x207946(0x220)+_0xc98bde+_0x207946(0x212)+_0x2e3c91+'\x0a';});else{const _0x3f3b35='['+(_0x2d9790[_0x33873a(0x28d)](_0x518912)+0x1)+']\x20'+_0x518912[_0x33873a(0x29c)]+'\x20-\x20'+_0x518912[_0x33873a(0x2be)]+_0x33873a(0x239)+(_0x3916e1?_0x33873a(0x271):'NTLS')+']';_0x4073b7+=_0x33873a(0x1ee)+_0x3f3b35+_0x33873a(0x229)+_0x2fea63+_0x33873a(0x260)+_0x15374f+_0x33873a(0x1c1)+_0x871931+_0x33873a(0x279)+_0x4f1100+'\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20servername:\x20'+_0x2fea63+_0x33873a(0x220)+_0xc98bde+_0x33873a(0x212)+_0x2fea63+'\x0a';}}if(_0x1ff5ca===_0x33873a(0x2a4)||_0x1ff5ca==='trojan'){if(_0x12254c['length']>0x0)_0x12254c['forEach']((_0x2dda4f,_0x3919ff)=>{const _0x43dbc8=_0x33873a,_0x2a08c3=_0x2dda4f,_0x2ae194=_0x57510f===_0x43dbc8(0x287)?_0x2dda4f+'.'+_0x2fea63:_0x2fea63,_0xe11e15=_0x57510f==='wildcard'?_0x2dda4f+'.'+_0x2fea63:_0x2fea63,_0x52bc30='['+(_0x2d9790[_0x43dbc8(0x28d)](_0x518912)*_0x12254c[_0x43dbc8(0x2b1)]+_0x3919ff+0x1)+']\x20'+_0x518912['country']+'\x20-\x20'+_0x518912[_0x43dbc8(0x2be)]+_0x43dbc8(0x26a)+(_0x3916e1?_0x43dbc8(0x271):_0x43dbc8(0x203))+']';_0x4073b7+=_0x43dbc8(0x1ee)+_0x52bc30+_0x43dbc8(0x2a9)+_0x2a08c3+_0x43dbc8(0x260)+_0x15374f+'\x0a\x20\x20\x20\x20password:\x20'+_0x871931+_0x43dbc8(0x297)+_0xe11e15+_0x43dbc8(0x207)+_0xc98bde+_0x43dbc8(0x212)+_0x2ae194+'\x0a';});else{const _0x4e7211='['+(_0x2d9790[_0x33873a(0x28d)](_0x518912)+0x1)+']\x20'+_0x518912[_0x33873a(0x29c)]+_0x33873a(0x232)+_0x518912['provider']+_0x33873a(0x26a)+(_0x3916e1?_0x33873a(0x271):_0x33873a(0x203))+']';_0x4073b7+=_0x33873a(0x1ee)+_0x4e7211+_0x33873a(0x2a9)+_0x2fea63+_0x33873a(0x260)+_0x15374f+'\x0a\x20\x20\x20\x20password:\x20'+_0x871931+_0x33873a(0x297)+_0x2fea63+_0x33873a(0x207)+_0xc98bde+_0x33873a(0x212)+_0x2fea63+'\x0a';}}if(_0x1ff5ca===_0x33873a(0x2a4)||_0x1ff5ca===_0x33873a(0x24e)){if(_0x12254c[_0x33873a(0x2b1)]>0x0)_0x12254c['forEach']((_0x44d4b6,_0x3a5398)=>{const _0x4bb979=_0x33873a,_0x3eff16=_0x44d4b6,_0x352c24=_0x57510f===_0x4bb979(0x287)?_0x44d4b6+'.'+_0x2fea63:_0x2fea63,_0x4026f2=_0x57510f===_0x4bb979(0x287)?_0x44d4b6+'.'+_0x2fea63:_0x2fea63,_0x180c3e='['+(_0x2d9790[_0x4bb979(0x28d)](_0x518912)*_0x12254c[_0x4bb979(0x2b1)]+_0x3a5398+0x1)+']\x20'+_0x518912[_0x4bb979(0x29c)]+'\x20-\x20'+_0x518912[_0x4bb979(0x2be)]+_0x4bb979(0x27d)+(_0x3916e1?_0x4bb979(0x271):_0x4bb979(0x203))+']';_0x4073b7+=_0x4bb979(0x1ee)+_0x180c3e+_0x4bb979(0x1e8)+_0x3eff16+'\x0a\x20\x20\x20\x20port:\x20'+_0x15374f+'\x0a\x20\x20\x20\x20cipher:\x20none\x0a\x20\x20\x20\x20password:\x20'+_0x871931+_0x4bb979(0x29e)+_0x4f1100+_0x4bb979(0x1dc)+_0x352c24+_0x4bb979(0x23a)+_0xc98bde+_0x4bb979(0x253);});else{const _0x4a60cd='['+(_0x2d9790[_0x33873a(0x28d)](_0x518912)+0x1)+']\x20'+_0x518912['country']+'\x20-\x20'+_0x518912[_0x33873a(0x2be)]+'\x20[SS-'+(_0x3916e1?_0x33873a(0x271):_0x33873a(0x203))+']';_0x4073b7+=_0x33873a(0x1ee)+_0x4a60cd+'\x22\x0a\x20\x20\x20\x20type:\x20ss\x0a\x20\x20\x20\x20server:\x20'+_0x2fea63+'\x0a\x20\x20\x20\x20port:\x20'+_0x15374f+_0x33873a(0x23e)+_0x871931+_0x33873a(0x29e)+_0x4f1100+_0x33873a(0x1dc)+_0x2fea63+'\x0a\x20\x20\x20\x20\x20\x20path:\x20'+_0xc98bde+_0x33873a(0x253);}}}),_0x4073b7;}function generateNekoboxConfig(_0x3a8e50){const _0x351fe2=_0x3d5dba;let _0x122cc7=_0x351fe2(0x263);const _0x2d2080=_0x3a8e50[_0x351fe2(0x249)](_0x2ab6f6=>_0x351fe2(0x1ea)+_0x2ab6f6[_0x351fe2(0x265)]+'\x22,')[_0x351fe2(0x1f1)]('\x0a');_0x122cc7+=_0x2d2080+'\x0a',_0x122cc7+=_0x351fe2(0x285),_0x122cc7+=_0x2d2080+'\x0a',_0x122cc7+=_0x351fe2(0x29d);const _0xf8f7d1=_0x3a8e50[_0x351fe2(0x249)]((_0xa6793c,_0x28d817)=>{const _0x271361=_0x351fe2;let _0x8174c5='';if(_0xa6793c['type']===_0x271361(0x1be))_0x8174c5=_0x271361(0x238)+_0xa6793c[_0x271361(0x1ce)]+_0x271361(0x1e6)+_0xa6793c[_0x271361(0x267)]+','+(_0xa6793c[_0x271361(0x1e2)]?_0x271361(0x202)+(_0xa6793c['sni']||_0xa6793c[_0x271361(0x1ce)])+_0x271361(0x1e5):'')+'\x0a\x20\x20\x20\x20\x20\x20\x22transport\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22headers\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22Host\x22:\x20\x22'+(_0xa6793c['wsHost']||_0xa6793c[_0x271361(0x1ce)])+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22'+_0xa6793c[_0x271361(0x269)]+_0x271361(0x219)+_0xa6793c[_0x271361(0x25a)]+_0x271361(0x291)+_0xa6793c[_0x271361(0x265)]+_0x271361(0x21e);else{if(_0xa6793c['type']===_0x271361(0x1f8))_0x8174c5=_0x271361(0x2bb)+_0xa6793c['server']+_0x271361(0x1e6)+_0xa6793c[_0x271361(0x267)]+_0x271361(0x1c5)+_0xa6793c[_0x271361(0x265)]+'\x22,'+(_0xa6793c[_0x271361(0x1e2)]?_0x271361(0x202)+(_0xa6793c[_0x271361(0x1eb)]||_0xa6793c['server'])+_0x271361(0x1e5):'')+_0x271361(0x255)+(_0xa6793c['wsHost']||_0xa6793c[_0x271361(0x1ce)])+_0x271361(0x214)+_0xa6793c[_0x271361(0x269)]+_0x271361(0x237)+_0xa6793c['uuid']+_0x271361(0x21e);else{if(_0xa6793c[_0x271361(0x21b)]==='trojan')_0x8174c5=_0x271361(0x1ef)+_0xa6793c[_0x271361(0x216)]+_0x271361(0x22d)+_0xa6793c[_0x271361(0x1ce)]+_0x271361(0x1e6)+_0xa6793c[_0x271361(0x267)]+_0x271361(0x1c5)+_0xa6793c[_0x271361(0x265)]+'\x22,'+(_0xa6793c[_0x271361(0x1e2)]?_0x271361(0x202)+(_0xa6793c[_0x271361(0x1eb)]||_0xa6793c[_0x271361(0x1ce)])+'\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22utls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22fingerprint\x22:\x20\x22randomized\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20},':'')+'\x0a\x20\x20\x20\x20\x20\x20\x22transport\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22early_data_header_name\x22:\x20\x22Sec-WebSocket-Protocol\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22headers\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22Host\x22:\x20\x22'+(_0xa6793c['wsHost']||_0xa6793c['server'])+_0x271361(0x214)+_0xa6793c['wsPath']+_0x271361(0x1e0);else _0xa6793c[_0x271361(0x21b)]==='ss'&&(_0x8174c5=_0x271361(0x23b)+_0xa6793c[_0x271361(0x265)]+_0x271361(0x22d)+_0xa6793c[_0x271361(0x1ce)]+_0x271361(0x1e6)+_0xa6793c['port']+_0x271361(0x24d)+_0xa6793c[_0x271361(0x216)]+'\x22,\x0a\x20\x20\x20\x20\x20\x20\x22plugin\x22:\x20\x22v2ray-plugin\x22,\x0a\x20\x20\x20\x20\x20\x20\x22plugin_opts\x22:\x20\x22mux=0;path='+_0xa6793c[_0x271361(0x269)]+_0x271361(0x1ec)+(_0xa6793c[_0x271361(0x24f)]||_0xa6793c[_0x271361(0x1ce)])+_0x271361(0x1c9)+(_0xa6793c[_0x271361(0x1e2)]?'1':'0')+_0x271361(0x21e));}}return _0x8174c5;})[_0x351fe2(0x1f1)](',\x0a');return _0x122cc7+=_0xf8f7d1,_0x122cc7+=_0x351fe2(0x1f3),_0x122cc7;}function showLoading(_0x585231){const _0x23ce75=_0x3d5dba;loadingElement['style'][_0x23ce75(0x28a)]='block',loadingElement[_0x23ce75(0x22a)](_0x23ce75(0x2aa))[_0x23ce75(0x1e4)]=_0x585231,resultElement[_0x23ce75(0x25d)][_0x23ce75(0x28a)]='none',validationStatusElement['style'][_0x23ce75(0x28a)]='none';}function hideLoading(){const _0x5c54d9=_0x3d5dba;loadingElement[_0x5c54d9(0x25d)]['display']=_0x5c54d9(0x2bc);}function showError(_0x4d32db){const _0x423928=_0x3d5dba;errorMessageElement['textContent']=_0x4d32db,errorMessageElement[_0x423928(0x25d)][_0x423928(0x28a)]='block';}function showResult(_0x37892f){const _0x40b751=_0x3d5dba;hideLoading(),validationStatusElement[_0x40b751(0x25d)][_0x40b751(0x28a)]=_0x40b751(0x2bc),outputElement[_0x40b751(0x1da)]=_0x37892f,resultElement[_0x40b751(0x25d)][_0x40b751(0x28a)]=_0x40b751(0x2b2),resultElement[_0x40b751(0x288)]({'behavior':_0x40b751(0x272)});}function shuffleArray(_0x17e2e4){const _0x350d32=_0x3d5dba;for(let _0x17a166=_0x17e2e4[_0x350d32(0x2b1)]-0x1;_0x17a166>0x0;_0x17a166--){const _0x16e261=Math[_0x350d32(0x1cb)](Math[_0x350d32(0x2c1)]()*(_0x17a166+0x1));[_0x17e2e4[_0x17a166],_0x17e2e4[_0x16e261]]=[_0x17e2e4[_0x16e261],_0x17e2e4[_0x17a166]];}return _0x17e2e4;}
+	</script>
 </body>
 </html>
