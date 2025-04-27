@@ -1,4 +1,4 @@
-name: cf workers
+name: cf workers 2
 
 on:
   workflow_dispatch:
@@ -60,13 +60,13 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           # Upload HTML files
-          wrangler kv:bulk put --binding=HTML_FILES --file=html-files.json
+          wrangler kv:bulk put HTML_FILES --file=html-files.json
           
           # Upload CSS files
-          wrangler kv:bulk put --binding=CSS_FILES --file=css-files.json
+          wrangler kv:bulk put CSS_FILES --file=css-files.json
           
           # Upload JS files
-          wrangler kv:bulk put --binding=JS_FILES --file=js-files.json
+          wrangler kv:bulk put JS_FILES --file=js-files.json
       
       - name: Deploy worker
         uses: cloudflare/wrangler-action@v3
