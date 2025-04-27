@@ -1,27 +1,72 @@
-- name: Upload files to KV storage
-  env:
-    CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-    CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-  run: |
-    # Lihat bantuan untuk perintah KV
-    wrangler kv --help
+name: Upload Files to KV Storage
+
+on:
+  # Trigger manual dari GitHub UI
+  workflow_dispatch:
+  
+  # Opsional: Trigger saat ada perubahan pada file statis
+  # push:
+  #   branches:
+  #     - master
+  #   paths:
+  #     - '*.html'
+  #     - 'css/**'
+  #     - 'js/**'
+
+jobs:
+  upload-to-kv:
+    runs-on: ubuntu-latest
+    environment: cf  # Pastikan environment ini sudah dikonfigurasi dengan secrets yang diperlukan
     
-    # Upload HTML files satu per satu
-    wrangler kv key put HTML_FILES index.html --path=./index.html
-    wrangler kv key put HTML_FILES sub.html --path=./sub.html
-    wrangler kv key put HTML_FILES converter.html --path=./converter.html
-    wrangler kv key put HTML_FILES link.html --path=./link.html
-    
-    # Upload CSS files satu per satu
-    wrangler kv key put CSS_FILES common.css --path=./css/common.css
-    wrangler kv key put CSS_FILES index.css --path=./css/index.css
-    wrangler kv key put CSS_FILES link.css --path=./css/link.css
-    wrangler kv key put CSS_FILES sub.css --path=./css/sub.css
-    wrangler kv key put CSS_FILES converter.css --path=./css/converter.css
-    
-    # Upload JS files satu per satu
-    wrangler kv key put JS_FILES common.js --path=./js/common.js
-    wrangler kv key put JS_FILES index.js --path=./js/index.js
-    wrangler kv key put JS_FILES link.js --path=./js/link.js
-    wrangler kv key put JS_FILES sub.js --path=./js/sub.js
-    wrangler kv key put JS_FILES converter.js --path=./js/converter.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install Wrangler
+        run: npm install -g wrangler
+      
+      - name: Login to Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: echo "Using Cloudflare API token for authentication"
+      
+      - name: Upload HTML files
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Upload HTML files satu per satu
+          wrangler kv key put HTML_FILES index.html --path=./index.html
+          wrangler kv key put HTML_FILES sub.html --path=./sub.html
+          wrangler kv key put HTML_FILES converter.html --path=./converter.html
+          wrangler kv key put HTML_FILES link.html --path=./link.html
+      
+      - name: Upload CSS files
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Upload CSS files satu per satu
+          wrangler kv key put CSS_FILES common.css --path=./css/common.css
+          wrangler kv key put CSS_FILES index.css --path=./css/index.css
+          wrangler kv key put CSS_FILES link.css --path=./css/link.css
+          wrangler kv key put CSS_FILES sub.css --path=./css/sub.css
+          wrangler kv key put CSS_FILES converter.css --path=./css/converter.css
+      
+      - name: Upload JS files
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Upload JS files satu per satu
+          wrangler kv key put JS_FILES common.js --path=./js/common.js
+          wrangler kv key put JS_FILES index.js --path=./js/index.js
+          wrangler kv key put JS_FILES link.js --path=./js/link.js
+          wrangler kv key put JS_FILES sub.js --path=./js/sub.js
+          wrangler kv key put JS_FILES converter.js --path=./js/converter.js
