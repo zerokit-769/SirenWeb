@@ -27,7 +27,7 @@ const bugOptions = [
   { value: "ava.game.naver.com", label: "ava.game.naver.com" },
   { value: "graph.instagram.com", label: "graph.instagram.com" },
   { value: "support.zoom.us", label: "support.zoom.us" },
-  { value: "zaintest.vuclip.com", label: "help.viu.com" },
+  { value: "help.viu.com", label: "help.viu.com" },
   { value: "dogseechew.com", label: "dogseechew.com" },
   { value: "oec22-normal-alisg.tokopediax.com", label: "oec22-normal-alisg.tokopediax.com" },
   { value: "investor.fb.com", label: "investor.fb.com" },
