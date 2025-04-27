@@ -5,12 +5,44 @@ minify = true
 workers_dev = true
 
 routes = [
-  { pattern = "*.afrcloud.xyz/*", custom_domain = true },
-  { pattern = "*.afrcloud.my.id/*", custom_domain = true },
-  { pattern = "*.afrcloud.site/*", custom_domain = true },
-  { pattern = "*.afrcloud.web.id/*", custom_domain = true }
-]
 
+  { pattern = "*.afrcloud.xyz/*", zone_name = "afrcloud.xyz" },
+  { pattern = "*.afrcloud.my.id/*", zone_name = "afrcloud.my.id" },
+  { pattern = "*.afrcloud.site/*", zone_name = "afrcloud.site" },
+  { pattern = "*.afrcloud.web.id/*", zone_name = "afrcloud.web.id" },
+
+  { pattern = "afrcloud.my.id", custom_domain = true },
+  { pattern = "ava.game.naver.com.afrcloud.my.id", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.afrcloud.my.id", custom_domain = true },
+  { pattern = "graph.instagram.com.afrcloud.my.id", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.afrcloud.my.id", custom_domain = true },
+  { pattern = "support.zoom.us.afrcloud.my.id", custom_domain = true },
+  { pattern = "cache.netflix.com.afrcloud.my.id", custom_domain = true },
+
+  { pattern = "afrcloud.site", custom_domain = true },
+  { pattern = "ava.game.naver.com.afrcloud.site", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.afrcloud.site", custom_domain = true },
+  { pattern = "graph.instagram.com.afrcloud.site", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.afrcloud.site", custom_domain = true },
+  { pattern = "support.zoom.us.afrcloud.site", custom_domain = true },
+  { pattern = "cache.netflix.com.afrcloud.site", custom_domain = true },
+
+  { pattern = "afrcloud.xyz", custom_domain = true },
+  { pattern = "ava.game.naver.com.afrcloud.xyz", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.afrcloud.xyz", custom_domain = true },
+  { pattern = "graph.instagram.com.afrcloud.xyz", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.afrcloud.xyz", custom_domain = true },
+  { pattern = "support.zoom.us.afrcloud.xyz", custom_domain = true },
+  { pattern = "cache.netflix.com.afrcloud.xyz", custom_domain = true },
+
+  { pattern = "afrcloud.web.id", custom_domain = true },
+  { pattern = "ava.game.naver.com.afrcloud.web.id", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.afrcloud.web.id", custom_domain = true },
+  { pattern = "graph.instagram.com.afrcloud.web.id", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.afrcloud.web.id", custom_domain = true },
+  { pattern = "support.zoom.us.afrcloud.web.id", custom_domain = true },
+  { pattern = "cache.netflix.com.afrcloud.web.id", custom_domain = true }
+]
 
 [[kv_namespaces]]
 binding = "SIREN"
