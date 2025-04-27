@@ -16,6 +16,9 @@ use regex::Regex;
 static PROXYIP_PATTERN: Lazy<Regex> = Lazy::new(|| Regex::new(r"^.+-\d+$").unwrap());
 static PROXYKV_PATTERN: Lazy<Regex> = Lazy::new(|| Regex::new(r"^([A-Z]{2})").unwrap());
 
+// Base URL for GitHub raw content
+static GITHUB_BASE_URL: &str = "https://raw.githubusercontent.com/AFRcloud/Inconigto-Mode/refs/heads/master/web";
+
 #[event(fetch)]
 async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
     let uuid = env
@@ -44,11 +47,11 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
 
     // Check if the request is for a CSS, JS, or image file
     if path.starts_with("/css/") {
-        return handle_css_file(req, env).await;
+        return handle_css_file(req, env, &config).await;
     } else if path.starts_with("/js/") {
-        return handle_js_file(req, env).await;
+        return handle_js_file(req, env, &config).await;
     } else if path.starts_with("/images/") {
-        return handle_image_file(req, env).await;
+        return handle_image_file(req, env, &config).await;
     }
 
     // For other routes, use the router
@@ -67,79 +70,108 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
         .await
 }
 
-// Handler for CSS files
-async fn handle_css_file(req: Request, env: Env) -> Result<Response> {
+// Handler for CSS files - fetch from GitHub
+async fn handle_css_file(req: Request, env: Env, config: &Config) -> Result<Response> {
     let url = req.url()?;
     let path = url.path();
     
     // Extract the CSS filename from the path
     let filename = path.strip_prefix("/css/").unwrap_or("");
     
-    // Get the CSS file from KV storage
-    let kv = env.kv("CSS_FILES")?;
-    match kv.get(filename).text().await? {
-        Some(css) => {
-            // Create a response with the CSS content and appropriate headers
-            let mut headers = Headers::new();
-            headers.set("Content-Type", "text/css")?;
-            Ok(Response::ok(css)?.with_headers(headers))
-        },
-        None => Response::error("CSS file not found", 404)
+    // Construct the GitHub URL for the CSS file
+    let css_url = format!("{}/css/{}", GITHUB_BASE_URL, filename);
+    
+    // Fetch the CSS file from GitHub
+    let req = Fetch::Url(Url::parse(&css_url)?);
+    let mut res = req.send().await?;
+    
+    if res.status_code() == 200 {
+        let css = res.text().await?;
+        
+        // Create a response with the CSS content and appropriate headers
+        let mut headers = Headers::new();
+        headers.set("Content-Type", "text/css")?;
+        
+        // Add caching headers
+        headers.set("Cache-Control", "public, max-age=86400")?; // Cache for 1 day
+        
+        Ok(Response::ok(css)?.with_headers(headers))
+    } else {
+        Response::error("CSS file not found", 404)
     }
 }
 
-// Handler for JS files
-async fn handle_js_file(req: Request, env: Env) -> Result<Response> {
+// Handler for JS files - fetch from GitHub
+async fn handle_js_file(req: Request, env: Env, config: &Config) -> Result<Response> {
     let url = req.url()?;
     let path = url.path();
     
     // Extract the JS filename from the path
     let filename = path.strip_prefix("/js/").unwrap_or("");
     
-    // Get the JS file from KV storage
-    let kv = env.kv("JS_FILES")?;
-    match kv.get(filename).text().await? {
-        Some(js) => {
-            // Create a response with the JS content and appropriate headers
-            let mut headers = Headers::new();
-            headers.set("Content-Type", "application/javascript")?;
-            Ok(Response::ok(js)?.with_headers(headers))
-        },
-        None => Response::error("JavaScript file not found", 404)
+    // Construct the GitHub URL for the JS file
+    let js_url = format!("{}/js/{}", GITHUB_BASE_URL, filename);
+    
+    // Fetch the JS file from GitHub
+    let req = Fetch::Url(Url::parse(&js_url)?);
+    let mut res = req.send().await?;
+    
+    if res.status_code() == 200 {
+        let js = res.text().await?;
+        
+        // Create a response with the JS content and appropriate headers
+        let mut headers = Headers::new();
+        headers.set("Content-Type", "application/javascript")?;
+        
+        // Add caching headers
+        headers.set("Cache-Control", "public, max-age=86400")?; // Cache for 1 day
+        
+        Ok(Response::ok(js)?.with_headers(headers))
+    } else {
+        Response::error("JavaScript file not found", 404)
     }
 }
 
-// Handler for image files
-async fn handle_image_file(req: Request, env: Env) -> Result<Response> {
+// Handler for image files - fetch from GitHub
+async fn handle_image_file(req: Request, env: Env, config: &Config) -> Result<Response> {
     let url = req.url()?;
     let path = url.path();
     
     // Extract the image filename from the path
     let filename = path.strip_prefix("/images/").unwrap_or("");
     
-    // Get the image file from KV storage
-    let kv = env.kv("IMAGE_FILES")?;
-    match kv.get(filename).bytes().await? {
-        Some(image_data) => {
-            // Create a response with the image content and appropriate headers
-            let mut headers = Headers::new();
-            
-            // Set content type based on file extension
-            if filename.ends_with(".png") {
-                headers.set("Content-Type", "image/png")?;
-            } else if filename.ends_with(".jpg") || filename.ends_with(".jpeg") {
-                headers.set("Content-Type", "image/jpeg")?;
-            } else if filename.ends_with(".svg") {
-                headers.set("Content-Type", "image/svg+xml")?;
-            } else if filename.ends_with(".gif") {
-                headers.set("Content-Type", "image/gif")?;
-            } else {
-                headers.set("Content-Type", "application/octet-stream")?;
-            }
-            
-            Ok(Response::from_bytes(image_data)?.with_headers(headers))
-        },
-        None => Response::error("Image file not found", 404)
+    // Construct the GitHub URL for the image file
+    let image_url = format!("{}/images/{}", GITHUB_BASE_URL, filename);
+    
+    // Fetch the image file from GitHub
+    let req = Fetch::Url(Url::parse(&image_url)?);
+    let mut res = req.send().await?;
+    
+    if res.status_code() == 200 {
+        let image_data = res.bytes().await?;
+        
+        // Create a response with the image content and appropriate headers
+        let mut headers = Headers::new();
+        
+        // Set content type based on file extension
+        if filename.ends_with(".png") {
+            headers.set("Content-Type", "image/png")?;
+        } else if filename.ends_with(".jpg") || filename.ends_with(".jpeg") {
+            headers.set("Content-Type", "image/jpeg")?;
+        } else if filename.ends_with(".svg") {
+            headers.set("Content-Type", "image/svg+xml")?;
+        } else if filename.ends_with(".gif") {
+            headers.set("Content-Type", "image/gif")?;
+        } else {
+            headers.set("Content-Type", "application/octet-stream")?;
+        }
+        
+        // Add caching headers
+        headers.set("Cache-Control", "public, max-age=86400")?; // Cache for 1 day
+        
+        Ok(Response::from_bytes(image_data)?.with_headers(headers))
+    } else {
+        Response::error("Image file not found", 404)
     }
 }
 
@@ -149,55 +181,20 @@ async fn get_response_from_url(url: String) -> Result<Response> {
     Response::from_html(res.text().await?)
 }
 
-// Modified to serve HTML from KV if available, otherwise fallback to URL
+// Keep the original HTML handlers unchanged
 async fn fe(_: Request, cx: RouteContext<Config>) -> Result<Response> {
-    // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_FILES") {
-        if let Ok(Some(html)) = kv.get("index.html").text().await {
-            return Response::from_html(html);
-        }
-    }
-    
-    // Fallback to URL if KV storage fails or file not found
     get_response_from_url(cx.data.main_page_url).await
 }
 
-// Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn sub(_: Request, cx: RouteContext<Config>) -> Result<Response> {
-    // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_FILES") {
-        if let Ok(Some(html)) = kv.get("sub.html").text().await {
-            return Response::from_html(html);
-        }
-    }
-    
-    // Fallback to URL if KV storage fails or file not found
     get_response_from_url(cx.data.sub_page_url).await
 }
 
-// Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn link(_: Request, cx: RouteContext<Config>) -> Result<Response> {
-    // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_FILES") {
-        if let Ok(Some(html)) = kv.get("link.html").text().await {
-            return Response::from_html(html);
-        }
-    }
-    
-    // Fallback to URL if KV storage fails or file not found
     get_response_from_url(cx.data.link_page_url).await
 }
 
-// Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn converter(_: Request, cx: RouteContext<Config>) -> Result<Response> {
-    // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_FILES") {
-        if let Ok(Some(html)) = kv.get("converter.html").text().await {
-            return Response::from_html(html);
-        }
-    }
-    
-    // Fallback to URL if KV storage fails or file not found
     get_response_from_url(cx.data.converter_page_url).await
 }
 
