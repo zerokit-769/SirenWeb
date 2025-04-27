@@ -76,7 +76,7 @@ async fn handle_css_file(req: Request, env: Env) -> Result<Response> {
     let filename = path.strip_prefix("/css/").unwrap_or("");
     
     // Get the CSS file from KV storage
-    let kv = env.kv("CSS_NAMESPACE")?;
+    let kv = env.kv("CSS_FILES")?;
     match kv.get(filename).text().await? {
         Some(css) => {
             // Create a response with the CSS content and appropriate headers
@@ -97,7 +97,7 @@ async fn handle_js_file(req: Request, env: Env) -> Result<Response> {
     let filename = path.strip_prefix("/js/").unwrap_or("");
     
     // Get the JS file from KV storage
-    let kv = env.kv("JS_NAMESPACE")?;
+    let kv = env.kv("JS_FILES")?;
     match kv.get(filename).text().await? {
         Some(js) => {
             // Create a response with the JS content and appropriate headers
@@ -118,7 +118,7 @@ async fn handle_image_file(req: Request, env: Env) -> Result<Response> {
     let filename = path.strip_prefix("/images/").unwrap_or("");
     
     // Get the image file from KV storage
-    let kv = env.kv("IMAGES_NAMESPACE")?;
+    let kv = env.kv("IMAGE_FILES")?;
     match kv.get(filename).bytes().await? {
         Some(image_data) => {
             // Create a response with the image content and appropriate headers
@@ -152,7 +152,7 @@ async fn get_response_from_url(url: String) -> Result<Response> {
 // Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn fe(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_NAMESPACE") {
+    if let Ok(kv) = cx.env.kv("HTML_FILES") {
         if let Ok(Some(html)) = kv.get("index.html").text().await {
             return Response::from_html(html);
         }
@@ -165,7 +165,7 @@ async fn fe(_: Request, cx: RouteContext<Config>) -> Result<Response> {
 // Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn sub(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_NAMESPACE") {
+    if let Ok(kv) = cx.env.kv("HTML_FILES") {
         if let Ok(Some(html)) = kv.get("sub.html").text().await {
             return Response::from_html(html);
         }
@@ -178,7 +178,7 @@ async fn sub(_: Request, cx: RouteContext<Config>) -> Result<Response> {
 // Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn link(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_NAMESPACE") {
+    if let Ok(kv) = cx.env.kv("HTML_FILES") {
         if let Ok(Some(html)) = kv.get("link.html").text().await {
             return Response::from_html(html);
         }
@@ -191,7 +191,7 @@ async fn link(_: Request, cx: RouteContext<Config>) -> Result<Response> {
 // Modified to serve HTML from KV if available, otherwise fallback to URL
 async fn converter(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     // Try to get HTML from KV storage first
-    if let Ok(kv) = cx.env.kv("HTML_NAMESPACE") {
+    if let Ok(kv) = cx.env.kv("HTML_FILES") {
         if let Ok(Some(html)) = kv.get("converter.html").text().await {
             return Response::from_html(html);
         }
