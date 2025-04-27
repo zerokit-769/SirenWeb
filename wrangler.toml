@@ -1,47 +1,30 @@
-name = "inconigto"
+name = "test"
 main = "build/worker/shim.mjs"
 compatibility_date = "2024-05-23"
 minify = true
 workers_dev = true
 
-routes = [
-
-  { pattern = "afrcloud.my.id", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "zaintest.vuclip.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.my.id", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.my.id", custom_domain = true },
-
-  { pattern = "afrcloud.site", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.site", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.site", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.site", custom_domain = true },
-  { pattern = "zaintest.vuclip.com.afrcloud.site", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.site", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.site", custom_domain = true },
-
-  { pattern = "afrcloud.xyz", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "zaintest.vuclip.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.xyz", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.xyz", custom_domain = true },
-
-  { pattern = "afrcloud.web.id", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "zaintest.vuclip.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.web.id", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.web.id", custom_domain = true },
-]
 
 [[kv_namespaces]]
 binding = "SIREN"
 id = "bcd06f44fbe0493aa2ec3457c4799444"
+
+[[kv_namespaces]]
+binding = "HTML_FILES"
+id = "a2717c696ca343dbb1d98a4d76c1a548"
+
+[[kv_namespaces]]
+binding = "CSS_FILES"
+id = "5b39658321584606b9128e76913ec421"
+
+[[kv_namespaces]]
+binding = "JS_FILES"
+id = "1fb5a8787fca4015b00c2f866b915e46"
+
+[[kv_namespaces]]
+binding = "IMAGE_FILES"
+id = "6a700df87b3542f7b9097112c39651b8"
+
 [build]
 command = "cargo install -q worker-build && worker-build --release"
 
@@ -50,7 +33,7 @@ build = { command = "cargo install -q worker-build && worker-build --dev" }
 
 [vars]
 UUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
-MAIN_PAGE_URL = "https://raw.githubusercontent.com/InconigtoMode/Inconigto-Mode/refs/heads/master/web/index.html"
-SUB_PAGE_URL = "https://raw.githubusercontent.com/InconigtoMode/Inconigto-Mode/refs/heads/master/web/sub.html"
-LINK_PAGE_URL = "https://raw.githubusercontent.com/InconigtoMode/Inconigto-Mode/refs/heads/master/web/link.html"
-CONVERTER_PAGE_URL = "https://raw.githubusercontent.com/InconigtoMode/Inconigto-Mode/refs/heads/master/web/converter.html"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/Inconigto-Mode/refs/heads/master/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/Inconigto-Mode/refs/heads/master/web/sub.html"
+LINK_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/Inconigto-Mode/refs/heads/master/web/link.html"
+CONVERTER_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/Inconigto-Mode/refs/heads/master/web/converter.html"
