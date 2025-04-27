@@ -1,0 +1,74 @@
+name: cf workers
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE.md'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: cf
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install Wrangler
+        run: npm install -g wrangler
+      
+      - name: Create HTML files JSON for bulk upload
+        run: |
+          echo '[
+            {"key": "index.html", "path": "./index.html"},
+            {"key": "sub.html", "path": "./sub.html"},
+            {"key": "converter.html", "path": "./converter.html"},
+            {"key": "link.html", "path": "./link.html"}
+          ]' > html-files.json
+      
+      - name: Create CSS files JSON for bulk upload
+        run: |
+          echo '[
+            {"key": "common.css", "path": "./css/common.css"},
+            {"key": "index.css", "path": "./css/index.css"},
+            {"key": "link.css", "path": "./css/link.css"},
+            {"key": "sub.css", "path": "./css/sub.css"},
+            {"key": "converter.css", "path": "./css/converter.css"}
+          ]' > css-files.json
+      
+      - name: Create JS files JSON for bulk upload
+        run: |
+          echo '[
+            {"key": "common.js", "path": "./js/common.js"},
+            {"key": "index.js", "path": "./js/index.js"},
+            {"key": "link.js", "path": "./js/link.js"},
+            {"key": "sub.js", "path": "./js/sub.js"},
+            {"key": "converter.js", "path": "./js/converter.js"}
+          ]' > js-files.json
+      
+      - name: Upload files to KV storage
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # Upload HTML files
+          wrangler kv:bulk put --binding=HTML_FILES --file=html-files.json
+          
+          # Upload CSS files
+          wrangler kv:bulk put --binding=CSS_FILES --file=css-files.json
+          
+          # Upload JS files
+          wrangler kv:bulk put --binding=JS_FILES --file=js-files.json
+      
+      - name: Deploy worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
