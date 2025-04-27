@@ -4,7 +4,7 @@
 
 // Configuration
 const CONFIG = {
-  proxyListUrl: "https://raw.githubusercontent.com/InconigtoMode/proxylist/refs/heads/main/all.txt",
+  proxyListUrl: "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt",
   apiCheckUrl: "https://api.jb8fd7grgd.workers.dev/",
   mainDomains: ["afrcloud.xyz", "afrcloud.site", "afrcloud.web.id", "afrcloud.my.id"],
   defaultUuid: "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff",
