@@ -54,16 +54,12 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
         return handle_image_file(req).await;
     }
 
-    // For other routes, use the router
+    // For other routes, use the router - EXACTLY as in the original
     Router::with_data(config)
         .on_async("/", fe)
-        .on_async("/index.html", fe)
         .on_async("/sub", sub)
-        .on_async("/sub.html", sub)
         .on_async("/link", link)
-        .on_async("/link.html", link)
         .on_async("/converter", converter)
-        .on_async("/converter.html", converter)
         .on_async("/:proxyip", tunnel)
         .on_async("/Inconigto-Mode/:proxyip", tunnel)
         .run(req, env)
@@ -175,13 +171,14 @@ async fn handle_image_file(req: Request) -> Result<Response> {
     }
 }
 
+// KEEP ALL ORIGINAL FUNCTIONS EXACTLY AS THEY WERE
+
 async fn get_response_from_url(url: String) -> Result<Response> {
     let req = Fetch::Url(Url::parse(url.as_str())?);
     let mut res = req.send().await?;
     Response::from_html(res.text().await?)
 }
 
-// Keep the original HTML handlers unchanged
 async fn fe(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     get_response_from_url(cx.data.main_page_url).await
 }
@@ -198,6 +195,7 @@ async fn converter(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     get_response_from_url(cx.data.converter_page_url).await
 }
 
+// KEEP THE TUNNEL FUNCTION EXACTLY AS IT WAS IN THE ORIGINAL
 async fn tunnel(req: Request, mut cx: RouteContext<Config>) -> Result<Response> {
     let mut proxyip = cx.param("proxyip").unwrap().to_string();
     if PROXYKV_PATTERN.is_match(&proxyip)  {
@@ -251,63 +249,6 @@ async fn tunnel(req: Request, mut cx: RouteContext<Config>) -> Result<Response> 
 
         Response::from_websocket(client)
     } else {
-        // Implementasi proxy HTTP
-        proxy_http_request(req, &cx.data).await
+        Response::from_html("hi from wasm!")
     }
-}
-
-// Implementasi proxy HTTP
-async fn proxy_http_request(req: Request, config: &Config) -> Result<Response> {
-    // Buat URL target berdasarkan proxy_addr dan proxy_port dari config
-    let target_url = format!("http://{}:{}{}", 
-        config.proxy_addr, 
-        config.proxy_port, 
-        req.path()
-    );
-
-    // Buat request baru ke target
-    let mut proxy_req = Request::new_with_init(
-        &target_url,
-        RequestInit::new()
-            .with_method(req.method())
-            .with_body(req.body().clone())
-    )?;
-
-    // Salin header dari request asli
-    let headers = req.headers();
-    for pair in headers.entries() {
-        if let (Some(name), Some(value)) = (pair.0, pair.1) {
-            // Skip hop-by-hop headers
-            if !["connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
-                 "te", "trailer", "transfer-encoding", "upgrade"].contains(&name.to_lowercase().as_str()) {
-                proxy_req.headers_mut().set(name, value)?;
-            }
-        }
-    }
-
-    // Kirim request ke target
-    let client = worker::Fetch::Request(proxy_req);
-    let mut resp = client.send().await?;
-
-    // Buat response baru dengan body dari response target
-    let status = resp.status_code();
-    let body = resp.bytes().await?;
-
-    // Buat response baru
-    let mut new_resp = Response::from_bytes(body)?;
-    new_resp = new_resp.with_status(status);
-
-    // Salin header dari response target
-    let resp_headers = resp.headers();
-    for pair in resp_headers.entries() {
-        if let (Some(name), Some(value)) = (pair.0, pair.1) {
-            // Skip hop-by-hop headers
-            if !["connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
-                 "te", "trailer", "transfer-encoding", "upgrade"].contains(&name.to_lowercase().as_str()) {
-                new_resp.headers_mut().set(name, value)?;
-            }
-        }
-    }
-
-    Ok(new_resp)
 }
