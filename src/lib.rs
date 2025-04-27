@@ -47,11 +47,11 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
 
     // Check if the request is for a CSS, JS, or image file
     if path.starts_with("/css/") {
-        return handle_css_file(req, env, &config).await;
+        return handle_css_file(req).await;
     } else if path.starts_with("/js/") {
-        return handle_js_file(req, env, &config).await;
+        return handle_js_file(req).await;
     } else if path.starts_with("/images/") {
-        return handle_image_file(req, env, &config).await;
+        return handle_image_file(req).await;
     }
 
     // For other routes, use the router
@@ -71,7 +71,7 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
 }
 
 // Handler for CSS files - fetch from GitHub
-async fn handle_css_file(req: Request, env: Env, config: &Config) -> Result<Response> {
+async fn handle_css_file(req: Request) -> Result<Response> {
     let url = req.url()?;
     let path = url.path();
     
@@ -102,7 +102,7 @@ async fn handle_css_file(req: Request, env: Env, config: &Config) -> Result<Resp
 }
 
 // Handler for JS files - fetch from GitHub
-async fn handle_js_file(req: Request, env: Env, config: &Config) -> Result<Response> {
+async fn handle_js_file(req: Request) -> Result<Response> {
     let url = req.url()?;
     let path = url.path();
     
@@ -133,7 +133,7 @@ async fn handle_js_file(req: Request, env: Env, config: &Config) -> Result<Respo
 }
 
 // Handler for image files - fetch from GitHub
-async fn handle_image_file(req: Request, env: Env, config: &Config) -> Result<Response> {
+async fn handle_image_file(req: Request) -> Result<Response> {
     let url = req.url()?;
     let path = url.path();
     
@@ -251,6 +251,63 @@ async fn tunnel(req: Request, mut cx: RouteContext<Config>) -> Result<Response> 
 
         Response::from_websocket(client)
     } else {
-        Response::from_html("hi from wasm!")
+        // Implementasi proxy HTTP
+        proxy_http_request(req, &cx.data).await
     }
+}
+
+// Implementasi proxy HTTP
+async fn proxy_http_request(req: Request, config: &Config) -> Result<Response> {
+    // Buat URL target berdasarkan proxy_addr dan proxy_port dari config
+    let target_url = format!("http://{}:{}{}", 
+        config.proxy_addr, 
+        config.proxy_port, 
+        req.path()
+    );
+
+    // Buat request baru ke target
+    let mut proxy_req = Request::new_with_init(
+        &target_url,
+        RequestInit::new()
+            .with_method(req.method())
+            .with_body(req.body().clone())
+    )?;
+
+    // Salin header dari request asli
+    let headers = req.headers();
+    for pair in headers.entries() {
+        if let (Some(name), Some(value)) = (pair.0, pair.1) {
+            // Skip hop-by-hop headers
+            if !["connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
+                 "te", "trailer", "transfer-encoding", "upgrade"].contains(&name.to_lowercase().as_str()) {
+                proxy_req.headers_mut().set(name, value)?;
+            }
+        }
+    }
+
+    // Kirim request ke target
+    let client = worker::Fetch::Request(proxy_req);
+    let mut resp = client.send().await?;
+
+    // Buat response baru dengan body dari response target
+    let status = resp.status_code();
+    let body = resp.bytes().await?;
+
+    // Buat response baru
+    let mut new_resp = Response::from_bytes(body)?;
+    new_resp = new_resp.with_status(status);
+
+    // Salin header dari response target
+    let resp_headers = resp.headers();
+    for pair in resp_headers.entries() {
+        if let (Some(name), Some(value)) = (pair.0, pair.1) {
+            // Skip hop-by-hop headers
+            if !["connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
+                 "te", "trailer", "transfer-encoding", "upgrade"].contains(&name.to_lowercase().as_str()) {
+                new_resp.headers_mut().set(name, value)?;
+            }
+        }
+    }
+
+    Ok(new_resp)
 }
