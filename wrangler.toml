@@ -6,16 +6,7 @@ workers_dev = true
 
 
 routes = [
-  # Wildcard routes untuk menangani semua subdomain di domain tertentu
-  { pattern = "*.afrcloud.xyz/*", zone_name = "afrcloud.xyz" },
-  { pattern = "*.afrcloud.my.id/*", zone_name = "afrcloud.my.id" },
-  { pattern = "*.afrcloud.site/*", zone_name = "afrcloud.site" },
-  { pattern = "*.afrcloud.web.id/*", zone_name = "afrcloud.web.id" },
-  { pattern = "afrcloud.xyz", zone_name = "afrcloud.xyz" },
-  { pattern = "afrcloud.my.id", zone_name = "afrcloud.my.id" },
-  { pattern = "afrcloud.site", zone_name = "afrcloud.site" },
-  { pattern = "afrcloud.web.id", zone_name = "afrcloud.web.id" },
-  
+ 
   # Rute eksplisit untuk custom domains pada domain afrcloud.xyz
   { pattern = "afrcloud.xyz", custom_domain = true },
   { pattern = "ava.game.naver.com.afrcloud.xyz", custom_domain = true },
