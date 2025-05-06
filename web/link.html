@@ -243,68 +243,7 @@
                             </button>
                         </div>
                         
-                        <!-- VMess Form -->
-                        <div id="vmess-form" class="protocol-form">
-                            <form id="vmess-account-form" class="space-y-5">
-                                <div>
-                                    <label for="vmess-name" class="block text-sm font-medium text-gray-300 mb-2">Account Name</label>
-                                    <input type="text" id="vmess-name" name="name" class="w-full px-4 py-2.5 glass-input rounded-lg text-sm" readonly>
-                                </div>
-                                
-                                <div>
-                                    <label for="vmess-uuid" class="block text-sm font-medium text-gray-300 mb-2">UUID</label>
-                                    <div class="flex">
-                                        <input type="text" id="vmess-uuid" name="uuid" class="flex-1 px-4 py-2.5 glass-input rounded-l-lg text-sm" value="bbbbbbbb-cccc-4ddd-eeee-ffffffffffff" required>
-                                        <button type="button" onclick="generateUUID('vmess-uuid')" class="secondary-btn px-4 py-2.5 rounded-r-lg hover:bg-slate-700">
-                                            <i class="fas fa-sync-alt"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <label for="vmess-path" class="block text-sm font-medium text-gray-300 mb-2">Path</label>
-                                    <input type="text" id="vmess-path" name="path" class="w-full px-4 py-2.5 glass-input rounded-lg text-sm" readonly>
-                                </div>
-                                
-                                <div>
-                                    <label for="vmess-security" class="block text-sm font-medium text-gray-300 mb-2">TLS</label>
-                                    <select id="vmess-security" name="security" class="w-full px-4 py-2.5 glass-select rounded-lg text-sm">
-                                        <option value="tls">TLS</option>
-                                        <option value="none">None</option>
-                                    </select>
-                                    <input type="hidden" id="vmess-encryption" name="encryption" value="zero">
-                                </div>
-                                
-                                <div>
-                                    <label for="vmess-server-domain" class="block text-sm font-medium text-gray-300 mb-2">Server Domain</label>
-                                    <select id="vmess-server-domain" name="server-domain" class="w-full px-4 py-2.5 glass-select rounded-lg text-sm">
-                                        <!-- Options will be populated dynamically -->
-                                    </select>
-                                </div>
-                                
-                                <div>
-                                    <label for="vmess-bug" class="block text-sm font-medium text-gray-300 mb-2">Custom Bug <span class="text-xs text-gray-500">(opsional)</span></label>
-                                    <select id="vmess-bug" name="bug" class="w-full px-4 py-2.5 glass-select rounded-lg text-sm">
-                                        <!-- Options will be populated dynamically -->
-                                    </select>
-                                    <div id="vmess-manual-bug-container" class="wildcard-container">
-                                        <input type="text" id="vmess-manual-bug" class="w-full px-4 py-2.5 glass-input rounded-lg text-sm mt-2" placeholder="Enter custom bug domain">
-                                    </div>
-                                    <div id="vmess-wildcard-container" class="wildcard-container">
-                                        <div class="checkbox-container">
-                                            <input type="checkbox" id="vmess-wildcard" name="wildcard">
-                                            <label for="vmess-wildcard">Gunakan Wildcard (bug.domain.com)</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="pt-2">
-                                    <button type="submit" class="w-full primary-btn py-3 px-4 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-plus-circle mr-2"></i> Create VMess Account
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        
                         
                         <!-- VLESS Form -->
                         <div id="vless-form" class="protocol-form hidden">
@@ -429,6 +368,70 @@
                                 </div>
                             </form>
                         </div>
+
+																								<!-- VMess Form -->
+                        <div id="vmess-form" class="protocol-form">
+                            <form id="vmess-account-form" class="space-y-5">
+                                <div>
+                                    <label for="vmess-name" class="block text-sm font-medium text-gray-300 mb-2">Account Name</label>
+                                    <input type="text" id="vmess-name" name="name" class="w-full px-4 py-2.5 glass-input rounded-lg text-sm" readonly>
+                                </div>
+                                
+                                <div>
+                                    <label for="vmess-uuid" class="block text-sm font-medium text-gray-300 mb-2">UUID</label>
+                                    <div class="flex">
+                                        <input type="text" id="vmess-uuid" name="uuid" class="flex-1 px-4 py-2.5 glass-input rounded-l-lg text-sm" value="bbbbbbbb-cccc-4ddd-eeee-ffffffffffff" required>
+                                        <button type="button" onclick="generateUUID('vmess-uuid')" class="secondary-btn px-4 py-2.5 rounded-r-lg hover:bg-slate-700">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="vmess-path" class="block text-sm font-medium text-gray-300 mb-2">Path</label>
+                                    <input type="text" id="vmess-path" name="path" class="w-full px-4 py-2.5 glass-input rounded-lg text-sm" readonly>
+                                </div>
+                                
+                                <div>
+                                    <label for="vmess-security" class="block text-sm font-medium text-gray-300 mb-2">TLS</label>
+                                    <select id="vmess-security" name="security" class="w-full px-4 py-2.5 glass-select rounded-lg text-sm">
+                                        <option value="tls">TLS</option>
+                                        <option value="none">None</option>
+                                    </select>
+                                    <input type="hidden" id="vmess-encryption" name="encryption" value="zero">
+                                </div>
+                                
+                                <div>
+                                    <label for="vmess-server-domain" class="block text-sm font-medium text-gray-300 mb-2">Server Domain</label>
+                                    <select id="vmess-server-domain" name="server-domain" class="w-full px-4 py-2.5 glass-select rounded-lg text-sm">
+                                        <!-- Options will be populated dynamically -->
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="vmess-bug" class="block text-sm font-medium text-gray-300 mb-2">Custom Bug <span class="text-xs text-gray-500">(opsional)</span></label>
+                                    <select id="vmess-bug" name="bug" class="w-full px-4 py-2.5 glass-select rounded-lg text-sm">
+                                        <!-- Options will be populated dynamically -->
+                                    </select>
+                                    <div id="vmess-manual-bug-container" class="wildcard-container">
+                                        <input type="text" id="vmess-manual-bug" class="w-full px-4 py-2.5 glass-input rounded-lg text-sm mt-2" placeholder="Enter custom bug domain">
+                                    </div>
+                                    <div id="vmess-wildcard-container" class="wildcard-container">
+                                        <div class="checkbox-container">
+                                            <input type="checkbox" id="vmess-wildcard" name="wildcard">
+                                            <label for="vmess-wildcard">Gunakan Wildcard (bug.domain.com)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-2">
+                                    <button type="submit" class="w-full primary-btn py-3 px-4 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-plus-circle mr-2"></i> Create VMess Account
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
                         
                         <!-- Shadowsocks Form -->
                         <div id="ss-form" class="protocol-form hidden">
