@@ -6,8 +6,7 @@ workers_dev = true
 
 
 routes = [
- 
-  # Rute eksplisit untuk custom domains pada domain stbwrt.web.id
+
   { pattern = "stbwrt.web.id", custom_domain = true },
   { pattern = "ava.game.naver.com.stbwrt.web.id", custom_domain = true },
   { pattern = "quiz.int.vidio.com.stbwrt.web.id", custom_domain = true },
