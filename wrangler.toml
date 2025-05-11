@@ -7,48 +7,16 @@ workers_dev = true
 
 routes = [
  
-  # Rute eksplisit untuk custom domains pada domain afrcloud.xyz
-  { pattern = "afrcloud.xyz", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "help.viu.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.xyz", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "graph.facebook.com.afrcloud.xyz", custom_domain = true },
-  { pattern = "dogseechew.com.afrcloud.xyz", custom_domain = true },
-
-  # Rute eksplisit untuk custom domains pada domain afrcloud.my.id
-  { pattern = "afrcloud.my.id", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "help.viu.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.my.id", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "graph.facebook.com.afrcloud.my.id", custom_domain = true },
-  { pattern = "dogseechew.com.afrcloud.my.id", custom_domain = true },
-
-  # Rute eksplisit untuk custom domains pada domain afrcloud.web.id
-  { pattern = "afrcloud.web.id", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "help.viu.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.web.id", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "graph.facebook.com.afrcloud.web.id", custom_domain = true },
-  { pattern = "dogseechew.com.afrcloud.web.id", custom_domain = true },
-
-  # Rute eksplisit untuk custom domains pada domain afrcloud.site
-  { pattern = "afrcloud.site", custom_domain = true },
-  { pattern = "ava.game.naver.com.afrcloud.site", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.afrcloud.site", custom_domain = true },
-  { pattern = "graph.instagram.com.afrcloud.site", custom_domain = true },
-  { pattern = "help.viu.com.afrcloud.site", custom_domain = true },
-  { pattern = "support.zoom.us.afrcloud.site", custom_domain = true },
-  { pattern = "cache.netflix.com.afrcloud.site", custom_domain = true },
-  { pattern = "dogseechew.com.afrcloud.site", custom_domain = true },
+  # Rute eksplisit untuk custom domains pada domain stbwrt.web.id
+  { pattern = "stbwrt.web.id", custom_domain = true },
+  { pattern = "ava.game.naver.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "graph.instagram.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "help.viu.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "support.zoom.us.stbwrt.web.id", custom_domain = true },
+  { pattern = "cache.netflix.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "graph.facebook.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "dogseechew.com.stbwrt.web.id", custom_domain = true },
 ]
 
 [[kv_namespaces]]
