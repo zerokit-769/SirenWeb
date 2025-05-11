@@ -5,7 +5,7 @@
 // Configuration
 const CONFIG = {
   proxyListUrl: "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt",
-  apiCheckUrl: "https://tt.rohendimtq246.workers.dev/",
+  apiCheckUrl: "https://afrcloud.dpdns.org/",
   mainDomains: ["stbwrt.web.id"],
   defaultUuid: "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff",
   maxProxies: 50,
