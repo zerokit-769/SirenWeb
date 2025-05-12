@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const userInfo = btoa(`${method}:${password}`)
 
         // Create the new format SS URL with dynamic port
-        connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`
+        connectionUrl = `ss://${userInfo}@${server}:${port}?plugin=v2ray-plugin;tls;mux=0;mode=websocket;path=${path};host=${host}#${name}`
       }
 
       // Display the result
