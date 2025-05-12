@@ -610,7 +610,7 @@ function generateV2rayLinks(configType, proxies, uuid, bugType, mainDomain, cust
           const userInfo = safeBase64Encode(`${method}:${uuid}`)
 
           links.push(
-            `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${encodedPath}&security=${security}&sni=${sni}#${name}`,
+            `ss://${userInfo}@${server}:${port}?plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath%3D${encodedPath}%3Bhost%3D${host}#${name}`,
           )
         })
       } else {
