@@ -9,12 +9,18 @@ routes = [
 
   { pattern = "stbwrt.web.id", custom_domain = true },
   { pattern = "ava.game.naver.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "df.game.naver.com.stbwrt.web.id", custom_domain = true },
   { pattern = "quiz.int.vidio.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "instagram.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "gateway.instagram.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "goodsetups.com.stbwrt.web.id", custom_domain = true },
   { pattern = "help.viu.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "help.snapchat.com.stbwrt.web.id", custom_domain = true },
   { pattern = "support.zoom.us.stbwrt.web.id", custom_domain = true },
   { pattern = "cache.netflix.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "adfinitas.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "hollywoodreporter.com.stbwrt.web.id", custom_domain = true },
   { pattern = "graph.facebook.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "engineering.instagram.com.stbwrt.web.id", custom_domain = true },
   { pattern = "dogseechew.com.stbwrt.web.id", custom_domain = true },
 ]
 
