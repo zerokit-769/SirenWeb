@@ -20,6 +20,11 @@ routes = [
   { pattern = "adfinitas.com.stbwrt.web.id", custom_domain = true },
   { pattern = "hollywoodreporter.com.stbwrt.web.id", custom_domain = true },
   { pattern = "graph.facebook.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "info.internet.org.stbwrt.web.id", custom_domain = true },
+  { pattern = "groups.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "lp.genesys.com.stbwrt.web.id", custom_domain = true },
+  { pattern = "offers.zoom.ca.stbwrt.web.id", custom_domain = true },
+  { pattern = "godady.com.stbwrt.web.id", custom_domain = true },
   { pattern = "engineering.instagram.com.stbwrt.web.id", custom_domain = true },
   { pattern = "dogseechew.com.stbwrt.web.id", custom_domain = true },
 ]
