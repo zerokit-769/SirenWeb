@@ -14,7 +14,6 @@ routes = [
   { pattern = "gateway.instagram.com.stbwrt.web.id", custom_domain = true },
   { pattern = "graph.instagram.com.stbwrt.web.id", custom_domain = true },
   { pattern = "instagram.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "help.viu.com.stbwrt.web.id", custom_domain = true },
   { pattern = "zaintest.vuclip.com.stbwrt.web.id", custom_domain = true },
   { pattern = "creativeservices.netflix.com.stbwrt.web.id", custom_domain = true },
   { pattern = "support.zoom.us.stbwrt.web.id", custom_domain = true },
