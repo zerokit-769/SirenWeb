@@ -16,7 +16,22 @@ jobs:
     environment: cf
     steps:
       - uses: actions/checkout@v4
-      - name: deploy
+
+      - name: Install wasm-opt
+        run: |
+          sudo apt update
+          sudo apt install -y binaryen
+
+      - name: Build project
+        run: |
+          cargo build --release
+          wasm-bindgen target/wasm32-unknown-unknown/release/siren.wasm --out-dir pkg --target web
+
+      - name: Optimize wasm with bulk memory enabled
+        run: |
+          wasm-opt -O --enable-bulk-memory -o ./pkg/siren_bg_opt.wasm ./pkg/siren_bg.wasm
+
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
