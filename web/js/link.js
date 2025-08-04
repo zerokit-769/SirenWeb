@@ -1,1 +1,1014 @@
-const _0x443151=_0x5468;(function(_0x1c24c4,_0x3580e7){const _0x186391=_0x5468,_0x3f583c=_0x1c24c4();while(!![]){try{const _0x26c255=-parseInt(_0x186391(0x19e))/0x1*(parseInt(_0x186391(0x1be))/0x2)+parseInt(_0x186391(0x1eb))/0x3+-parseInt(_0x186391(0x23c))/0x4+parseInt(_0x186391(0x1b9))/0x5*(parseInt(_0x186391(0x190))/0x6)+parseInt(_0x186391(0x229))/0x7+-parseInt(_0x186391(0x1e8))/0x8*(-parseInt(_0x186391(0x1f8))/0x9)+parseInt(_0x186391(0x23e))/0xa*(-parseInt(_0x186391(0x1b0))/0xb);if(_0x26c255===_0x3580e7)break;else _0x3f583c['push'](_0x3f583c['shift']());}catch(_0x2a3b63){_0x3f583c['push'](_0x3f583c['shift']());}}}(_0x4cc0,0x6ff16));const QRCode=window[_0x443151(0x25c)];function _0x4cc0(){const _0x321d1f=['VLESS','load-custom-url','vmess-wildcard','proxy-count-info','port','toCanvas','SVG\x20to\x20data\x20URL\x20error:','CORS.sh\x20proxy\x20failed','inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-gray-500\x20ml-2\x20pulse-animation','json','selected-provider','custom-url-btn','width','vless://','image/svg+xml;charset=utf-8','input','NTLS','appendChild','https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=','&path=','\x20valid\x20proxies','floor','...','Aktif','whiteSpace','flexDirection','ss-account-form','Failed\x20to\x20download\x20QR\x20code.\x20Please\x20try\x20again.','download-qr','search-input','temp_','error','provider','Fetch\x20error:','Canvas\x20to\x20data\x20URL\x20error:','create-account-btn\x20primary-btn\x20py-2\x20px-4\x20rounded-lg\x20text-xs\x20group-hover:scale-105\x20transition-transform','createElement','AllOrigins\x20proxy\x20failed','Mati','VMess','QR\x20Code\x20last\x20resort\x20error:','removeChild','vmess','px-1\x20text-gray-400','proxy-status-unknown','row','ellipsis','<i\x20class=\x22fas\x20fa-check\x20mr-1\x22></i>\x20Copied!','Type\x20Manual','Processed\x20','vless-wildcard','Direct\x20fetch\x20failed','className','vmess-security','?security=','contents','Unknown','center','103.6.207.108','proxy-status-','trojan-server-domain','138mlEeBR','security','Trojan','revokeObjectURL','relative','filter','-bug','vless-path','selected-country','100%','inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-rose-500\x20ml-2','vmess-bug','data-index','maxWidth','15bZBZoo','min','length','proxy-status-loading','set','submit','?plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath%3D','src','get','\x20[SS-','proxy-latency','ss-security','show','Unknown\x20Provider','replaceChild','\x20|\x20','<i\x20class=\x22fas\x20fa-chevron-left\x22></i>','trim','27313RTARHp','QR\x20Code\x20canvas\x20error:','split','help.viu.com','\x20[VMess-','nowrap','{port}','innerHTML','QR\x20Code\x20SVG\x20error:','92810NNwcIU','trojan-bug','\x20[Trojan-','vmess-account-form','flex-1\x20min-w-0\x20pr-2','85546bOANev','catch','zero','proxyip','then','\x20failed:','result-section','tls','Tidak\x20diketahui','parseInt','isArray','trojan-wildcard','alignItems','overflow','DOMContentLoaded','ss-wildcard-container','\x20lines\x20in\x20proxy\x20data','TLS','ss-server-domain','click','body','disabled','none','/Inconigto-Mode/{ip}-{port}','querySelector','getElementById','refresh-btn','Default','label','{ip}','https://cors-anywhere.herokuapp.com/','ava.game.naver.com','https://api.allorigins.win/get?url=','uuid','proxy-list-container','textContent','loading-indicator','dogseechew.com','button','bbbbbbbb-cccc-4ddd-eeee-ffffffffffff','trojan-name','path','128rcHlaM','substring','font-medium\x20text-sm\x20truncate\x20group-hover:text-indigo-300\x20transition-colors','1965879UYRXBL','.protocol-form','blob:','change','download','.tab-btn','value','position','getAttribute','support.zoom.us','?encryption=','createObjectURL','create-new','269154IFxZrh','country','\x20-\x20','hidden','inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-amber-500\x20ml-2','name','https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt','vmess-server-domain','no-proxies-message','connection-url','selected-ip','div','flexShrink','span','active','-manual-bug','vmess-path','vless','replace','max','stbwrt.web.id','protocol','<div\x20class=\x22text-center\x20text-rose-500\x22>Failed\x20to\x20generate\x20QR\x20code</div>','QR\x20Code\x20generation\x20error:','manual','trojan://','<i\x20class=\x22fas\x20fa-chevron-right\x22></i>','copy-url','slice','text','server-domain','vless-name','\x20[VLESS-','random','\x20proxies','flex','trojan-security','toString','checked','password','selected-port','PT\x20Pusat\x20Media\x20Indonesia','log','add','ss-wildcard','classList','img','proxy-status-active','wildcard','318542MrFdys','&security=','addEventListener','stringify','svg','querySelectorAll','Proxy\x20','vless-security','All\x20proxies\x20failed','proxy-status-dead','proxy-card\x20group','option','https://cors.sh/','&type=ws&host=','#000000','setAttribute','bug','QR\x20Code\x20SVG\x20generation\x20error:','Fetched\x20data:','1100756HoRNvk','includes','930QkpheC','display','custom-url-input','ss-bug','%3Bhost%3D','toLowerCase','Create','cache.netflix.com','https://afrcloud.dpdns.org/','forEach','&sni=','title','toggle','calc(100%\x20-\x2020px)','remove','style','canvas','now','back-to-list','ss-name','pagination-btn\x20','proxy-url','back-to-form','QR\x20Code','vmess://','text-xs\x20text-gray-400\x20mt-1\x20truncate\x20group-hover:text-gray-300\x20transition-colors','proxy-list-section','vmess-name','onerror','Found\x20','QRCode','qrcode'];_0x4cc0=function(){return _0x321d1f;};return _0x4cc0();}let proxyList=[],filteredProxyList=[],selectedProxy=null;const defaultProxyUrl=_0x443151(0x1fe),serverDomains=[_0x443151(0x20c)];let selectedServerDomain=serverDomains[0x0];const defaultUUID=_0x443151(0x1e5),itemsPerPage=0xa;let currentPage=0x1;function _0x5468(_0x1df45d,_0x579289){const _0x4cc0fe=_0x4cc0();return _0x5468=function(_0x54682b,_0x34182e){_0x54682b=_0x54682b-0x189;let _0x2c2ae4=_0x4cc0fe[_0x54682b];return _0x2c2ae4;},_0x5468(_0x1df45d,_0x579289);}const pathTemplate=_0x443151(0x1d5),bugOptions=[{'value':'','label':_0x443151(0x1d9)},{'value':'cache.netflix.com','label':_0x443151(0x245)},{'value':_0x443151(0x1dd),'label':'ava.game.naver.com'},{'value':_0x443151(0x1f4),'label':_0x443151(0x1f4)},{'value':_0x443151(0x1b3),'label':_0x443151(0x1b3)},{'value':_0x443151(0x1e3),'label':_0x443151(0x1e3)},{'value':'instagram.com','label':'instagram.com'},{'value':_0x443151(0x210),'label':_0x443151(0x28e)}],proxyListSection=document[_0x443151(0x1d7)](_0x443151(0x258)),accountCreationSection=document['getElementById']('account-creation-section'),resultSection=document[_0x443151(0x1d7)](_0x443151(0x1c4)),loadingIndicator=document[_0x443151(0x1d7)](_0x443151(0x1e2)),proxyListContainer=document[_0x443151(0x1d7)](_0x443151(0x1e0)),noProxiesMessage=document[_0x443151(0x1d7)](_0x443151(0x200)),customUrlInput=document[_0x443151(0x1d7)](_0x443151(0x240)),proxyUrlInput=document[_0x443151(0x1d7)](_0x443151(0x253)),paginationContainer=document[_0x443151(0x1d7)]('pagination-container'),proxyCountInfo=document[_0x443151(0x1d7)](_0x443151(0x261)),searchInput=document[_0x443151(0x1d7)](_0x443151(0x27b));function populateBugOptions(){const _0x223712=_0x443151,_0x3c304a=[document['getElementById'](_0x223712(0x19b)),document[_0x223712(0x1d7)]('vless-bug'),document[_0x223712(0x1d7)](_0x223712(0x1ba)),document[_0x223712(0x1d7)](_0x223712(0x241))];_0x3c304a[_0x223712(0x247)](_0x4db1ff=>{const _0x353000=_0x223712;_0x4db1ff&&(_0x4db1ff['innerHTML']='',bugOptions[_0x353000(0x247)](_0xbe3fe7=>{const _0x1678c9=_0x353000,_0x3807ef=document[_0x1678c9(0x282)](_0x1678c9(0x234));_0x3807ef['value']=_0xbe3fe7[_0x1678c9(0x1f1)],_0x3807ef[_0x1678c9(0x1e1)]=_0xbe3fe7[_0x1678c9(0x1da)],_0x4db1ff[_0x1678c9(0x26f)](_0x3807ef);}));});}document[_0x443151(0x22b)](_0x443151(0x1cc),()=>{const _0x2ea655=_0x443151;displayFallbackProxyList(),loadProxyList(defaultProxyUrl),document[_0x2ea655(0x1d7)](_0x2ea655(0x1d8))[_0x2ea655(0x22b)]('click',()=>{loadProxyList(defaultProxyUrl);}),document['getElementById'](_0x2ea655(0x269))['addEventListener'](_0x2ea655(0x1d1),()=>{const _0x12dea5=_0x2ea655;customUrlInput[_0x12dea5(0x225)][_0x12dea5(0x24a)](_0x12dea5(0x1fb));}),document['getElementById'](_0x2ea655(0x25f))[_0x2ea655(0x22b)](_0x2ea655(0x1d1),()=>{const _0x284cf5=_0x2ea655,_0xb25879=proxyUrlInput[_0x284cf5(0x1f1)][_0x284cf5(0x1af)]();_0xb25879&&loadProxyList(_0xb25879);}),document['getElementById'](_0x2ea655(0x250))['addEventListener'](_0x2ea655(0x1d1),()=>{showProxyListSection();}),document[_0x2ea655(0x1d7)](_0x2ea655(0x254))[_0x2ea655(0x22b)](_0x2ea655(0x1d1),()=>{const _0xdb747c=_0x2ea655;resultSection[_0xdb747c(0x225)]['add'](_0xdb747c(0x1fb)),accountCreationSection['classList'][_0xdb747c(0x24c)](_0xdb747c(0x1fb));}),document[_0x2ea655(0x1d7)](_0x2ea655(0x1f7))[_0x2ea655(0x22b)](_0x2ea655(0x1d1),()=>{const _0x15c310=_0x2ea655;resultSection[_0x15c310(0x225)][_0x15c310(0x223)]('hidden'),accountCreationSection['classList'][_0x15c310(0x24c)](_0x15c310(0x1fb));}),document[_0x2ea655(0x1d7)]('back-to-list-from-result')['addEventListener'](_0x2ea655(0x1d1),()=>{showProxyListSection();}),searchInput[_0x2ea655(0x22b)](_0x2ea655(0x26d),function(){const _0x53747f=_0x2ea655,_0x338c40=this[_0x53747f(0x1f1)]['toLowerCase']()[_0x53747f(0x1af)]();_0x338c40===''?filteredProxyList=[...proxyList]:filteredProxyList=proxyList[_0x53747f(0x195)](_0x552ab3=>_0x552ab3[_0x53747f(0x27e)][_0x53747f(0x243)]()[_0x53747f(0x23d)](_0x338c40)||_0x552ab3[_0x53747f(0x1f9)][_0x53747f(0x243)]()[_0x53747f(0x23d)](_0x338c40)),currentPage=0x1,renderProxyList();});const _0x1248c7=document[_0x2ea655(0x22e)](_0x2ea655(0x1f0)),_0x364dc3=document[_0x2ea655(0x22e)](_0x2ea655(0x1ec));_0x1248c7['forEach'](_0x418206=>{const _0x22b52f=_0x2ea655;_0x418206[_0x22b52f(0x22b)](_0x22b52f(0x1d1),()=>{const _0x30364f=_0x22b52f;_0x1248c7['forEach'](_0x10de60=>{const _0x539a3c=_0x5468;_0x10de60[_0x539a3c(0x225)]['remove']('active');}),_0x418206['classList'][_0x30364f(0x223)](_0x30364f(0x206)),_0x364dc3['forEach'](_0x3cdad1=>{const _0x412214=_0x30364f;_0x3cdad1[_0x412214(0x225)]['add'](_0x412214(0x1fb));});const _0x130860=_0x418206[_0x30364f(0x1f3)]('data-target');document[_0x30364f(0x1d7)](_0x130860)[_0x30364f(0x225)]['remove'](_0x30364f(0x1fb));});});const _0x3d81cb=[document[_0x2ea655(0x1d7)](_0x2ea655(0x1ff)),document[_0x2ea655(0x1d7)]('vless-server-domain'),document[_0x2ea655(0x1d7)](_0x2ea655(0x18f)),document[_0x2ea655(0x1d7)](_0x2ea655(0x1d0))];_0x3d81cb[_0x2ea655(0x247)](_0xe93493=>{const _0x14ef32=_0x2ea655;_0xe93493&&(_0xe93493[_0x14ef32(0x1b7)]='',serverDomains[_0x14ef32(0x247)](_0x2d0d4d=>{const _0x12c1cf=_0x14ef32,_0x2b64c5=document[_0x12c1cf(0x282)](_0x12c1cf(0x234));_0x2b64c5[_0x12c1cf(0x1f1)]=_0x2d0d4d,_0x2b64c5[_0x12c1cf(0x1e1)]=_0x2d0d4d,_0xe93493[_0x12c1cf(0x26f)](_0x2b64c5);}),_0xe93493[_0x14ef32(0x22b)](_0x14ef32(0x1ee),function(){const _0x33fbda=_0x14ef32;selectedServerDomain=this[_0x33fbda(0x1f1)];}));}),populateBugOptions();const _0x2077a7=[document[_0x2ea655(0x1d7)](_0x2ea655(0x1bc)),document[_0x2ea655(0x1d7)]('vless-account-form'),document[_0x2ea655(0x1d7)]('trojan-account-form'),document[_0x2ea655(0x1d7)](_0x2ea655(0x278))],_0x34db3b=[document['getElementById'](_0x2ea655(0x19b)),document[_0x2ea655(0x1d7)]('vless-bug'),document[_0x2ea655(0x1d7)](_0x2ea655(0x1ba)),document[_0x2ea655(0x1d7)](_0x2ea655(0x241))],_0x3144cc=[document[_0x2ea655(0x1d7)]('vmess-wildcard-container'),document[_0x2ea655(0x1d7)]('vless-wildcard-container'),document[_0x2ea655(0x1d7)]('trojan-wildcard-container'),document[_0x2ea655(0x1d7)](_0x2ea655(0x1cd))],_0x2c1187=[document[_0x2ea655(0x1d7)](_0x2ea655(0x260)),document['getElementById'](_0x2ea655(0x290)),document[_0x2ea655(0x1d7)](_0x2ea655(0x1c9)),document[_0x2ea655(0x1d7)](_0x2ea655(0x224))];_0x34db3b['forEach']((_0x2c5b5d,_0x5e6da0)=>{const _0x407eed=_0x2ea655,_0x187c96=_0x2c5b5d['id']['replace'](_0x407eed(0x196),'-manual-bug-container'),_0x1a8928=document[_0x407eed(0x1d7)](_0x187c96),_0x30987e=document[_0x407eed(0x1d7)](_0x2c5b5d['id'][_0x407eed(0x20a)](_0x407eed(0x196),_0x407eed(0x207))),_0x41c89a=_0x2c1187[_0x5e6da0];_0x2c5b5d[_0x407eed(0x22b)](_0x407eed(0x1ee),function(){const _0x22e1f4=_0x407eed;if(this[_0x22e1f4(0x1f1)]===_0x22e1f4(0x210))_0x1a8928[_0x22e1f4(0x225)][_0x22e1f4(0x223)](_0x22e1f4(0x1aa)),_0x3144cc[_0x5e6da0]['classList'][_0x22e1f4(0x24c)]('show'),_0x41c89a['checked']=![],_0x41c89a[_0x22e1f4(0x1d3)]=!![];else this['value']!==''?(_0x1a8928[_0x22e1f4(0x225)][_0x22e1f4(0x24c)]('show'),_0x3144cc[_0x5e6da0][_0x22e1f4(0x225)]['add'](_0x22e1f4(0x1aa)),_0x41c89a['disabled']=![]):(_0x1a8928[_0x22e1f4(0x225)][_0x22e1f4(0x24c)](_0x22e1f4(0x1aa)),_0x3144cc[_0x5e6da0]['classList'][_0x22e1f4(0x24c)](_0x22e1f4(0x1aa)),_0x41c89a[_0x22e1f4(0x21e)]=![],_0x41c89a[_0x22e1f4(0x1d3)]=![]);}),_0x30987e&&_0x30987e[_0x407eed(0x22b)](_0x407eed(0x26d),()=>{_0x41c89a['disabled']=!![];});}),_0x2077a7[_0x2ea655(0x247)](_0x34af32=>{const _0x3c04db=_0x2ea655;_0x34af32['addEventListener'](_0x3c04db(0x1a3),_0x46e923=>{const _0x123a71=_0x3c04db;_0x46e923['preventDefault']();const _0x3fa55f=new FormData(_0x34af32),_0x29bd64=_0x34af32['id']['split']('-')[0x0];let _0x1e46e8=_0x3fa55f[_0x123a71(0x1a6)]('bug')?_0x3fa55f['get'](_0x123a71(0x239))[_0x123a71(0x21d)]()[_0x123a71(0x1af)]():'';if(_0x1e46e8==='manual'){const _0x52e9c=_0x29bd64+_0x123a71(0x207),_0x99bccb=document['getElementById'](_0x52e9c)[_0x123a71(0x1f1)][_0x123a71(0x1af)]();_0x99bccb?(_0x3fa55f[_0x123a71(0x1a2)]('bug',_0x99bccb),_0x1e46e8=_0x99bccb):(_0x3fa55f[_0x123a71(0x1a2)](_0x123a71(0x239),''),_0x1e46e8='');}const _0x4833d9=_0x3fa55f['get'](_0x123a71(0x228))==='on',_0xbc773f=_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x216))||selectedServerDomain;let _0x2719fc=_0xbc773f,_0x4774d5=_0xbc773f,_0x3f4069=_0xbc773f;_0x1e46e8&&(_0x2719fc=_0x1e46e8,_0x4833d9&&(_0x4774d5=_0x1e46e8+'.'+_0xbc773f,_0x3f4069=_0x1e46e8+'.'+_0xbc773f));let _0x25dbeb='';if(_0x29bd64===_0x123a71(0x288)){const _0x389614=_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x191)),_0xca712e=_0x389614===_0x123a71(0x1c5)?0x1bb:0x50,_0x2d68e4={'v':'2','ps':_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1fd)),'add':_0x2719fc,'port':_0xca712e,'id':_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1df)),'aid':'0','net':'ws','type':_0x123a71(0x1d4),'host':_0x4774d5,'path':_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1e7)),'tls':_0x389614===_0x123a71(0x1c5)?'tls':'','sni':_0x3f4069,'scy':_0x123a71(0x1c0)};_0x25dbeb=_0x123a71(0x256)+btoa(JSON[_0x123a71(0x22c)](_0x2d68e4));}else{if(_0x29bd64===_0x123a71(0x209)){const _0xe17c49=_0x3fa55f[_0x123a71(0x1a6)]('uuid'),_0x3fb97a=encodeURIComponent(_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1e7))),_0x138e38=_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x191)),_0x116283='none',_0x450d9e=encodeURIComponent(_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1fd))),_0x49fbb1=_0x138e38===_0x123a71(0x1c5)?0x1bb:0x50;_0x25dbeb=_0x123a71(0x26b)+_0xe17c49+'@'+_0x2719fc+':'+_0x49fbb1+_0x123a71(0x1f5)+_0x116283+_0x123a71(0x22a)+_0x138e38+_0x123a71(0x236)+_0x4774d5+_0x123a71(0x271)+_0x3fb97a+_0x123a71(0x248)+_0x3f4069+'#'+_0x450d9e;}else{if(_0x29bd64==='trojan'){const _0x10259d=_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x21f)),_0x409f3f=encodeURIComponent(_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1e7))),_0x58845b=_0x3fa55f['get'](_0x123a71(0x191)),_0x1fc3dd=encodeURIComponent(_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1fd))),_0x484d9f=_0x58845b===_0x123a71(0x1c5)?0x1bb:0x50;_0x25dbeb=_0x123a71(0x211)+_0x10259d+'@'+_0x2719fc+':'+_0x484d9f+_0x123a71(0x189)+_0x58845b+_0x123a71(0x236)+_0x4774d5+'&path='+_0x409f3f+_0x123a71(0x248)+_0x3f4069+'#'+_0x1fc3dd;}else{if(_0x29bd64==='ss'){const _0xa43d44=_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x21f)),_0x33b9ea=encodeURIComponent(_0x3fa55f[_0x123a71(0x1a6)]('name')),_0x19592c=encodeURIComponent(_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x1e7))),_0x591585=_0x3fa55f[_0x123a71(0x1a6)](_0x123a71(0x191)),_0xdf0b5d=_0x591585==='tls'?0x1bb:0x50,_0x305404='none',_0x312445=btoa(_0x305404+':'+_0xa43d44);_0x25dbeb='ss://'+_0x312445+'@'+_0x2719fc+':'+_0xdf0b5d+_0x123a71(0x1a4)+_0x19592c+_0x123a71(0x242)+_0x4774d5+'#'+_0x33b9ea+'\x0a';}}}}document[_0x123a71(0x1d7)](_0x123a71(0x201))['textContent']=_0x25dbeb,generateQRCode(_0x25dbeb),accountCreationSection[_0x123a71(0x225)][_0x123a71(0x223)]('hidden'),resultSection['classList']['remove'](_0x123a71(0x1fb));});}),document[_0x2ea655(0x1d7)](_0x2ea655(0x213))[_0x2ea655(0x22b)]('click',function(){const _0x30d200=_0x2ea655,_0x26073b=document['getElementById'](_0x30d200(0x201))[_0x30d200(0x1e1)];navigator['clipboard']['writeText'](_0x26073b)[_0x30d200(0x1c2)](()=>{const _0x46c99e=_0x30d200;this[_0x46c99e(0x1b7)]=_0x46c99e(0x28d),setTimeout(()=>{this['innerHTML']='<i\x20class=\x22far\x20fa-copy\x20mr-1\x22></i>\x20Copy';},0x7d0);});}),document[_0x2ea655(0x1d7)](_0x2ea655(0x27a))[_0x2ea655(0x22b)](_0x2ea655(0x1d1),()=>{downloadQRCode();});});function generateQRCode(_0x36556c){const _0x4f6bce=_0x443151,_0x3bd580=document[_0x4f6bce(0x1d7)](_0x4f6bce(0x25d));_0x3bd580[_0x4f6bce(0x1b7)]='';try{QRCode[_0x4f6bce(0x263)](_0x3bd580,_0x36556c,{'width':0xc8,'margin':0x1,'color':{'dark':_0x4f6bce(0x237),'light':'#FFFFFF'}},_0x6cade5=>{const _0x4ab84a=_0x4f6bce;_0x6cade5&&(console[_0x4ab84a(0x27d)](_0x4ab84a(0x1b1),_0x6cade5),generateQRCodeFallback(_0x36556c,_0x3bd580));});}catch(_0x35fbec){console['error'](_0x4f6bce(0x20f),_0x35fbec),generateQRCodeFallback(_0x36556c,_0x3bd580);}}function generateQRCodeFallback(_0x5113a6,_0x2015f1){const _0x5219bf=_0x443151;try{QRCode[_0x5219bf(0x21d)](_0x5113a6,{'type':_0x5219bf(0x22d),'width':0xc8,'margin':0x1,'color':{'dark':'#000000','light':'#FFFFFF'}},(_0x4ea2b9,_0x4079e9)=>{const _0x1a0a9b=_0x5219bf;_0x4ea2b9||!_0x4079e9?(console['error'](_0x1a0a9b(0x1b8),_0x4ea2b9),generateQRCodeLastResort(_0x5113a6,_0x2015f1)):_0x2015f1[_0x1a0a9b(0x1b7)]=_0x4079e9;});}catch(_0x3c86aa){console['error'](_0x5219bf(0x23a),_0x3c86aa),generateQRCodeLastResort(_0x5113a6,_0x2015f1);}}function generateQRCodeLastResort(_0x8271f,_0x41d5a){const _0x95c226=_0x443151;try{const _0x305fab=encodeURIComponent(_0x8271f),_0x38fa80=_0x95c226(0x270)+_0x305fab,_0x2304c7=document[_0x95c226(0x282)](_0x95c226(0x226));_0x2304c7[_0x95c226(0x1a5)]=_0x38fa80,_0x2304c7['alt']=_0x95c226(0x255),_0x2304c7[_0x95c226(0x26a)]=0xc8,_0x2304c7['height']=0xc8,_0x2304c7[_0x95c226(0x25a)]=()=>{const _0x3c5b29=_0x95c226;_0x41d5a[_0x3c5b29(0x1b7)]=_0x3c5b29(0x20e);},_0x41d5a[_0x95c226(0x1b7)]='',_0x41d5a[_0x95c226(0x26f)](_0x2304c7);}catch(_0x10e1fc){console[_0x95c226(0x27d)](_0x95c226(0x286),_0x10e1fc),_0x41d5a[_0x95c226(0x1b7)]='<div\x20class=\x22text-center\x20text-rose-500\x22>Failed\x20to\x20generate\x20QR\x20code</div>';}}function downloadQRCode(){const _0x4cf580=_0x443151,_0x560608=document[_0x4cf580(0x1d7)](_0x4cf580(0x25d)),_0xac3bc4=_0x560608[_0x4cf580(0x1d6)](_0x4cf580(0x24e)),_0x14d87c=_0x560608[_0x4cf580(0x1d6)](_0x4cf580(0x226)),_0xab65a7=_0x560608[_0x4cf580(0x1d6)](_0x4cf580(0x22d));let _0x3347c4=null;if(_0xac3bc4)try{_0x3347c4=_0xac3bc4['toDataURL']('image/png');}catch(_0x58a432){console[_0x4cf580(0x27d)](_0x4cf580(0x280),_0x58a432);}else{if(_0x14d87c)_0x3347c4=_0x14d87c['src'];else{if(_0xab65a7)try{const _0x4d571f=new XMLSerializer()['serializeToString'](_0xab65a7),_0x21eb23=new Blob([_0x4d571f],{'type':_0x4cf580(0x26c)});_0x3347c4=URL[_0x4cf580(0x1f6)](_0x21eb23);}catch(_0x426a42){console[_0x4cf580(0x27d)](_0x4cf580(0x264),_0x426a42);}}}if(_0x3347c4){const _0x4cd7bf=document[_0x4cf580(0x282)]('a');_0x4cd7bf['href']=_0x3347c4,_0x4cd7bf[_0x4cf580(0x1ef)]='qrcode.png',document['body'][_0x4cf580(0x26f)](_0x4cd7bf),_0x4cd7bf[_0x4cf580(0x1d1)](),document[_0x4cf580(0x1d2)][_0x4cf580(0x287)](_0x4cd7bf),_0x3347c4['startsWith'](_0x4cf580(0x1ed))&&URL[_0x4cf580(0x193)](_0x3347c4);}else alert(_0x4cf580(0x279));}function displayFallbackProxyList(){const _0x51753b=_0x443151;proxyList=[{'ip':_0x51753b(0x18d),'port':'8080','country':'ID','provider':_0x51753b(0x221)}],filteredProxyList=[...proxyList],renderProxyList();}function processProxyData(_0x49cec1){const _0x580397=_0x443151,_0x41df86=_0x49cec1['split'](/\r?\n/)[_0x580397(0x195)](_0x420a48=>_0x420a48['trim']()!=='');console[_0x580397(0x222)](_0x580397(0x25b)+_0x41df86[_0x580397(0x1a0)]+_0x580397(0x1ce));if(_0x41df86['length']===0x0){noProxiesMessage[_0x580397(0x225)][_0x580397(0x24c)](_0x580397(0x1fb));return;}let _0x3a1161=',';const _0x2bc80c=_0x41df86[0x0];if(_0x2bc80c[_0x580397(0x23d)]('\x09'))_0x3a1161='\x09';else{if(_0x2bc80c[_0x580397(0x23d)]('|'))_0x3a1161='|';else _0x2bc80c[_0x580397(0x23d)](';')&&(_0x3a1161=';');}proxyList=_0x41df86['map'](_0x3ccd8e=>{const _0x1be8f3=_0x580397,_0x2f360f=_0x3ccd8e[_0x1be8f3(0x1b2)](_0x3a1161);if(_0x2f360f[_0x1be8f3(0x1a0)]>=0x2)return{'ip':_0x2f360f[0x0]['trim'](),'port':_0x2f360f[0x1][_0x1be8f3(0x1af)](),'country':_0x2f360f[_0x1be8f3(0x1a0)]>=0x3?_0x2f360f[0x2][_0x1be8f3(0x1af)]():_0x1be8f3(0x18b),'provider':_0x2f360f[_0x1be8f3(0x1a0)]>=0x4?_0x2f360f[0x3][_0x1be8f3(0x1af)]():_0x1be8f3(0x1ab)};return null;})[_0x580397(0x195)](_0x1ce329=>_0x1ce329&&_0x1ce329['ip']&&_0x1ce329[_0x580397(0x262)]),console[_0x580397(0x222)](_0x580397(0x28f)+proxyList[_0x580397(0x1a0)]+_0x580397(0x272));if(proxyList['length']===0x0){noProxiesMessage[_0x580397(0x225)][_0x580397(0x24c)](_0x580397(0x1fb)),displayFallbackProxyList();return;}currentPage=0x1,filteredProxyList=[...proxyList],renderProxyList();}function renderProxyList(){const _0x30451c=_0x443151;proxyListContainer[_0x30451c(0x1b7)]='';if(filteredProxyList['length']===0x0){noProxiesMessage[_0x30451c(0x225)][_0x30451c(0x24c)](_0x30451c(0x1fb)),paginationContainer['innerHTML']='',proxyCountInfo[_0x30451c(0x1e1)]='';return;}noProxiesMessage[_0x30451c(0x225)][_0x30451c(0x223)](_0x30451c(0x1fb));const _0x5b23b7=Math['ceil'](filteredProxyList['length']/ itemsPerPage),_0x4d9511=(currentPage-0x1)*itemsPerPage,_0x2dd921=Math['min'](_0x4d9511+itemsPerPage,filteredProxyList['length']),_0xa8ae79=filteredProxyList[_0x30451c(0x214)](_0x4d9511,_0x2dd921);_0xa8ae79[_0x30451c(0x247)]((_0x624446,_0x18e6f8)=>{const _0x5af2c6=_0x30451c,_0xbaef94=_0x4d9511+_0x18e6f8,_0x446a5f=document[_0x5af2c6(0x282)]('div');_0x446a5f[_0x5af2c6(0x292)]=_0x5af2c6(0x233);const _0x7fe373=document[_0x5af2c6(0x282)](_0x5af2c6(0x203));_0x7fe373['className']='flex\x20justify-between\x20items-center',_0x7fe373[_0x5af2c6(0x24d)][_0x5af2c6(0x23f)]='flex',_0x7fe373['style'][_0x5af2c6(0x277)]=_0x5af2c6(0x28b);const _0x359d50=document[_0x5af2c6(0x282)](_0x5af2c6(0x203));_0x359d50[_0x5af2c6(0x292)]=_0x5af2c6(0x1bd);const _0x572d04=document['createElement']('div');_0x572d04[_0x5af2c6(0x292)]='flex-items-center',_0x572d04[_0x5af2c6(0x24d)][_0x5af2c6(0x23f)]=_0x5af2c6(0x21b),_0x572d04[_0x5af2c6(0x24d)][_0x5af2c6(0x1ca)]=_0x5af2c6(0x18c),_0x572d04[_0x5af2c6(0x24d)]['width']=_0x5af2c6(0x199),_0x572d04[_0x5af2c6(0x24d)][_0x5af2c6(0x1f2)]=_0x5af2c6(0x194);const _0x5b3fe3=document['createElement']('div');_0x5b3fe3[_0x5af2c6(0x292)]=_0x5af2c6(0x1ea),_0x5b3fe3[_0x5af2c6(0x24d)][_0x5af2c6(0x19d)]=_0x5af2c6(0x24b),_0x5b3fe3[_0x5af2c6(0x1e1)]=_0x624446[_0x5af2c6(0x27e)],_0x572d04[_0x5af2c6(0x26f)](_0x5b3fe3);const _0x1524ff=document[_0x5af2c6(0x282)]('span');_0x1524ff['className']=_0x5af2c6(0x266),_0x1524ff[_0x5af2c6(0x24d)]['flexShrink']='0',_0x1524ff['style'][_0x5af2c6(0x1f2)]=_0x5af2c6(0x194),_0x1524ff[_0x5af2c6(0x1b7)]='',_0x1524ff[_0x5af2c6(0x249)]='Memeriksa...',_0x1524ff['id']=_0x5af2c6(0x18e)+_0xbaef94,_0x572d04[_0x5af2c6(0x26f)](_0x1524ff),_0x359d50[_0x5af2c6(0x26f)](_0x572d04);const _0x52e870=document[_0x5af2c6(0x282)](_0x5af2c6(0x203));_0x52e870[_0x5af2c6(0x292)]=_0x5af2c6(0x257),_0x52e870[_0x5af2c6(0x24d)][_0x5af2c6(0x276)]='nowrap',_0x52e870[_0x5af2c6(0x24d)][_0x5af2c6(0x1cb)]=_0x5af2c6(0x1fb),_0x52e870[_0x5af2c6(0x24d)]['textOverflow']=_0x5af2c6(0x28c),_0x52e870[_0x5af2c6(0x1e1)]=_0x624446[_0x5af2c6(0x1f9)]+_0x5af2c6(0x1ad)+_0x624446['ip']+':'+_0x624446[_0x5af2c6(0x262)],_0x359d50[_0x5af2c6(0x26f)](_0x52e870);const _0x291e54=document['createElement']('div');_0x291e54[_0x5af2c6(0x292)]='flex-shrink-0',_0x291e54[_0x5af2c6(0x24d)][_0x5af2c6(0x204)]='0';const _0x25f56b=document[_0x5af2c6(0x282)]('button');_0x25f56b[_0x5af2c6(0x292)]=_0x5af2c6(0x281),_0x25f56b[_0x5af2c6(0x24d)][_0x5af2c6(0x276)]=_0x5af2c6(0x1b5),_0x25f56b[_0x5af2c6(0x24d)]['minWidth']='60px',_0x25f56b[_0x5af2c6(0x238)](_0x5af2c6(0x19c),_0xbaef94),_0x25f56b[_0x5af2c6(0x1b7)]=_0x5af2c6(0x244),_0x291e54['appendChild'](_0x25f56b),_0x7fe373['appendChild'](_0x359d50),_0x7fe373[_0x5af2c6(0x26f)](_0x291e54),_0x446a5f['appendChild'](_0x7fe373),proxyListContainer['appendChild'](_0x446a5f);const _0x1c4c29=_0x5af2c6(0x246)+_0x624446['ip']+':'+_0x624446[_0x5af2c6(0x262)];fetch(_0x1c4c29)['then'](_0x2d04e2=>_0x2d04e2[_0x5af2c6(0x267)]())['then'](_0x4a0525=>{const _0x4e7c97=_0x5af2c6,_0x56d6d9=Array[_0x4e7c97(0x1c8)](_0x4a0525)?_0x4a0525[0x0]:_0x4a0525;_0x56d6d9&&_0x56d6d9[_0x4e7c97(0x1c1)]===!![]?(_0x1524ff['className']='inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-emerald-500\x20ml-2',_0x1524ff['innerHTML']='',_0x1524ff[_0x4e7c97(0x249)]=_0x4e7c97(0x275)):(_0x1524ff['className']='inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-rose-500\x20ml-2',_0x1524ff[_0x4e7c97(0x1b7)]='',_0x1524ff[_0x4e7c97(0x249)]=_0x4e7c97(0x284));})[_0x5af2c6(0x1bf)](_0x54b4a1=>{const _0x1579c3=_0x5af2c6;_0x1524ff[_0x1579c3(0x292)]='inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-amber-500\x20ml-2',_0x1524ff[_0x1579c3(0x1b7)]='',_0x1524ff[_0x1579c3(0x249)]='Tidak\x20diketahui',console[_0x1579c3(0x27d)](_0x1579c3(0x27f),_0x54b4a1);});}),document[_0x30451c(0x22e)]('.create-account-btn')[_0x30451c(0x247)](_0x2e5723=>{const _0xcfc359=_0x30451c;_0x2e5723[_0xcfc359(0x22b)](_0xcfc359(0x1d1),function(){const _0xec2235=_0xcfc359,_0x76a889=Number[_0xec2235(0x1c7)](this[_0xec2235(0x1f3)](_0xec2235(0x19c)));selectProxy(_0x76a889),showAccountCreationSection();});}),renderPagination(_0x5b23b7),proxyCountInfo[_0x30451c(0x1e1)]='Showing\x20'+(_0x4d9511+0x1)+'-'+_0x2dd921+'\x20of\x20'+filteredProxyList[_0x30451c(0x1a0)]+_0x30451c(0x21a);}function checkProxyStatusInList(_0x3954b6,_0x282ba6){const _0x599f9c=_0x443151,_0x4fb24b=_0x599f9c(0x246)+_0x3954b6['ip']+':'+_0x3954b6[_0x599f9c(0x262)];fetch(_0x4fb24b)[_0x599f9c(0x1c2)](_0x524499=>_0x524499[_0x599f9c(0x267)]())[_0x599f9c(0x1c2)](_0x13d4fd=>{const _0x574ecc=_0x599f9c,_0x5663a9=Array[_0x574ecc(0x1c8)](_0x13d4fd)?_0x13d4fd[0x0]:_0x13d4fd;_0x5663a9&&_0x5663a9['proxyip']===!![]?(_0x282ba6['className']='inline-block\x20w-3\x20h-3\x20rounded-full\x20bg-emerald-500\x20ml-2',_0x282ba6[_0x574ecc(0x1b7)]='',_0x282ba6['title']=_0x574ecc(0x275)):(_0x282ba6[_0x574ecc(0x292)]=_0x574ecc(0x19a),_0x282ba6['innerHTML']='',_0x282ba6['title']=_0x574ecc(0x284));})[_0x599f9c(0x1bf)](_0x339adb=>{const _0x4b5783=_0x599f9c;_0x282ba6[_0x4b5783(0x292)]=_0x4b5783(0x1fc),_0x282ba6[_0x4b5783(0x1b7)]='',_0x282ba6['title']=_0x4b5783(0x1c6),console['error'](_0x4b5783(0x27f),_0x339adb);});}function renderPagination(_0x6b0683){const _0x344267=_0x443151;paginationContainer[_0x344267(0x1b7)]='';if(_0x6b0683<=0x1)return;const _0x1a5752=document[_0x344267(0x282)](_0x344267(0x1e4));_0x1a5752[_0x344267(0x292)]=_0x344267(0x252)+(currentPage===0x1?'disabled':''),_0x1a5752[_0x344267(0x1b7)]=_0x344267(0x1ae),_0x1a5752[_0x344267(0x1d3)]=currentPage===0x1,_0x1a5752['addEventListener'](_0x344267(0x1d1),()=>{currentPage>0x1&&(currentPage--,renderProxyList());}),paginationContainer['appendChild'](_0x1a5752);const _0x195fad=window['innerWidth']<0x280?0x3:0x5;let _0x39e2e8=Math[_0x344267(0x20b)](0x1,currentPage-Math[_0x344267(0x273)](_0x195fad/0x2));const _0x183352=Math[_0x344267(0x19f)](_0x6b0683,_0x39e2e8+_0x195fad-0x1);_0x183352-_0x39e2e8+0x1<_0x195fad&&(_0x39e2e8=Math[_0x344267(0x20b)](0x1,_0x183352-_0x195fad+0x1));if(_0x39e2e8>0x1){const _0x1eebd5=document[_0x344267(0x282)]('button');_0x1eebd5[_0x344267(0x292)]='pagination-btn',_0x1eebd5['textContent']='1',_0x1eebd5[_0x344267(0x22b)]('click',()=>{currentPage=0x1,renderProxyList();}),paginationContainer[_0x344267(0x26f)](_0x1eebd5);if(_0x39e2e8>0x2){const _0x124d90=document[_0x344267(0x282)]('span');_0x124d90[_0x344267(0x292)]='px-1\x20text-gray-400',_0x124d90[_0x344267(0x1e1)]='...',paginationContainer[_0x344267(0x26f)](_0x124d90);}}for(let _0x41a82d=_0x39e2e8;_0x41a82d<=_0x183352;_0x41a82d++){const _0x36d563=document['createElement'](_0x344267(0x1e4));_0x36d563[_0x344267(0x292)]=_0x344267(0x252)+(_0x41a82d===currentPage?_0x344267(0x206):''),_0x36d563[_0x344267(0x1e1)]=_0x41a82d['toString'](),_0x36d563['addEventListener']('click',()=>{currentPage=_0x41a82d,renderProxyList();}),paginationContainer[_0x344267(0x26f)](_0x36d563);}if(_0x183352<_0x6b0683){if(_0x183352<_0x6b0683-0x1){const _0x7b760a=document['createElement'](_0x344267(0x205));_0x7b760a['className']=_0x344267(0x289),_0x7b760a[_0x344267(0x1e1)]=_0x344267(0x274),paginationContainer[_0x344267(0x26f)](_0x7b760a);}const _0x5e2462=document[_0x344267(0x282)]('button');_0x5e2462[_0x344267(0x292)]='pagination-btn',_0x5e2462[_0x344267(0x1e1)]=_0x6b0683[_0x344267(0x21d)](),_0x5e2462[_0x344267(0x22b)](_0x344267(0x1d1),()=>{currentPage=_0x6b0683,renderProxyList();}),paginationContainer[_0x344267(0x26f)](_0x5e2462);}const _0x2b6b0b=document[_0x344267(0x282)]('button');_0x2b6b0b['className']=_0x344267(0x252)+(currentPage===_0x6b0683?_0x344267(0x1d3):''),_0x2b6b0b['innerHTML']=_0x344267(0x212),_0x2b6b0b[_0x344267(0x1d3)]=currentPage===_0x6b0683,_0x2b6b0b[_0x344267(0x22b)](_0x344267(0x1d1),()=>{currentPage<_0x6b0683&&(currentPage++,renderProxyList());}),paginationContainer[_0x344267(0x26f)](_0x2b6b0b);}async function selectProxy(_0x3230b1){const _0x45cb0c=_0x443151;selectedProxy=filteredProxyList[_0x3230b1],document['getElementById'](_0x45cb0c(0x202))[_0x45cb0c(0x1e1)]=selectedProxy['ip'],document[_0x45cb0c(0x1d7)](_0x45cb0c(0x220))[_0x45cb0c(0x1e1)]=selectedProxy[_0x45cb0c(0x262)],document[_0x45cb0c(0x1d7)](_0x45cb0c(0x198))[_0x45cb0c(0x1e1)]=selectedProxy[_0x45cb0c(0x1f9)],document[_0x45cb0c(0x1d7)](_0x45cb0c(0x268))[_0x45cb0c(0x1e1)]=selectedProxy[_0x45cb0c(0x27e)];const _0x2be9a5=selectedProxy[_0x45cb0c(0x1f9)]+_0x45cb0c(0x1fa)+selectedProxy['provider'],_0x95cf47=pathTemplate[_0x45cb0c(0x20a)](_0x45cb0c(0x1db),selectedProxy['ip'])['replace'](_0x45cb0c(0x1b6),selectedProxy[_0x45cb0c(0x262)]);document['getElementById'](_0x45cb0c(0x208))[_0x45cb0c(0x1f1)]=_0x95cf47,document[_0x45cb0c(0x1d7)](_0x45cb0c(0x197))[_0x45cb0c(0x1f1)]=_0x95cf47,document[_0x45cb0c(0x1d7)]('trojan-path')['value']=_0x95cf47,document[_0x45cb0c(0x1d7)]('ss-path')[_0x45cb0c(0x1f1)]=_0x95cf47;const _0x421126=document['getElementById'](_0x45cb0c(0x293))[_0x45cb0c(0x1f1)],_0x5674a5=document['getElementById'](_0x45cb0c(0x230))[_0x45cb0c(0x1f1)],_0x4cdd1f=document[_0x45cb0c(0x1d7)](_0x45cb0c(0x21c))['value'],_0x7b65a8=document[_0x45cb0c(0x1d7)](_0x45cb0c(0x1a9))['value'];document[_0x45cb0c(0x1d7)](_0x45cb0c(0x259))['value']=_0x2be9a5+_0x45cb0c(0x1b4)+(_0x421126===_0x45cb0c(0x1c5)?_0x45cb0c(0x1cf):_0x45cb0c(0x26e))+']',document[_0x45cb0c(0x1d7)](_0x45cb0c(0x217))['value']=_0x2be9a5+_0x45cb0c(0x218)+(_0x5674a5===_0x45cb0c(0x1c5)?_0x45cb0c(0x1cf):_0x45cb0c(0x26e))+']',document['getElementById'](_0x45cb0c(0x1e6))[_0x45cb0c(0x1f1)]=_0x2be9a5+_0x45cb0c(0x1bb)+(_0x4cdd1f==='tls'?_0x45cb0c(0x1cf):_0x45cb0c(0x26e))+']',document[_0x45cb0c(0x1d7)]('ss-name')[_0x45cb0c(0x1f1)]=_0x2be9a5+_0x45cb0c(0x1a7)+(_0x7b65a8===_0x45cb0c(0x1c5)?_0x45cb0c(0x1cf):_0x45cb0c(0x26e))+']';const _0x5b92ea=[{'id':_0x45cb0c(0x293),'nameId':'vmess-name','protocol':_0x45cb0c(0x285)},{'id':_0x45cb0c(0x230),'nameId':_0x45cb0c(0x217),'protocol':_0x45cb0c(0x25e)},{'id':_0x45cb0c(0x21c),'nameId':'trojan-name','protocol':_0x45cb0c(0x192)},{'id':_0x45cb0c(0x1a9),'nameId':_0x45cb0c(0x251),'protocol':'SS'}];_0x5b92ea['forEach'](_0x2251fa=>{const _0x72d164=_0x45cb0c,_0x3472e9=document[_0x72d164(0x1d7)](_0x2251fa['id']),_0x166d00=document[_0x72d164(0x1d7)](_0x2251fa['nameId']),_0x84394e=_0x3472e9['cloneNode'](!![]);_0x3472e9['parentNode'][_0x72d164(0x1ac)](_0x84394e,_0x3472e9),_0x84394e[_0x72d164(0x22b)](_0x72d164(0x1ee),function(){const _0xdde9db=_0x72d164,_0x2bc555=this['value']==='tls'?_0xdde9db(0x1cf):_0xdde9db(0x26e);_0x166d00['value']=_0x2be9a5+'\x20['+_0x2251fa[_0xdde9db(0x20d)]+'-'+_0x2bc555+']';});});const _0x36be48=document[_0x45cb0c(0x1d7)]('proxy-status-container'),_0x4c0b07=document['getElementById'](_0x45cb0c(0x1a1)),_0x5b6e0a=document[_0x45cb0c(0x1d7)]('proxy-status-active'),_0x2a9144=document['getElementById'](_0x45cb0c(0x232)),_0x4fbf41=document[_0x45cb0c(0x1d7)](_0x45cb0c(0x28a)),_0x4ab409=document[_0x45cb0c(0x1d7)]('proxy-latency');_0x36be48[_0x45cb0c(0x225)][_0x45cb0c(0x24c)]('hidden'),_0x4c0b07[_0x45cb0c(0x225)][_0x45cb0c(0x24c)](_0x45cb0c(0x1fb)),_0x5b6e0a['classList']['add'](_0x45cb0c(0x1fb)),_0x2a9144[_0x45cb0c(0x225)][_0x45cb0c(0x223)](_0x45cb0c(0x1fb)),_0x4fbf41[_0x45cb0c(0x225)][_0x45cb0c(0x223)](_0x45cb0c(0x1fb)),checkProxyStatus(selectedProxy);}function checkProxyStatus(_0x369ece){const _0x4d82c5=_0x443151,_0x299c51=performance['now'](),_0x368eed='https://tt.rohendimtq246.workers.dev/'+_0x369ece['ip']+':'+_0x369ece[_0x4d82c5(0x262)],_0x5407b1=document[_0x4d82c5(0x1d7)]('proxy-status-container'),_0x1a66a2=document['getElementById']('proxy-status-loading'),_0x40d3de=document[_0x4d82c5(0x1d7)](_0x4d82c5(0x227)),_0x459ae7=document[_0x4d82c5(0x1d7)](_0x4d82c5(0x232)),_0x4bf7f5=document['getElementById']('proxy-status-unknown'),_0x4d6469=document['getElementById'](_0x4d82c5(0x1a8));_0x5407b1[_0x4d82c5(0x225)]['remove'](_0x4d82c5(0x1fb)),_0x1a66a2['classList'][_0x4d82c5(0x24c)](_0x4d82c5(0x1fb)),_0x40d3de[_0x4d82c5(0x225)][_0x4d82c5(0x223)](_0x4d82c5(0x1fb)),_0x459ae7[_0x4d82c5(0x225)]['add'](_0x4d82c5(0x1fb)),_0x4bf7f5[_0x4d82c5(0x225)][_0x4d82c5(0x223)](_0x4d82c5(0x1fb)),fetch(_0x368eed)[_0x4d82c5(0x1c2)](_0x4575b5=>_0x4575b5[_0x4d82c5(0x267)]())[_0x4d82c5(0x1c2)](_0x11e784=>{const _0x545a7a=_0x4d82c5,_0x5a9b61=performance[_0x545a7a(0x24f)](),_0x4ed19b=Math[_0x545a7a(0x273)](_0x5a9b61-_0x299c51);_0x1a66a2[_0x545a7a(0x225)][_0x545a7a(0x223)]('hidden');const _0x45b15a=Array[_0x545a7a(0x1c8)](_0x11e784)?_0x11e784[0x0]:_0x11e784;_0x45b15a&&_0x45b15a[_0x545a7a(0x1c1)]===!![]?(_0x40d3de[_0x545a7a(0x225)][_0x545a7a(0x24c)](_0x545a7a(0x1fb)),_0x4d6469[_0x545a7a(0x1e1)]=_0x4ed19b+'ms'):_0x459ae7[_0x545a7a(0x225)][_0x545a7a(0x24c)](_0x545a7a(0x1fb));})[_0x4d82c5(0x1bf)](_0x137f19=>{const _0x5dd6be=_0x4d82c5;_0x1a66a2['classList'][_0x5dd6be(0x223)](_0x5dd6be(0x1fb)),_0x4bf7f5[_0x5dd6be(0x225)][_0x5dd6be(0x24c)](_0x5dd6be(0x1fb)),console[_0x5dd6be(0x27d)](_0x5dd6be(0x27f),_0x137f19);});}function showProxyListSection(){const _0x311ea0=_0x443151;proxyListSection[_0x311ea0(0x225)][_0x311ea0(0x24c)](_0x311ea0(0x1fb)),accountCreationSection['classList'][_0x311ea0(0x223)](_0x311ea0(0x1fb)),resultSection[_0x311ea0(0x225)][_0x311ea0(0x223)](_0x311ea0(0x1fb));}function showAccountCreationSection(){const _0x40a53f=_0x443151;proxyListSection[_0x40a53f(0x225)][_0x40a53f(0x223)](_0x40a53f(0x1fb)),accountCreationSection[_0x40a53f(0x225)][_0x40a53f(0x24c)](_0x40a53f(0x1fb)),resultSection[_0x40a53f(0x225)][_0x40a53f(0x223)](_0x40a53f(0x1fb));}function loadProxyList(_0x54af92){const _0x4e7447=_0x443151;loadingIndicator[_0x4e7447(0x225)][_0x4e7447(0x24c)](_0x4e7447(0x1fb)),proxyListContainer[_0x4e7447(0x1b7)]='',noProxiesMessage[_0x4e7447(0x225)][_0x4e7447(0x223)](_0x4e7447(0x1fb));const _0x8e8154=[async()=>{const _0xa7586a=_0x4e7447,_0x5984cc=await fetch(_0x54af92);if(!_0x5984cc['ok'])throw new Error(_0xa7586a(0x291));return await _0x5984cc['text']();},async()=>{const _0x11641c=_0x4e7447,_0x1f3141=_0x11641c(0x1dc)+_0x54af92,_0x49b6c0=await fetch(_0x1f3141);if(!_0x49b6c0['ok'])throw new Error('CORS\x20Anywhere\x20proxy\x20failed');return await _0x49b6c0[_0x11641c(0x215)]();},async()=>{const _0xa8f1a8=_0x4e7447,_0x3b85d7=_0xa8f1a8(0x1de)+encodeURIComponent(_0x54af92),_0x474601=await fetch(_0x3b85d7);if(!_0x474601['ok'])throw new Error(_0xa8f1a8(0x283));const _0x45b526=await _0x474601[_0xa8f1a8(0x267)]();return _0x45b526[_0xa8f1a8(0x18a)];},async()=>{const _0xa710a9=_0x4e7447,_0x474898=_0xa710a9(0x235)+_0x54af92,_0x2243c3=await fetch(_0x474898,{'headers':{'x-cors-api-key':_0xa710a9(0x27c)+Math[_0xa710a9(0x219)]()['toString'](0x24)[_0xa710a9(0x1e9)](0x2,0xc)}});if(!_0x2243c3['ok'])throw new Error(_0xa710a9(0x265));return await _0x2243c3[_0xa710a9(0x215)]();}];(async function _0x10b859(_0x44a5d2=0x0){const _0x64ba3=_0x4e7447;if(_0x44a5d2>=_0x8e8154['length']){console['error'](_0x64ba3(0x231)),loadingIndicator[_0x64ba3(0x225)]['add'](_0x64ba3(0x1fb)),noProxiesMessage['classList'][_0x64ba3(0x24c)](_0x64ba3(0x1fb)),displayFallbackProxyList();return;}try{const _0x120c48=await _0x8e8154[_0x44a5d2]();console['log'](_0x64ba3(0x23b),_0x120c48[_0x64ba3(0x1e9)](0x0,0xc8)+_0x64ba3(0x274)),processProxyData(_0x120c48),loadingIndicator[_0x64ba3(0x225)]['add'](_0x64ba3(0x1fb));}catch(_0xe43a01){console[_0x64ba3(0x27d)](_0x64ba3(0x22f)+_0x44a5d2+_0x64ba3(0x1c3),_0xe43a01),_0x10b859(_0x44a5d2+0x1);}}());}
+/**
+ * JavaScript for the link generator page
+ */
+// Declare QRCode variable
+const QRCode = window.QRCode
+
+// Global variables
+let proxyList = []
+let filteredProxyList = []
+let selectedProxy = null
+const defaultProxyUrl = "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt"
+const serverDomains = ["afrcloud.xyz", "afrcloud.site", "afrcloud.web.id", "afrcloud.my.id"]
+let selectedServerDomain = serverDomains[0] // Default to first domain
+const defaultUUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
+const itemsPerPage = 10
+let currentPage = 1
+const pathTemplate = "/Inconigto-Mode/{ip}-{port}"
+
+// Array of bug options for easy management
+const bugOptions = [
+  { value: "", label: "Default" },
+  { value: "cache.netflix.com", label: "cache.netflix.com" },
+  { value: "ava.game.naver.com", label: "ava.game.naver.com" },
+  { value: "graph.instagram.com", label: "graph.instagram.com" },
+  { value: "support.zoom.us", label: "support.zoom.us" },
+  { value: "zaintest.vuclip.com", label: "zaintest.vuclip.com" },
+  { value: "manual", label: "Type Manual" },
+]
+
+// DOM elements
+const proxyListSection = document.getElementById("proxy-list-section")
+const accountCreationSection = document.getElementById("account-creation-section")
+const resultSection = document.getElementById("result-section")
+const loadingIndicator = document.getElementById("loading-indicator")
+const proxyListContainer = document.getElementById("proxy-list-container")
+const noProxiesMessage = document.getElementById("no-proxies-message")
+const customUrlInput = document.getElementById("custom-url-input")
+const proxyUrlInput = document.getElementById("proxy-url")
+const paginationContainer = document.getElementById("pagination-container")
+const proxyCountInfo = document.getElementById("proxy-count-info")
+const searchInput = document.getElementById("search-input")
+
+// Function to populate bug select dropdowns
+function populateBugOptions() {
+  const bugSelects = [
+    document.getElementById("vmess-bug"),
+    document.getElementById("vless-bug"),
+    document.getElementById("trojan-bug"),
+    document.getElementById("ss-bug"),
+  ]
+  bugSelects.forEach((select) => {
+    if (select) {
+      // Clear existing options
+      select.innerHTML = ""
+      // Add options from the array
+      bugOptions.forEach((option) => {
+        const optionElement = document.createElement("option")
+        optionElement.value = option.value
+        optionElement.textContent = option.label
+        select.appendChild(optionElement)
+      })
+    }
+  })
+}
+
+// Initialize
+document.addEventListener("DOMContentLoaded", () => {
+  // Display fallback proxy list immediately to ensure something is visible
+  displayFallbackProxyList()
+  // Then try to load the actual proxy list
+  loadProxyList(defaultProxyUrl)
+
+  // Event listeners
+  document.getElementById("refresh-btn").addEventListener("click", () => {
+    loadProxyList(defaultProxyUrl)
+  })
+  document.getElementById("custom-url-btn").addEventListener("click", () => {
+    customUrlInput.classList.toggle("hidden")
+  })
+  document.getElementById("load-custom-url").addEventListener("click", () => {
+    const url = proxyUrlInput.value.trim()
+    if (url) {
+      loadProxyList(url)
+    }
+  })
+  document.getElementById("back-to-list").addEventListener("click", () => {
+    showProxyListSection()
+  })
+  document.getElementById("back-to-form").addEventListener("click", () => {
+    resultSection.classList.add("hidden")
+    accountCreationSection.classList.remove("hidden")
+  })
+  document.getElementById("create-new").addEventListener("click", () => {
+    resultSection.classList.add("hidden")
+    accountCreationSection.classList.remove("hidden")
+  })
+  document.getElementById("back-to-list-from-result").addEventListener("click", () => {
+    showProxyListSection()
+  })
+
+  // Search functionality
+  searchInput.addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase().trim()
+    if (searchTerm === "") {
+      filteredProxyList = [...proxyList]
+    } else {
+      filteredProxyList = proxyList.filter(
+        (proxy) =>
+          proxy.provider.toLowerCase().includes(searchTerm) || proxy.country.toLowerCase().includes(searchTerm),
+      )
+    }
+    currentPage = 1
+    renderProxyList()
+  })
+
+  // Protocol tabs
+  const protocolTabs = document.querySelectorAll(".tab-btn")
+  const protocolForms = document.querySelectorAll(".protocol-form")
+
+  protocolTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      protocolTabs.forEach((t) => {
+        t.classList.remove("active")
+      })
+      // Add active class to clicked tab
+      tab.classList.add("active")
+      // Hide all forms
+      protocolForms.forEach((form) => {
+        form.classList.add("hidden")
+      })
+      // Show the selected form
+      const targetId = tab.getAttribute("data-target")
+      document.getElementById(targetId).classList.remove("hidden")
+    })
+  })
+
+  // Populate server domain dropdowns
+  const serverDomainSelects = [
+    document.getElementById("vmess-server-domain"),
+    document.getElementById("vless-server-domain"),
+    document.getElementById("trojan-server-domain"),
+    document.getElementById("ss-server-domain"),
+  ]
+  serverDomainSelects.forEach((select) => {
+    if (select) {
+      // Clear existing options
+      select.innerHTML = ""
+      // Add options for each domain
+      serverDomains.forEach((domain) => {
+        const option = document.createElement("option")
+        option.value = domain
+        option.textContent = domain
+        select.appendChild(option)
+      })
+      // Add event listener to update selected domain
+      select.addEventListener("change", function () {
+        selectedServerDomain = this.value
+      })
+    }
+  })
+
+  // Populate bug options dropdowns
+  populateBugOptions()
+
+  // Form submissions
+  const forms = [
+    document.getElementById("vmess-account-form"),
+    document.getElementById("vless-account-form"),
+    document.getElementById("trojan-account-form"),
+    document.getElementById("ss-account-form"),
+  ]
+
+  // Custom Bug dan Wildcard functionality
+  const bugInputs = [
+    document.getElementById("vmess-bug"),
+    document.getElementById("vless-bug"),
+    document.getElementById("trojan-bug"),
+    document.getElementById("ss-bug"),
+  ]
+  const wildcardContainers = [
+    document.getElementById("vmess-wildcard-container"),
+    document.getElementById("vless-wildcard-container"),
+    document.getElementById("trojan-wildcard-container"),
+    document.getElementById("ss-wildcard-container"),
+  ]
+  const wildcardCheckboxes = [
+    document.getElementById("vmess-wildcard"),
+    document.getElementById("vless-wildcard"),
+    document.getElementById("trojan-wildcard"),
+    document.getElementById("ss-wildcard"),
+  ]
+
+  // Add event listeners to bug selects
+  bugInputs.forEach((select, index) => {
+    const manualContainerId = select.id.replace("-bug", "-manual-bug-container")
+    const manualContainer = document.getElementById(manualContainerId)
+    const manualInput = document.getElementById(select.id.replace("-bug", "-manual-bug"))
+    const wildcardCheckbox = wildcardCheckboxes[index]
+
+    select.addEventListener("change", function () {
+      if (this.value === "manual") {
+        manualContainer.classList.add("show")
+        wildcardContainers[index].classList.remove("show") // Hide wildcard container
+        wildcardCheckbox.checked = false // Uncheck the wildcard checkbox
+        wildcardCheckbox.disabled = true // Disable the wildcard checkbox
+      } else if (this.value !== "") {
+        manualContainer.classList.remove("show")
+        wildcardContainers[index].classList.add("show")
+        wildcardCheckbox.disabled = false // Enable the wildcard checkbox
+      } else {
+        manualContainer.classList.remove("show")
+        wildcardContainers[index].classList.remove("show")
+        wildcardCheckbox.checked = false
+        wildcardCheckbox.disabled = false // Reset the disabled state
+      }
+    })
+
+    if (manualInput) {
+      manualInput.addEventListener("input", () => {
+        // Don't show wildcard container for manual input
+        wildcardCheckbox.disabled = true
+      })
+    }
+  })
+
+  forms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault()
+      // Get form data
+      const formData = new FormData(form)
+      const formType = form.id.split("-")[0] // vmess, vless, trojan, or ss
+
+      // Get custom bug and wildcard values
+      let customBug = formData.get("bug") ? formData.get("bug").toString().trim() : ""
+      // If manual bug is selected, use the manual input value instead
+      if (customBug === "manual") {
+        const manualInputId = `${formType}-manual-bug`
+        const manualBugValue = document.getElementById(manualInputId).value.trim()
+        if (manualBugValue) {
+          formData.set("bug", manualBugValue)
+          // Update customBug with the manual value for server address
+          customBug = manualBugValue
+        } else {
+          formData.set("bug", "") // Reset to empty if manual field is empty
+          customBug = "" // Also update customBug variable
+        }
+      }
+      const useWildcard = formData.get("wildcard") === "on"
+
+      // Determine server, host, and SNI based on custom bug and wildcard
+      // Get the selected server domain from the form
+      const selectedDomain = formData.get("server-domain") || selectedServerDomain
+      let server = selectedDomain
+      let host = selectedDomain
+      let sni = selectedDomain
+
+      if (customBug) {
+        server = customBug
+        if (useWildcard) {
+          host = `${customBug}.${selectedDomain}`
+          sni = `${customBug}.${selectedDomain}`
+        }
+      }
+
+      // Generate connection URL based on protocol
+      let connectionUrl = ""
+      if (formType === "vmess") {
+        const security = formData.get("security")
+        // Set port based on TLS setting
+        const port = security === "tls" ? 443 : 80
+        const vmessConfig = {
+          v: "2",
+          ps: formData.get("name"),
+          add: server,
+          port: port,
+          id: formData.get("uuid"),
+          aid: "0",
+          net: "ws", // Always WebSocket
+          type: "none",
+          host: host,
+          path: formData.get("path"),
+          tls: security === "tls" ? "tls" : "",
+          sni: sni,
+          scy: "zero",
+        }
+        connectionUrl = "vmess://" + btoa(JSON.stringify(vmessConfig))
+      } else if (formType === "vless") {
+        const uuid = formData.get("uuid")
+        const path = encodeURIComponent(formData.get("path"))
+        const security = formData.get("security")
+        const encryption = "none"
+        const name = encodeURIComponent(formData.get("name"))
+        // Set port based on TLS setting
+        const port = security === "tls" ? 443 : 80
+        connectionUrl = `vless://${uuid}@${server}:${port}?encryption=${encryption}&security=${security}&type=ws&host=${host}&path=${path}&sni=${sni}#${name}`
+      } else if (formType === "trojan") {
+        const password = formData.get("password")
+        const path = encodeURIComponent(formData.get("path"))
+        const security = formData.get("security")
+        const name = encodeURIComponent(formData.get("name"))
+        // Set port based on TLS setting
+        const port = security === "tls" ? 443 : 80
+        connectionUrl = `trojan://${password}@${server}:${port}?security=${security}&type=ws&host=${host}&path=${path}&sni=${sni}#${name}`
+      } else if (formType === "ss") {
+        const password = formData.get("password")
+        const name = encodeURIComponent(formData.get("name"))
+        const path = encodeURIComponent(formData.get("path"))
+        const security = formData.get("security")
+        // Set port based on TLS setting
+        const port = security === "tls" ? 443 : 80
+        // Use fixed cipher: none for Shadowsocks
+        const method = "none"
+        // Base64 encode the method:password part
+        const userInfo = btoa(`${method}:${password}`)
+        // Create the new format SS URL with dynamic port
+        connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`
+      }
+
+      // Display the result
+      document.getElementById("connection-url").textContent = connectionUrl
+      // Generate QR code - Improved with multiple fallback methods
+      generateQRCode(connectionUrl)
+
+      // Show result section
+      accountCreationSection.classList.add("hidden")
+      resultSection.classList.remove("hidden")
+    })
+  })
+
+  // Copy URL button
+  document.getElementById("copy-url").addEventListener("click", function () {
+    const connectionUrl = document.getElementById("connection-url").textContent
+    navigator.clipboard.writeText(connectionUrl).then(() => {
+      this.innerHTML = '<i class="fas fa-check mr-1"></i> Copied!'
+      setTimeout(() => {
+        this.innerHTML = '<i class="far fa-copy mr-1"></i> Copy'
+      }, 2000)
+    })
+  })
+
+  // Download QR code button
+  document.getElementById("download-qr").addEventListener("click", () => {
+    downloadQRCode()
+  })
+})
+
+// Improved QR code generation with multiple fallback methods
+function generateQRCode(text) {
+  const qrcodeElement = document.getElementById("qrcode")
+  qrcodeElement.innerHTML = ""
+
+  // Try multiple methods to generate QR code
+  try {
+    // Method 1: Try to generate QR code using toCanvas
+    QRCode.toCanvas(
+      qrcodeElement,
+      text,
+      {
+        width: 200,
+        margin: 1,
+        color: {
+          dark: "#000000",
+          light: "#FFFFFF",
+        },
+      },
+      (error) => {
+        if (error) {
+          console.error("QR Code canvas error:", error)
+          // If canvas fails, try method 2
+          generateQRCodeFallback(text, qrcodeElement)
+        }
+      },
+    )
+  } catch (error) {
+    console.error("QR Code generation error:", error)
+    // If method 1 fails completely, try method 2
+    generateQRCodeFallback(text, qrcodeElement)
+  }
+}
+
+// Fallback QR code generation method
+function generateQRCodeFallback(text, container) {
+  try {
+    // Method 2: Try to generate QR code as SVG
+    QRCode.toString(
+      text,
+      {
+        type: "svg",
+        width: 200,
+        margin: 1,
+        color: {
+          dark: "#000000",
+          light: "#FFFFFF",
+        },
+      },
+      (error, svg) => {
+        if (error || !svg) {
+          console.error("QR Code SVG error:", error)
+          // If SVG fails, try method 3
+          generateQRCodeLastResort(text, container)
+        } else {
+          container.innerHTML = svg
+        }
+      },
+    )
+  } catch (error) {
+    console.error("QR Code SVG generation error:", error)
+    // If method 2 fails completely, try method 3
+    generateQRCodeLastResort(text, container)
+  }
+}
+
+// Last resort QR code generation method
+function generateQRCodeLastResort(text, container) {
+  try {
+    // Method 3: Try to generate QR code as data URL
+    const encodedText = encodeURIComponent(text)
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodedText}`
+    const img = document.createElement("img")
+    img.src = qrApiUrl
+    img.alt = "QR Code"
+    img.width = 200
+    img.height = 200
+    img.onerror = () => {
+      container.innerHTML = '<div class="text-center text-rose-500">Failed to generate QR code</div>'
+    }
+    container.innerHTML = ""
+    container.appendChild(img)
+  } catch (error) {
+    console.error("QR Code last resort error:", error)
+    container.innerHTML = '<div class="text-center text-rose-500">Failed to generate QR code</div>'
+  }
+}
+
+// Download QR code function
+function downloadQRCode() {
+  const qrcodeElement = document.getElementById("qrcode")
+  // Try to find canvas or img in the QR code container
+  const canvas = qrcodeElement.querySelector("canvas")
+  const img = qrcodeElement.querySelector("img")
+  const svg = qrcodeElement.querySelector("svg")
+
+  let imageUrl = null
+
+  if (canvas) {
+    // If canvas exists, convert it to data URL
+    try {
+      imageUrl = canvas.toDataURL("image/png")
+    } catch (e) {
+      console.error("Canvas to data URL error:", e)
+    }
+  } else if (img) {
+    // If img exists, use its src
+    imageUrl = img.src
+  } else if (svg) {
+    // If SVG exists, convert it to data URL
+    try {
+      const svgData = new XMLSerializer().serializeToString(svg)
+      const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" })
+      imageUrl = URL.createObjectURL(svgBlob)
+    } catch (e) {
+      console.error("SVG to data URL error:", e)
+    }
+  }
+
+  if (imageUrl) {
+    // Create a link and trigger download
+    const link = document.createElement("a")
+    link.href = imageUrl
+    link.download = "qrcode.png"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+
+    // Revoke object URL if it was created from a blob
+    if (imageUrl.startsWith("blob:")) {
+      URL.revokeObjectURL(imageUrl)
+    }
+  } else {
+    alert("Failed to download QR code. Please try again.")
+  }
+}
+
+// Function to display fallback proxy list
+function displayFallbackProxyList() {
+  // Add a fallback proxy list for immediate display
+  proxyList = [{ ip: "103.6.207.108", port: "8080", country: "ID", provider: "PT Pusat Media Indonesia" }]
+  filteredProxyList = [...proxyList]
+  renderProxyList()
+}
+
+// Process proxy list data
+function processProxyData(text) {
+  // Handle different line endings and remove empty lines
+  const lines = text.split(/\r?\n/).filter((line) => line.trim() !== "")
+  console.log(`Found ${lines.length} lines in proxy data`)
+
+  if (lines.length === 0) {
+    noProxiesMessage.classList.remove("hidden")
+    return // No data to process
+  }
+
+  // Try to determine the format of the data
+  let delimiter = "," // Default delimiter
+  // Check if the data uses tabs or other delimiters
+  const firstLine = lines[0]
+  if (firstLine.includes("\t")) {
+    delimiter = "\t"
+  } else if (firstLine.includes("|")) {
+    delimiter = "|"
+  } else if (firstLine.includes(";")) {
+    delimiter = ";"
+  }
+
+  // Parse proxy list with the detected delimiter
+  proxyList = lines
+    .map((line) => {
+      const parts = line.split(delimiter)
+      // Require at least IP and port
+      if (parts.length >= 2) {
+        return {
+          ip: parts[0].trim(),
+          port: parts[1].trim(),
+          country: parts.length >= 3 ? parts[2].trim() : "Unknown",
+          provider: parts.length >= 4 ? parts[3].trim() : "Unknown Provider",
+        }
+      }
+      return null
+    })
+    .filter((proxy) => proxy && proxy.ip && proxy.port)
+
+  console.log(`Processed ${proxyList.length} valid proxies`)
+
+  // If no valid proxies were found, show message and use fallback
+  if (proxyList.length === 0) {
+    noProxiesMessage.classList.remove("hidden")
+    displayFallbackProxyList()
+    return
+  }
+
+  // Reset pagination
+  currentPage = 1
+  filteredProxyList = [...proxyList]
+
+  // Render the proxy list
+  renderProxyList()
+}
+
+// Function to render the proxy list with pagination
+function renderProxyList() {
+  proxyListContainer.innerHTML = ""
+
+  if (filteredProxyList.length === 0) {
+    noProxiesMessage.classList.remove("hidden")
+    paginationContainer.innerHTML = ""
+    proxyCountInfo.textContent = ""
+    return
+  }
+
+  noProxiesMessage.classList.add("hidden")
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProxyList.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = Math.min(startIndex + itemsPerPage, filteredProxyList.length)
+
+  // Get current page items
+  const currentItems = filteredProxyList.slice(startIndex, endIndex)
+
+  // Render proxy cards
+  currentItems.forEach((proxy, index) => {
+    const actualIndex = startIndex + index
+    const card = document.createElement("div")
+    card.className = "proxy-card group"
+
+    // Create the main content of the card with forced row layout
+    const cardContent = document.createElement("div")
+    cardContent.className = "flex justify-between items-center"
+    cardContent.style.display = "flex" // Force flex display
+    cardContent.style.flexDirection = "row" // Force row direction
+
+    // Left side with proxy info
+    const infoDiv = document.createElement("div")
+    infoDiv.className = "flex-1 min-w-0 pr-2" // min-w-0 helps with text truncation
+
+    // Provider and status badge container
+    const providerContainer = document.createElement("div")
+    providerContainer.className = "flex-items-center"
+    providerContainer.style.display = "flex"
+    providerContainer.style.alignItems = "center"
+    providerContainer.style.width = "100%"
+    providerContainer.style.position = "relative"
+
+    // Provider name with truncation
+    const providerName = document.createElement("div")
+    providerName.className = "font-medium text-sm truncate group-hover:text-indigo-300 transition-colors"
+    providerName.style.maxWidth = "calc(100% - 20px)" // Leave space for the status indicator
+    providerName.textContent = proxy.provider
+    providerContainer.appendChild(providerName)
+
+    // Status badge (initially loading)
+    const statusBadge = document.createElement("span")
+    statusBadge.className = "inline-block w-3 h-3 rounded-full bg-gray-500 ml-2 pulse-animation"
+    statusBadge.style.flexShrink = "0"
+    statusBadge.style.position = "relative"
+    statusBadge.innerHTML = ""
+    statusBadge.title = "Memeriksa..."
+    statusBadge.id = `proxy-status-${actualIndex}`
+    providerContainer.appendChild(statusBadge)
+    infoDiv.appendChild(providerContainer)
+
+    // Country and IP:Port info with truncation
+    const detailsDiv = document.createElement("div")
+    detailsDiv.className = "text-xs text-gray-400 mt-1 truncate group-hover:text-gray-300 transition-colors"
+    detailsDiv.style.whiteSpace = "nowrap"
+    detailsDiv.style.overflow = "hidden"
+    detailsDiv.style.textOverflow = "ellipsis"
+    detailsDiv.textContent = `${proxy.country} | ${proxy.ip}:${proxy.port}`
+    infoDiv.appendChild(detailsDiv)
+
+    // Right side with button - fixed width to prevent wrapping
+    const buttonDiv = document.createElement("div")
+    buttonDiv.className = "flex-shrink-0"
+    buttonDiv.style.flexShrink = "0" // Prevent shrinking
+    const button = document.createElement("button")
+    button.className =
+      "create-account-btn primary-btn py-2 px-4 rounded-lg text-xs group-hover:scale-105 transition-transform"
+    button.style.whiteSpace = "nowrap"
+    button.style.minWidth = "60px"
+    button.setAttribute("data-index", actualIndex)
+    button.innerHTML = "Create"
+    buttonDiv.appendChild(button)
+
+    // Assemble the card
+    cardContent.appendChild(infoDiv)
+    cardContent.appendChild(buttonDiv)
+    card.appendChild(cardContent)
+    proxyListContainer.appendChild(card)
+
+    // Check proxy status for this card
+    // --- PERBAIKAN: Gunakan CORS proxy untuk pemeriksaan status ---
+    const originalStatusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
+    const corsStatusURL = `https://api.allorigins.win/get?url=${encodeURIComponent(originalStatusURL)}`
+
+    fetch(corsStatusURL)
+      .then((response) => response.json())
+      .then((data) => {
+        // AllOrigins wraps the response in a 'contents' property
+        const proxyData = JSON.parse(data.contents)
+        // Handle the new format where proxyData is an array
+        const actualProxyData = Array.isArray(proxyData) ? proxyData[0] : proxyData
+
+        if (actualProxyData && actualProxyData.proxyip === true) {
+          statusBadge.className = "inline-block w-3 h-3 rounded-full bg-emerald-500 ml-2"
+          statusBadge.innerHTML = ""
+          statusBadge.title = "Aktif"
+        } else {
+          statusBadge.className = "inline-block w-3 h-3 rounded-full bg-rose-500 ml-2"
+          statusBadge.innerHTML = ""
+          statusBadge.title = "Mati"
+        }
+      })
+      .catch((error) => {
+        statusBadge.className = "inline-block w-3 h-3 rounded-full bg-amber-500 ml-2"
+        statusBadge.innerHTML = ""
+        statusBadge.title = "Tidak diketahui"
+        console.error("Fetch error for proxy status in list:", error) // Log lebih spesifik
+      })
+  })
+
+  // Add event listeners to create account buttons
+  document.querySelectorAll(".create-account-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const index = Number.parseInt(this.getAttribute("data-index"))
+      selectProxy(index)
+      showAccountCreationSection()
+    })
+  })
+
+  // Render pagination controls
+  renderPagination(totalPages)
+
+  // Update proxy count info
+  proxyCountInfo.textContent = `Showing ${startIndex + 1}-${endIndex} of ${filteredProxyList.length} proxies`
+}
+
+// Function to check proxy status in the list (this function is not used in renderProxyList anymore, but kept for consistency)
+function checkProxyStatusInList(proxy, statusBadge) {
+  // --- PERBAIKAN: Gunakan CORS proxy untuk pemeriksaan status ---
+  const originalStatusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
+  const corsStatusURL = `https://api.allorigins.win/get?url=${encodeURIComponent(originalStatusURL)}`
+
+  fetch(corsStatusURL)
+    .then((response) => response.json())
+    .then((data) => {
+      // AllOrigins wraps the response in a 'contents' property
+      const proxyData = JSON.parse(data.contents)
+      // Handle the new format where proxyData is an array
+      const actualProxyData = Array.isArray(proxyData) ? proxyData[0] : proxyData
+
+      if (actualProxyData && actualProxyData.proxyip === true) {
+        statusBadge.className = "inline-block w-3 h-3 rounded-full bg-emerald-500 ml-2"
+        statusBadge.innerHTML = ""
+        statusBadge.title = "Aktif"
+      } else {
+        statusBadge.className = "inline-block w-3 h-3 rounded-full bg-rose-500 ml-2"
+        statusBadge.innerHTML = ""
+        statusBadge.title = "Mati"
+      }
+    })
+    .catch((error) => {
+      statusBadge.className = "inline-block w-3 h-3 rounded-full bg-amber-500 ml-2"
+      statusBadge.innerHTML = ""
+      statusBadge.title = "Tidak diketahui"
+      console.error("Fetch error for proxy status in list (checkProxyStatusInList):", error)
+    })
+}
+
+// Function to render pagination controls
+function renderPagination(totalPages) {
+  paginationContainer.innerHTML = ""
+  if (totalPages <= 1) return
+
+  // Previous button
+  const prevBtn = document.createElement("button")
+  prevBtn.className = `pagination-btn ${currentPage === 1 ? "disabled" : ""}`
+  prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>'
+  prevBtn.disabled = currentPage === 1
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--
+      renderProxyList()
+    }
+  })
+  paginationContainer.appendChild(prevBtn)
+
+  // Page numbers
+  const maxVisiblePages = window.innerWidth < 640 ? 3 : 5
+  let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2))
+  const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
+
+  // Adjust start page if we're near the end
+  if (endPage - startPage + 1 < maxVisiblePages) {
+    startPage = Math.max(1, endPage - maxVisiblePages + 1)
+  }
+
+  // First page button if not visible
+  if (startPage > 1) {
+    const firstPageBtn = document.createElement("button")
+    firstPageBtn.className = "pagination-btn"
+    firstPageBtn.textContent = "1"
+    firstPageBtn.addEventListener("click", () => {
+      currentPage = 1
+      renderProxyList()
+    })
+    paginationContainer.appendChild(firstPageBtn)
+
+    // Ellipsis if needed
+    if (startPage > 2) {
+      const ellipsis = document.createElement("span")
+      ellipsis.className = "px-1 text-gray-400"
+      ellipsis.textContent = "..."
+      paginationContainer.appendChild(ellipsis)
+    }
+  }
+
+  // Page buttons
+  for (let i = startPage; i <= endPage; i++) {
+    const pageBtn = document.createElement("button")
+    pageBtn.className = `pagination-btn ${i === currentPage ? "active" : ""}`
+    pageBtn.textContent = i.toString()
+    pageBtn.addEventListener("click", () => {
+      currentPage = i
+      renderProxyList()
+    })
+    paginationContainer.appendChild(pageBtn)
+  }
+
+  // Last page button if not visible
+  if (endPage < totalPages) {
+    // Ellipsis if needed
+    if (endPage < totalPages - 1) {
+      const ellipsis = document.createElement("span")
+      ellipsis.className = "px-1 text-gray-400"
+      ellipsis.textContent = "..."
+      paginationContainer.appendChild(ellipsis)
+    }
+    const lastPageBtn = document.createElement("button")
+    lastPageBtn.className = "pagination-btn"
+    lastPageBtn.textContent = totalPages.toString()
+    lastPageBtn.addEventListener("click", () => {
+      currentPage = totalPages
+      renderProxyList()
+    })
+    paginationContainer.appendChild(lastPageBtn)
+  }
+
+  // Next button
+  const nextBtn = document.createElement("button")
+  nextBtn.className = `pagination-btn ${currentPage === totalPages ? "disabled" : ""}`
+  nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>'
+  nextBtn.disabled = currentPage === totalPages
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      currentPage++
+      renderProxyList()
+    }
+  })
+  paginationContainer.appendChild(nextBtn)
+}
+
+// Function to select a proxy
+async function selectProxy(index) {
+  selectedProxy = filteredProxyList[index]
+
+  // Update selected proxy info
+  document.getElementById("selected-ip").textContent = selectedProxy.ip
+  document.getElementById("selected-port").textContent = selectedProxy.port
+  document.getElementById("selected-country").textContent = selectedProxy.country
+  document.getElementById("selected-provider").textContent = selectedProxy.provider
+
+  // Update form fields
+  const baseAccountName = `${selectedProxy.country} - ${selectedProxy.provider}`
+  const path = pathTemplate.replace("{ip}", selectedProxy.ip).replace("{port}", selectedProxy.port)
+
+  // Set the path values
+  document.getElementById("vmess-path").value = path
+  document.getElementById("vless-path").value = path
+  document.getElementById("trojan-path").value = path
+  document.getElementById("ss-path").value = path
+
+  // Set initial account names with protocol and TLS info
+  const vmessSecurity = document.getElementById("vmess-security").value
+  const vlessSecurity = document.getElementById("vless-security").value
+  const trojanSecurity = document.getElementById("trojan-security").value
+  const ssSecurity = document.getElementById("ss-security").value
+
+  document.getElementById("vmess-name").value = `${baseAccountName} [VMess-${vmessSecurity === "tls" ? "TLS" : "NTLS"}]`
+  document.getElementById("vless-name").value = `${baseAccountName} [VLESS-${vlessSecurity === "tls" ? "TLS" : "NTLS"}]`
+  document.getElementById("trojan-name").value =
+    `${baseAccountName} [Trojan-${trojanSecurity === "tls" ? "TLS" : "NTLS"}]`
+  document.getElementById("ss-name").value = `${baseAccountName} [SS-${ssSecurity === "tls" ? "TLS" : "NTLS"}]`
+
+  // Add event listeners to update account names when security option changes
+  const securitySelects = [
+    { id: "vmess-security", nameId: "vmess-name", protocol: "VMess" },
+    { id: "vless-security", nameId: "vless-name", protocol: "VLESS" },
+    { id: "trojan-security", nameId: "trojan-name", protocol: "Trojan" },
+    { id: "ss-security", nameId: "ss-name", protocol: "SS" },
+  ]
+  securitySelects.forEach((item) => {
+    const select = document.getElementById(item.id)
+    const nameInput = document.getElementById(item.nameId)
+
+    // Remove any existing event listeners (to prevent duplicates)
+    const newSelect = select.cloneNode(true)
+    select.parentNode.replaceChild(newSelect, select)
+
+    // Add new event listener
+    newSelect.addEventListener("change", function () {
+      const tlsType = this.value === "tls" ? "TLS" : "NTLS"
+      nameInput.value = `${baseAccountName} [${item.protocol}-${tlsType}]`
+    })
+  })
+
+  // Check proxy status in the account creation section
+  const statusContainer = document.getElementById("proxy-status-container")
+  const statusLoading = document.getElementById("proxy-status-loading")
+  const statusActive = document.getElementById("proxy-status-active")
+  const statusDead = document.getElementById("proxy-status-dead")
+  const statusUnknown = document.getElementById("proxy-status-unknown")
+  const latencyElement = document.getElementById("proxy-latency")
+
+  // Show status container and loading state
+  statusContainer.classList.remove("hidden")
+  statusLoading.classList.remove("hidden")
+  statusActive.classList.add("hidden")
+  statusDead.classList.add("hidden")
+  statusUnknown.classList.add("hidden")
+
+  checkProxyStatus(selectedProxy)
+}
+
+// Function to check proxy status in the account creation section
+function checkProxyStatus(proxy) {
+  const startTime = performance.now()
+  // --- PERBAIKAN: Gunakan CORS proxy untuk pemeriksaan status ---
+  const originalStatusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
+  const corsStatusURL = `https://api.allorigins.win/get?url=${encodeURIComponent(originalStatusURL)}`
+
+  const statusContainer = document.getElementById("proxy-status-container")
+  const statusLoading = document.getElementById("proxy-status-loading")
+  const statusActive = document.getElementById("proxy-status-active")
+  const statusDead = document.getElementById("proxy-status-dead")
+  const statusUnknown = document.getElementById("proxy-status-unknown")
+  const latencyElement = document.getElementById("proxy-latency")
+
+  // Show status container and loading state
+  statusContainer.classList.remove("hidden")
+  statusLoading.classList.remove("hidden")
+  statusActive.classList.add("hidden")
+  statusDead.classList.add("hidden")
+  statusUnknown.classList.add("hidden")
+
+  fetch(corsStatusURL)
+    .then((response) => response.json())
+    .then((data) => {
+      const endTime = performance.now()
+      const latency = Math.floor(endTime - startTime)
+
+      // Hide loading state
+      statusLoading.classList.add("hidden")
+
+      // AllOrigins wraps the response in a 'contents' property
+      const proxyData = JSON.parse(data.contents)
+      // Handle the new format where proxyData is an array
+      const actualProxyData = Array.isArray(proxyData) ? proxyData[0] : proxyData
+
+      if (actualProxyData && actualProxyData.proxyip === true) {
+        statusActive.classList.remove("hidden")
+        latencyElement.textContent = `${latency}ms`
+      } else {
+        statusDead.classList.remove("hidden")
+      }
+    })
+    .catch((error) => {
+      // Hide loading state
+      statusLoading.classList.add("hidden")
+      statusUnknown.classList.remove("hidden")
+      console.error("Fetch error for proxy status in account creation:", error) // Log lebih spesifik
+    })
+}
+
+// Function to show proxy list section
+function showProxyListSection() {
+  proxyListSection.classList.remove("hidden")
+  accountCreationSection.classList.add("hidden")
+  resultSection.classList.add("hidden")
+}
+
+// Function to show account creation section
+function showAccountCreationSection() {
+  proxyListSection.classList.add("hidden")
+  accountCreationSection.classList.remove("hidden")
+  resultSection.classList.add("hidden")
+}
+
+// Update the loadProxyList function to better handle GitHub data and CORS issues
+function loadProxyList(url) {
+  // Show loading indicator
+  loadingIndicator.classList.remove("hidden")
+  proxyListContainer.innerHTML = ""
+  noProxiesMessage.classList.add("hidden")
+
+  // Try multiple CORS proxies in sequence
+  const corsProxies = [
+    // Direct fetch (no proxy)
+    async () => {
+      const response = await fetch(url)
+      if (!response.ok) throw new Error("Direct fetch failed")
+      return await response.text()
+    },
+    // CORS Anywhere proxy
+    async () => {
+      const corsUrl = `https://cors-anywhere.herokuapp.com/${url}`
+      const response = await fetch(corsUrl)
+      if (!response.ok) throw new Error("CORS Anywhere proxy failed")
+      return await response.text()
+    },
+    // AllOrigins proxy
+    async () => {
+      const corsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
+      const response = await fetch(corsUrl)
+      if (!response.ok) throw new Error("AllOrigins proxy failed")
+      const data = await response.json()
+      return data.contents
+    },
+    // CORS.sh proxy
+    async () => {
+      const corsUrl = `https://cors.sh/${url}`
+      const response = await fetch(corsUrl, {
+        headers: {
+          "x-cors-api-key": "temp_" + Math.random().toString(36).substring(2, 12),
+        },
+      })
+      if (!response.ok) throw new Error("CORS.sh proxy failed")
+      return await response.text()
+    },
+  ]
+
+  // Try each proxy in sequence
+  ;(async function tryProxies(index = 0) {
+    if (index >= corsProxies.length) {
+      console.error("All proxies failed")
+      loadingIndicator.classList.add("hidden")
+      noProxiesMessage.classList.remove("hidden")
+      // Fall back to sample data
+      displayFallbackProxyList()
+      return
+    }
+
+    try {
+      const text = await corsProxies[index]()
+      console.log("Fetched data:", text.substring(0, 200) + "...") // Debug log (truncated)
+      processProxyData(text)
+      loadingIndicator.classList.add("hidden")
+    } catch (error) {
+      console.error(`Proxy ${index} failed:`, error)
+      // Try next proxy
+      tryProxies(index + 1)
+    }
+  })()
+}
