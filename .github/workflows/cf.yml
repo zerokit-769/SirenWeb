@@ -17,19 +17,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install wasm-opt
+      - name: Install Rust and worker-build
         run: |
-          sudo apt update
-          sudo apt install -y binaryen
+          rustup update
+          rustup target add wasm32-unknown-unknown
+          cargo install -q worker-build
 
-      - name: Build project
-        run: |
-          cargo build --release
-          wasm-bindgen target/wasm32-unknown-unknown/release/siren.wasm --out-dir pkg --target web
-
-      - name: Optimize wasm with bulk memory enabled
-        run: |
-          wasm-opt -O --enable-bulk-memory -o ./pkg/siren_bg_opt.wasm ./pkg/siren_bg.wasm
+      - name: Build with worker-build
+        run: worker-build --release
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
