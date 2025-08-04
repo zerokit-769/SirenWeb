@@ -26,7 +26,6 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
     let main_page_url = env.var("MAIN_PAGE_URL").map(|x| x.to_string()).unwrap();
     let sub_page_url = env.var("SUB_PAGE_URL").map(|x| x.to_string()).unwrap();
     let link_page_url = env.var("LINK_PAGE_URL").map(|x| x.to_string()).unwrap();
-    let converter_page_url = env.var("CONVERTER_PAGE_URL").map(|x| x.to_string()).unwrap();
 
     let config = Config { 
     uuid, 
@@ -35,7 +34,6 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
     main_page_url, 
     sub_page_url,
     link_page_url,
-    converter_page_url,
 };
 
 
@@ -54,7 +52,6 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
         .on_async("/", fe)
         .on_async("/sub", sub)
         .on_async("/link", link)
-        .on_async("/converter", converter)
         .on_async("/:proxyip", tunnel)
         .on_async("/Inconigto-Mode/:proxyip", tunnel)
         .run(req, env)
@@ -143,10 +140,6 @@ async fn sub(_: Request, cx: RouteContext<Config>) -> Result<Response> {
 
 async fn link(_: Request, cx: RouteContext<Config>) -> Result<Response> {
     get_response_from_url(cx.data.link_page_url).await
-}
-
-async fn converter(_: Request, cx: RouteContext<Config>) -> Result<Response> {
-    get_response_from_url(cx.data.converter_page_url).await
 }
 
 async fn tunnel(req: Request, mut cx: RouteContext<Config>) -> Result<Response> {
