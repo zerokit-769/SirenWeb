@@ -29,15 +29,15 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
     let converter_page_url = env.var("CONVERTER_PAGE_URL").map(|x| x.to_string()).unwrap();
 
     let config = Config { 
-        uuid, 
-        host: host.clone(), 
-        proxy_addr: host, 
-        proxy_port: 443, 
-        main_page_url, 
-        sub_page_url,
-        link_page_url,
-        converter_page_url,
-    };
+    uuid, 
+    proxy_addr: host,
+    proxy_port: 443, 
+    main_page_url, 
+    sub_page_url,
+    link_page_url,
+    converter_page_url,
+};
+
 
     let url = req.url()?;
     let path = url.path();
