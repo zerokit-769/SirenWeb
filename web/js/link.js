@@ -1,6 +1,7 @@
 /**
  * JavaScript for the link generator page
  */
+
 // Declare QRCode variable
 const QRCode = window.QRCode
 
@@ -9,23 +10,35 @@ let proxyList = []
 let filteredProxyList = []
 let selectedProxy = null
 const defaultProxyUrl = "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt"
-const serverDomains = ["stbwrt.web.id"]
+
+const serverDomains = ["stbwrt.biz.id"]
 let selectedServerDomain = serverDomains[0] // Default to first domain
 const defaultUUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
 const itemsPerPage = 10
 let currentPage = 1
+
 const pathTemplate = "/Inconigto-Mode/{ip}-{port}"
 
 // Array of bug options for easy management
 const bugOptions = [
   { value: "", label: "Default" },
-  { value: "cache.netflix.com", label: "cache.netflix.com" },
-  { value: "ava.game.naver.com", label: "ava.game.naver.com" },
-  { value: "graph.instagram.com", label: "graph.instagram.com" },
-  { value: "support.zoom.us", label: "support.zoom.us" },
-  { value: "zaintest.vuclip.com", label: "zaintest.vuclip.com" },
-  { value: "manual", label: "Type Manual" },
-]
+  { value: "ava.game.naver.com", label: "WLG" },
+  { value: "df.game.naver.com", label: "WLG" },
+  { value: "quiz.int.vidio.com", label: "VIDIO" },
+  { value: "gateway.instagram.com", label: "IG" },
+  { value: "graph.instagram.com", label: "IG" },
+  { value: "instagram.com", label: "IG" },
+  { value: "help.viu.com", label: "VIU" },
+  { value: "zaintest.vuclip.com", label: "VIU" },
+  { value: "cache.netflix.com", label: "NETFLIX" },
+  { value: "support.zoom.us", label: "ZOOM" },
+  { value: "graph.facebook.com", label: "FACEBOOK" },
+  { value: "facebook.com", label: "FACEBOOK" },
+  { value: "dogseechew.com", label: "TIKTOK" },
+  { value: "mssdk24-normal-useast2a.tiktokv.com", label: "TIKTOK" },
+  { value: "manual", label: "Manual Non-Wildcard" },
+];
+
 
 // DOM elements
 const proxyListSection = document.getElementById("proxy-list-section")
@@ -48,10 +61,12 @@ function populateBugOptions() {
     document.getElementById("trojan-bug"),
     document.getElementById("ss-bug"),
   ]
+
   bugSelects.forEach((select) => {
     if (select) {
       // Clear existing options
       select.innerHTML = ""
+
       // Add options from the array
       bugOptions.forEach((option) => {
         const optionElement = document.createElement("option")
@@ -67,6 +82,7 @@ function populateBugOptions() {
 document.addEventListener("DOMContentLoaded", () => {
   // Display fallback proxy list immediately to ensure something is visible
   displayFallbackProxyList()
+
   // Then try to load the actual proxy list
   loadProxyList(defaultProxyUrl)
 
@@ -74,26 +90,32 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("refresh-btn").addEventListener("click", () => {
     loadProxyList(defaultProxyUrl)
   })
+
   document.getElementById("custom-url-btn").addEventListener("click", () => {
     customUrlInput.classList.toggle("hidden")
   })
+
   document.getElementById("load-custom-url").addEventListener("click", () => {
     const url = proxyUrlInput.value.trim()
     if (url) {
       loadProxyList(url)
     }
   })
+
   document.getElementById("back-to-list").addEventListener("click", () => {
     showProxyListSection()
   })
+
   document.getElementById("back-to-form").addEventListener("click", () => {
     resultSection.classList.add("hidden")
     accountCreationSection.classList.remove("hidden")
   })
+
   document.getElementById("create-new").addEventListener("click", () => {
     resultSection.classList.add("hidden")
     accountCreationSection.classList.remove("hidden")
   })
+
   document.getElementById("back-to-list-from-result").addEventListener("click", () => {
     showProxyListSection()
   })
@@ -101,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Search functionality
   searchInput.addEventListener("input", function () {
     const searchTerm = this.value.toLowerCase().trim()
+
     if (searchTerm === "") {
       filteredProxyList = [...proxyList]
     } else {
@@ -109,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
           proxy.provider.toLowerCase().includes(searchTerm) || proxy.country.toLowerCase().includes(searchTerm),
       )
     }
+
     currentPage = 1
     renderProxyList()
   })
@@ -123,12 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
       protocolTabs.forEach((t) => {
         t.classList.remove("active")
       })
+
       // Add active class to clicked tab
       tab.classList.add("active")
+
       // Hide all forms
       protocolForms.forEach((form) => {
         form.classList.add("hidden")
       })
+
       // Show the selected form
       const targetId = tab.getAttribute("data-target")
       document.getElementById(targetId).classList.remove("hidden")
@@ -142,10 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("trojan-server-domain"),
     document.getElementById("ss-server-domain"),
   ]
+
   serverDomainSelects.forEach((select) => {
     if (select) {
       // Clear existing options
       select.innerHTML = ""
+
       // Add options for each domain
       serverDomains.forEach((domain) => {
         const option = document.createElement("option")
@@ -153,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         option.textContent = domain
         select.appendChild(option)
       })
+
       // Add event listener to update selected domain
       select.addEventListener("change", function () {
         selectedServerDomain = this.value
@@ -178,12 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("trojan-bug"),
     document.getElementById("ss-bug"),
   ]
+
   const wildcardContainers = [
     document.getElementById("vmess-wildcard-container"),
     document.getElementById("vless-wildcard-container"),
     document.getElementById("trojan-wildcard-container"),
     document.getElementById("ss-wildcard-container"),
   ]
+
   const wildcardCheckboxes = [
     document.getElementById("vmess-wildcard"),
     document.getElementById("vless-wildcard"),
@@ -227,12 +259,14 @@ document.addEventListener("DOMContentLoaded", () => {
   forms.forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault()
+
       // Get form data
       const formData = new FormData(form)
       const formType = form.id.split("-")[0] // vmess, vless, trojan, or ss
 
       // Get custom bug and wildcard values
       let customBug = formData.get("bug") ? formData.get("bug").toString().trim() : ""
+
       // If manual bug is selected, use the manual input value instead
       if (customBug === "manual") {
         const manualInputId = `${formType}-manual-bug`
@@ -246,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
           customBug = "" // Also update customBug variable
         }
       }
+
       const useWildcard = formData.get("wildcard") === "on"
 
       // Determine server, host, and SNI based on custom bug and wildcard
@@ -265,10 +300,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Generate connection URL based on protocol
       let connectionUrl = ""
+
       if (formType === "vmess") {
         const security = formData.get("security")
         // Set port based on TLS setting
         const port = security === "tls" ? 443 : 80
+
         const vmessConfig = {
           v: "2",
           ps: formData.get("name"),
@@ -284,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
           sni: sni,
           scy: "zero",
         }
+
         connectionUrl = "vmess://" + btoa(JSON.stringify(vmessConfig))
       } else if (formType === "vless") {
         const uuid = formData.get("uuid")
@@ -293,6 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = encodeURIComponent(formData.get("name"))
         // Set port based on TLS setting
         const port = security === "tls" ? 443 : 80
+
         connectionUrl = `vless://${uuid}@${server}:${port}?encryption=${encryption}&security=${security}&type=ws&host=${host}&path=${path}&sni=${sni}#${name}`
       } else if (formType === "trojan") {
         const password = formData.get("password")
@@ -301,24 +340,30 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = encodeURIComponent(formData.get("name"))
         // Set port based on TLS setting
         const port = security === "tls" ? 443 : 80
+
         connectionUrl = `trojan://${password}@${server}:${port}?security=${security}&type=ws&host=${host}&path=${path}&sni=${sni}#${name}`
       } else if (formType === "ss") {
         const password = formData.get("password")
         const name = encodeURIComponent(formData.get("name"))
         const path = encodeURIComponent(formData.get("path"))
         const security = formData.get("security")
+
         // Set port based on TLS setting
         const port = security === "tls" ? 443 : 80
+
         // Use fixed cipher: none for Shadowsocks
         const method = "none"
+
         // Base64 encode the method:password part
         const userInfo = btoa(`${method}:${password}`)
+
         // Create the new format SS URL with dynamic port
         connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`
       }
 
       // Display the result
       document.getElementById("connection-url").textContent = connectionUrl
+
       // Generate QR code - Improved with multiple fallback methods
       generateQRCode(connectionUrl)
 
@@ -417,6 +462,7 @@ function generateQRCodeLastResort(text, container) {
     // Method 3: Try to generate QR code as data URL
     const encodedText = encodeURIComponent(text)
     const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodedText}`
+
     const img = document.createElement("img")
     img.src = qrApiUrl
     img.alt = "QR Code"
@@ -425,6 +471,7 @@ function generateQRCodeLastResort(text, container) {
     img.onerror = () => {
       container.innerHTML = '<div class="text-center text-rose-500">Failed to generate QR code</div>'
     }
+
     container.innerHTML = ""
     container.appendChild(img)
   } catch (error) {
@@ -436,6 +483,7 @@ function generateQRCodeLastResort(text, container) {
 // Download QR code function
 function downloadQRCode() {
   const qrcodeElement = document.getElementById("qrcode")
+
   // Try to find canvas or img in the QR code container
   const canvas = qrcodeElement.querySelector("canvas")
   const img = qrcodeElement.querySelector("img")
@@ -486,6 +534,7 @@ function downloadQRCode() {
 function displayFallbackProxyList() {
   // Add a fallback proxy list for immediate display
   proxyList = [{ ip: "103.6.207.108", port: "8080", country: "ID", provider: "PT Pusat Media Indonesia" }]
+
   filteredProxyList = [...proxyList]
   renderProxyList()
 }
@@ -503,6 +552,7 @@ function processProxyData(text) {
 
   // Try to determine the format of the data
   let delimiter = "," // Default delimiter
+
   // Check if the data uses tabs or other delimiters
   const firstLine = lines[0]
   if (firstLine.includes("\t")) {
@@ -517,6 +567,7 @@ function processProxyData(text) {
   proxyList = lines
     .map((line) => {
       const parts = line.split(delimiter)
+
       // Require at least IP and port
       if (parts.length >= 2) {
         return {
@@ -608,6 +659,7 @@ function renderProxyList() {
     statusBadge.title = "Memeriksa..."
     statusBadge.id = `proxy-status-${actualIndex}`
     providerContainer.appendChild(statusBadge)
+
     infoDiv.appendChild(providerContainer)
 
     // Country and IP:Port info with truncation
@@ -623,6 +675,7 @@ function renderProxyList() {
     const buttonDiv = document.createElement("div")
     buttonDiv.className = "flex-shrink-0"
     buttonDiv.style.flexShrink = "0" // Prevent shrinking
+
     const button = document.createElement("button")
     button.className =
       "create-account-btn primary-btn py-2 px-4 rounded-lg text-xs group-hover:scale-105 transition-transform"
@@ -636,22 +689,19 @@ function renderProxyList() {
     cardContent.appendChild(infoDiv)
     cardContent.appendChild(buttonDiv)
     card.appendChild(cardContent)
+
     proxyListContainer.appendChild(card)
 
     // Check proxy status for this card
-    // --- PERBAIKAN: Gunakan CORS proxy untuk pemeriksaan status ---
-    const originalStatusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
-    const corsStatusURL = `https://api.allorigins.win/get?url=${encodeURIComponent(originalStatusURL)}`
+    const statusURL = `https://afrcloud.dpdns.org/${proxy.ip}:${proxy.port}`
 
-    fetch(corsStatusURL)
+    fetch(statusURL)
       .then((response) => response.json())
       .then((data) => {
-        // AllOrigins wraps the response in a 'contents' property
-        const proxyData = JSON.parse(data.contents)
-        // Handle the new format where proxyData is an array
-        const actualProxyData = Array.isArray(proxyData) ? proxyData[0] : proxyData
+        // Handle the new format where data is an array
+        const proxyData = Array.isArray(data) ? data[0] : data
 
-        if (actualProxyData && actualProxyData.proxyip === true) {
+        if (proxyData && proxyData.proxyip === true) {
           statusBadge.className = "inline-block w-3 h-3 rounded-full bg-emerald-500 ml-2"
           statusBadge.innerHTML = ""
           statusBadge.title = "Aktif"
@@ -665,7 +715,7 @@ function renderProxyList() {
         statusBadge.className = "inline-block w-3 h-3 rounded-full bg-amber-500 ml-2"
         statusBadge.innerHTML = ""
         statusBadge.title = "Tidak diketahui"
-        console.error("Fetch error for proxy status in list:", error) // Log lebih spesifik
+        console.error("Fetch error:", error)
       })
   })
 
@@ -685,21 +735,17 @@ function renderProxyList() {
   proxyCountInfo.textContent = `Showing ${startIndex + 1}-${endIndex} of ${filteredProxyList.length} proxies`
 }
 
-// Function to check proxy status in the list (this function is not used in renderProxyList anymore, but kept for consistency)
+// Function to check proxy status in the list
 function checkProxyStatusInList(proxy, statusBadge) {
-  // --- PERBAIKAN: Gunakan CORS proxy untuk pemeriksaan status ---
-  const originalStatusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
-  const corsStatusURL = `https://api.allorigins.win/get?url=${encodeURIComponent(originalStatusURL)}`
+  const statusURL = `https://afrcloud.dpdns.org/${proxy.ip}:${proxy.port}`
 
-  fetch(corsStatusURL)
+  fetch(statusURL)
     .then((response) => response.json())
     .then((data) => {
-      // AllOrigins wraps the response in a 'contents' property
-      const proxyData = JSON.parse(data.contents)
-      // Handle the new format where proxyData is an array
-      const actualProxyData = Array.isArray(proxyData) ? proxyData[0] : proxyData
+      // Handle the new format where data is an array
+      const proxyData = Array.isArray(data) ? data[0] : data
 
-      if (actualProxyData && actualProxyData.proxyip === true) {
+      if (proxyData && proxyData.proxyip === true) {
         statusBadge.className = "inline-block w-3 h-3 rounded-full bg-emerald-500 ml-2"
         statusBadge.innerHTML = ""
         statusBadge.title = "Aktif"
@@ -713,13 +759,14 @@ function checkProxyStatusInList(proxy, statusBadge) {
       statusBadge.className = "inline-block w-3 h-3 rounded-full bg-amber-500 ml-2"
       statusBadge.innerHTML = ""
       statusBadge.title = "Tidak diketahui"
-      console.error("Fetch error for proxy status in list (checkProxyStatusInList):", error)
+      console.error("Fetch error:", error)
     })
 }
 
 // Function to render pagination controls
 function renderPagination(totalPages) {
   paginationContainer.innerHTML = ""
+
   if (totalPages <= 1) return
 
   // Previous button
@@ -786,6 +833,7 @@ function renderPagination(totalPages) {
       ellipsis.textContent = "..."
       paginationContainer.appendChild(ellipsis)
     }
+
     const lastPageBtn = document.createElement("button")
     lastPageBtn.className = "pagination-btn"
     lastPageBtn.textContent = totalPages.toString()
@@ -849,6 +897,7 @@ async function selectProxy(index) {
     { id: "trojan-security", nameId: "trojan-name", protocol: "Trojan" },
     { id: "ss-security", nameId: "ss-name", protocol: "SS" },
   ]
+
   securitySelects.forEach((item) => {
     const select = document.getElementById(item.id)
     const nameInput = document.getElementById(item.nameId)
@@ -885,10 +934,7 @@ async function selectProxy(index) {
 // Function to check proxy status in the account creation section
 function checkProxyStatus(proxy) {
   const startTime = performance.now()
-  // --- PERBAIKAN: Gunakan CORS proxy untuk pemeriksaan status ---
-  const originalStatusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
-  const corsStatusURL = `https://api.allorigins.win/get?url=${encodeURIComponent(originalStatusURL)}`
-
+  const statusURL = `https://tt.rohendimtq246.workers.dev/${proxy.ip}:${proxy.port}`
   const statusContainer = document.getElementById("proxy-status-container")
   const statusLoading = document.getElementById("proxy-status-loading")
   const statusActive = document.getElementById("proxy-status-active")
@@ -903,7 +949,7 @@ function checkProxyStatus(proxy) {
   statusDead.classList.add("hidden")
   statusUnknown.classList.add("hidden")
 
-  fetch(corsStatusURL)
+  fetch(statusURL)
     .then((response) => response.json())
     .then((data) => {
       const endTime = performance.now()
@@ -912,12 +958,10 @@ function checkProxyStatus(proxy) {
       // Hide loading state
       statusLoading.classList.add("hidden")
 
-      // AllOrigins wraps the response in a 'contents' property
-      const proxyData = JSON.parse(data.contents)
-      // Handle the new format where proxyData is an array
-      const actualProxyData = Array.isArray(proxyData) ? proxyData[0] : proxyData
+      // Handle the new format where data is an array
+      const proxyData = Array.isArray(data) ? data[0] : data
 
-      if (actualProxyData && actualProxyData.proxyip === true) {
+      if (proxyData && proxyData.proxyip === true) {
         statusActive.classList.remove("hidden")
         latencyElement.textContent = `${latency}ms`
       } else {
@@ -928,7 +972,7 @@ function checkProxyStatus(proxy) {
       // Hide loading state
       statusLoading.classList.add("hidden")
       statusUnknown.classList.remove("hidden")
-      console.error("Fetch error for proxy status in account creation:", error) // Log lebih spesifik
+      console.error("Fetch error:", error)
     })
 }
 
