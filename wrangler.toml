@@ -7,23 +7,19 @@ workers_dev = true
 
 routes = [
 
-  { pattern = "stbwrt.web.id", custom_domain = true },
-  { pattern = "ava.game.naver.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "df.game.naver.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "quiz.int.vidio.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "gateway.instagram.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "graph.instagram.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "instagram.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "zaintest.vuclip.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "creativeservices.netflix.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "support.zoom.us.stbwrt.web.id", custom_domain = true },
-  { pattern = "cache.netflix.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "graph.facebook.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "facebook.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "engineering.instagram.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "dogseechew.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "mssdk24-normal-useast2a.tiktokv.com.stbwrt.web.id", custom_domain = true },
-  { pattern = "lasolda.ma.stbwrt.web.id", custom_domain = true },
+  { pattern = "stbwrt.biz.id", custom_domain = true },
+  { pattern = "ava.game.naver.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "df.game.naver.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "graph.instagram.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "instagram.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "creativeservices.netflix.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "support.zoom.us.stbwrt.biz.id", custom_domain = true },
+  { pattern = "cache.netflix.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "graph.facebook.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "facebook.com.stbwrt.biz.id", custom_domain = true },
+  { pattern = "engineering.instagram.com.stbwrt.biz.id", custom_domain = true },
 ]
 
 [[kv_namespaces]]
@@ -38,7 +34,6 @@ build = { command = "cargo install -q worker-build && worker-build --dev" }
 
 [vars]
 UUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
-MAIN_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/index.html"
-SUB_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/sub.html"
-LINK_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/link.html"
-CONVERTER_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/converter.html"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/SirenWeb/refs/heads/master/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/SirenWeb/refs/heads/master/web/sub.html"
+LINK_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/SirenWeb/refs/heads/master/web/link.html"
