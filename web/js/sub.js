@@ -1,1 +1,559 @@
-const _0xfc11a9=_0x31f6;(function(_0x276d8a,_0x3870fb){const _0x7282ff=_0x31f6,_0x29475f=_0x276d8a();while(!![]){try{const _0x37ae74=parseInt(_0x7282ff(0x236))/0x1+-parseInt(_0x7282ff(0x209))/0x2*(-parseInt(_0x7282ff(0x211))/0x3)+parseInt(_0x7282ff(0x264))/0x4*(-parseInt(_0x7282ff(0x1f3))/0x5)+parseInt(_0x7282ff(0x20b))/0x6*(-parseInt(_0x7282ff(0x1ff))/0x7)+-parseInt(_0x7282ff(0x23b))/0x8+parseInt(_0x7282ff(0x24e))/0x9*(-parseInt(_0x7282ff(0x1ec))/0xa)+parseInt(_0x7282ff(0x1fd))/0xb*(parseInt(_0x7282ff(0x210))/0xc);if(_0x37ae74===_0x3870fb)break;else _0x29475f['push'](_0x29475f['shift']());}catch(_0x2d2b95){_0x29475f['push'](_0x29475f['shift']());}}}(_0x43eb,0xe5952));const CONFIG={'proxyListUrl':_0xfc11a9(0x248),'apiCheckUrl':_0xfc11a9(0x1bf),'mainDomains':[_0xfc11a9(0x1d4)],'defaultUuid':'bbbbbbbb-cccc-4ddd-eeee-ffffffffffff','maxProxies':0x32,'defaultProxyCount':0x5,'pathTemplate':_0xfc11a9(0x21f)};let proxyList=[],filteredProxyList=[],validatedProxies=[],validationInProgress=![],totalValidated=0x0,validCount=0x0,invalidCount=0x0;const form=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1ba)),configTypeSelect=document['getElementById'](_0xfc11a9(0x249)),formatTypeSelect=document[_0xfc11a9(0x20d)](_0xfc11a9(0x235)),uuidInput=document[_0xfc11a9(0x20d)]('uuid'),generateUuidBtn=document[_0xfc11a9(0x20d)]('generateUuid'),bugTypeSelect=document[_0xfc11a9(0x20d)](_0xfc11a9(0x242)),mainDomainSelect=document[_0xfc11a9(0x20d)]('mainDomain'),customBugContainer=document[_0xfc11a9(0x20d)](_0xfc11a9(0x232)),customBugInput=document[_0xfc11a9(0x20d)](_0xfc11a9(0x234)),tlsSelect=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1f4)),countrySelect=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1ac)),limitInput=document[_0xfc11a9(0x20d)]('limit'),validateProxiesCheckbox=document['getElementById'](_0xfc11a9(0x251)),loadingElement=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1f9)),validationStatusElement=document[_0xfc11a9(0x20d)]('validation-status'),validationCountElement=document['getElementById'](_0xfc11a9(0x1c1)),validationBarElement=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1c2)),validCountElement=document[_0xfc11a9(0x20d)]('valid-count'),invalidCountElement=document['getElementById'](_0xfc11a9(0x1b5)),errorMessageElement=document['getElementById'](_0xfc11a9(0x1fb)),resultElement=document['getElementById'](_0xfc11a9(0x22e)),outputElement=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1aa)),copyLinkBtn=document[_0xfc11a9(0x20d)](_0xfc11a9(0x1ae));function generateUUIDv4(){const _0x5601b4=_0xfc11a9;return crypto[_0x5601b4(0x1d6)]();}async function copyToClipboard(_0x3a1862){const _0x50dae7=_0xfc11a9;try{return await navigator[_0x50dae7(0x24a)]['writeText'](_0x3a1862),!![];}catch(_0x53b1ea){return console[_0x50dae7(0x257)](_0x50dae7(0x262),_0x53b1ea),![];}}function safeBase64Encode(_0x38f716){const _0x3317fd=_0xfc11a9;try{return btoa(unescape(encodeURIComponent(_0x38f716)));}catch(_0x84a36b){return console[_0x3317fd(0x257)](_0x3317fd(0x227),_0x84a36b),'';}}document[_0xfc11a9(0x25c)](_0xfc11a9(0x1b9),()=>{populateMainDomains(),setupEventListeners(),loadProxyList();});function populateMainDomains(){const _0x5e4edd=_0xfc11a9;CONFIG[_0x5e4edd(0x1bc)][_0x5e4edd(0x24d)](_0x40b88c=>{const _0x56ddf6=_0x5e4edd,_0x111831=document['createElement'](_0x56ddf6(0x203));_0x111831[_0x56ddf6(0x1ee)]=_0x40b88c,_0x111831[_0x56ddf6(0x20e)]=_0x40b88c,mainDomainSelect[_0x56ddf6(0x1b2)](_0x111831);});}function setupEventListeners(){const _0x3ef107=_0xfc11a9;generateUuidBtn[_0x3ef107(0x25c)](_0x3ef107(0x1bd),()=>{uuidInput['value']=generateUUIDv4();}),bugTypeSelect['addEventListener'](_0x3ef107(0x1e2),()=>{const _0x3eacfc=_0x3ef107;bugTypeSelect[_0x3eacfc(0x1ee)]==='non-wildcard'||bugTypeSelect[_0x3eacfc(0x1ee)]===_0x3eacfc(0x1f8)?customBugContainer[_0x3eacfc(0x1e1)][_0x3eacfc(0x256)]='block':customBugContainer[_0x3eacfc(0x1e1)][_0x3eacfc(0x256)]=_0x3eacfc(0x201);}),form[_0x3ef107(0x25c)](_0x3ef107(0x215),handleFormSubmit),copyLinkBtn['addEventListener'](_0x3ef107(0x1bd),()=>{const _0x4502cb=_0x3ef107;copyToClipboard(outputElement[_0x4502cb(0x1ee)])[_0x4502cb(0x1ef)](_0xbf9f12=>{const _0x280fd0=_0x4502cb;_0xbf9f12&&(copyLinkBtn[_0x280fd0(0x253)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20class=\x22copy-icon\x22\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<polyline\x20points=\x2220\x206\x209\x2017\x204\x2012\x22></polyline>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20COPIED\x20SUCCESSFULLY\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',setTimeout(()=>{const _0x45c7b2=_0x280fd0;copyLinkBtn['innerHTML']=_0x45c7b2(0x21b);},0x7d0));});});}function loadProxyList(){const _0x186b68=_0xfc11a9;showLoading(_0x186b68(0x1d8)),fetch(CONFIG[_0x186b68(0x221)])[_0x186b68(0x1ef)](_0x4494de=>{const _0x1f5123=_0x186b68;if(!_0x4494de['ok'])throw new Error(_0x1f5123(0x22d));return _0x4494de[_0x1f5123(0x1ab)]();})[_0x186b68(0x1ef)](_0x139194=>{processProxyData(_0x139194),hideLoading();})[_0x186b68(0x1cd)](_0x34db10=>{const _0x400f5e=_0x186b68;console[_0x400f5e(0x257)](_0x400f5e(0x1c4),_0x34db10),showError(_0x400f5e(0x1e7)),hideLoading();});}function processProxyData(_0x33f045){const _0x548299=_0xfc11a9,_0x4d6091=_0x33f045[_0x548299(0x1bb)](/\r?\n/)[_0x548299(0x22c)](_0xf68f4f=>_0xf68f4f[_0x548299(0x260)]()!=='');if(_0x4d6091[_0x548299(0x23e)]===0x0){showError(_0x548299(0x1da));return;}let _0x3777ca=',';const _0x1899eb=_0x4d6091[0x0];if(_0x1899eb[_0x548299(0x21a)]('\x09'))_0x3777ca='\x09';else{if(_0x1899eb['includes']('|'))_0x3777ca='|';else _0x1899eb[_0x548299(0x21a)](';')&&(_0x3777ca=';');}proxyList=_0x4d6091[_0x548299(0x1eb)](_0x94f33=>{const _0x1325d2=_0x548299,_0x2dfee1=_0x94f33['split'](_0x3777ca);if(_0x2dfee1['length']>=0x2)return{'ip':_0x2dfee1[0x0][_0x1325d2(0x260)](),'port':_0x2dfee1[0x1][_0x1325d2(0x260)](),'country':_0x2dfee1[_0x1325d2(0x23e)]>=0x3?_0x2dfee1[0x2][_0x1325d2(0x260)]():'Unknown','provider':_0x2dfee1[_0x1325d2(0x23e)]>=0x4?_0x2dfee1[0x3][_0x1325d2(0x260)]():'Unknown\x20Provider'};return null;})[_0x548299(0x22c)](_0xdf2f5b=>_0xdf2f5b&&_0xdf2f5b['ip']&&_0xdf2f5b['port']),populateCountryDropdown();}function populateCountryDropdown(){const _0x12258b=_0xfc11a9,_0x3712f3=[...new Set(proxyList[_0x12258b(0x1eb)](_0x3cdc85=>_0x3cdc85[_0x12258b(0x1ac)]))];_0x3712f3[_0x12258b(0x25d)](),countrySelect['innerHTML']='';const _0x47db50=document[_0x12258b(0x217)](_0x12258b(0x203));_0x47db50[_0x12258b(0x1ee)]='',_0x47db50[_0x12258b(0x20e)]='All\x20Countries',countrySelect[_0x12258b(0x1b2)](_0x47db50),_0x3712f3[_0x12258b(0x24d)](_0x547d71=>{const _0x3e904a=_0x12258b,_0x1f50f5=document[_0x3e904a(0x217)](_0x3e904a(0x203));_0x1f50f5[_0x3e904a(0x1ee)]=_0x547d71,_0x1f50f5[_0x3e904a(0x20e)]=_0x547d71,countrySelect[_0x3e904a(0x1b2)](_0x1f50f5);});}async function handleFormSubmit(_0x242808){const _0x247c0d=_0xfc11a9;_0x242808[_0x247c0d(0x1f1)](),errorMessageElement[_0x247c0d(0x20e)]='',errorMessageElement['style']['display']=_0x247c0d(0x201);const _0x110b63=configTypeSelect['value'],_0x1e06b0=formatTypeSelect[_0x247c0d(0x1ee)],_0x521cbd=uuidInput[_0x247c0d(0x1ee)],_0x46bcd6=bugTypeSelect[_0x247c0d(0x1ee)],_0x178670=mainDomainSelect['value'],_0x1a54a2=customBugInput[_0x247c0d(0x1ee)],_0x287a93=tlsSelect[_0x247c0d(0x1ee)]===_0x247c0d(0x25e),_0x2b7f20=countrySelect[_0x247c0d(0x1ee)],_0x2365d1=Number['parseInt'](limitInput['value'],0xa),_0x287a10=validateProxiesCheckbox['checked'];if(!_0x521cbd){showError(_0x247c0d(0x1d3));return;}if(_0x2365d1<0x1||_0x2365d1>CONFIG['maxProxies']){showError(_0x247c0d(0x1c9)+CONFIG[_0x247c0d(0x250)]+'.');return;}filteredProxyList=_0x2b7f20?proxyList[_0x247c0d(0x22c)](_0x4b2ae4=>_0x4b2ae4[_0x247c0d(0x1ac)]===_0x2b7f20):[...proxyList];if(filteredProxyList[_0x247c0d(0x23e)]===0x0){showError(_0x247c0d(0x1fc));return;}shuffleArray(filteredProxyList),filteredProxyList=filteredProxyList[_0x247c0d(0x1f0)](0x0,_0x2365d1),showLoading(_0x247c0d(0x231));_0x287a10&&await validateProxyList();const _0x17bc8e=generateConfiguration(_0x110b63,_0x1e06b0,_0x521cbd,_0x46bcd6,_0x178670,_0x1a54a2,_0x287a93);showResult(_0x17bc8e);}async function validateProxyList(){const _0x3d56ce=_0xfc11a9;validationInProgress=!![],validatedProxies=[],totalValidated=0x0,validCount=0x0,invalidCount=0x0,validationStatusElement[_0x3d56ce(0x1e1)][_0x3d56ce(0x256)]=_0x3d56ce(0x20f),validationCountElement['textContent']='0/'+filteredProxyList[_0x3d56ce(0x23e)],validationBarElement[_0x3d56ce(0x1e1)][_0x3d56ce(0x1f6)]='0%',validCountElement[_0x3d56ce(0x20e)]='0',invalidCountElement[_0x3d56ce(0x20e)]='0',invalidCountElement['textContent']='0';const _0x4332ef=[...filteredProxyList],_0x37ce3f=0x5,_0x5b3e38=Math['ceil'](_0x4332ef[_0x3d56ce(0x23e)]/_0x37ce3f);for(let _0x16a2da=0x0;_0x16a2da<_0x5b3e38;_0x16a2da++){const _0x3a46c6=_0x16a2da*_0x37ce3f,_0x3e4450=Math[_0x3d56ce(0x200)](_0x3a46c6+_0x37ce3f,_0x4332ef['length']),_0xc8c08d=_0x4332ef[_0x3d56ce(0x1f0)](_0x3a46c6,_0x3e4450);await Promise[_0x3d56ce(0x1ed)](_0xc8c08d[_0x3d56ce(0x1eb)](async _0x5ec896=>{const _0x495a1d=_0x3d56ce,_0x592a51=await validateProxy(_0x5ec896);totalValidated++;const _0x22ea5a=totalValidated/_0x4332ef[_0x495a1d(0x23e)]*0x64;validationCountElement[_0x495a1d(0x20e)]=totalValidated+'/'+_0x4332ef[_0x495a1d(0x23e)],validationBarElement['style']['width']=_0x22ea5a+'%',_0x592a51?(validCount++,validCountElement[_0x495a1d(0x20e)]=validCount,validatedProxies['push'](_0x5ec896)):(invalidCount++,invalidCountElement['textContent']=invalidCount);}));}validatedProxies[_0x3d56ce(0x23e)]>0x0&&(filteredProxyList=validatedProxies),validationInProgress=![];}async function validateProxy(_0x40e0b1){const _0x4b50a9=_0xfc11a9;try{const _0x5084c5=await fetch(''+CONFIG[_0x4b50a9(0x24b)]+_0x40e0b1['ip']+':'+_0x40e0b1[_0x4b50a9(0x1e3)]),_0x17509d=await _0x5084c5['json'](),_0x416052=Array[_0x4b50a9(0x23d)](_0x17509d)?_0x17509d[0x0]:_0x17509d;return _0x416052&&_0x416052[_0x4b50a9(0x25a)]===!![];}catch(_0x1dc00e){return console[_0x4b50a9(0x257)](_0x4b50a9(0x208),_0x1dc00e),![];}}function generateConfiguration(_0x1f0a31,_0x142717,_0x559e83,_0x2af67c,_0x2a84fa,_0x306f9c,_0x2a8e81){const _0x55ef89=_0xfc11a9,_0x26af7a=filteredProxyList;switch(_0x142717){case _0x55ef89(0x259):return generateV2rayLinks(_0x1f0a31,_0x26af7a,_0x559e83,_0x2af67c,_0x2a84fa,_0x306f9c,_0x2a8e81);case'clash':return generateClashConfig(_0x1f0a31,_0x26af7a,_0x559e83,_0x2af67c,_0x2a84fa,_0x306f9c,_0x2a8e81);case _0x55ef89(0x1e6):const _0x325b5f=[];_0x26af7a[_0x55ef89(0x24d)](_0x2f8b2a=>{const _0x84057b=_0x55ef89,_0x2a6cad=CONFIG[_0x84057b(0x1db)][_0x84057b(0x1f5)](_0x84057b(0x1cc),_0x2f8b2a['ip'])[_0x84057b(0x1f5)](_0x84057b(0x1c8),_0x2f8b2a[_0x84057b(0x1e3)]),_0x5796b5=_0x2a8e81?0x1bb:0x50,_0x10ed8d=_0x306f9c&&(_0x2af67c===_0x84057b(0x1df)||_0x2af67c===_0x84057b(0x1f8))?_0x306f9c[_0x84057b(0x1bb)](',')[_0x84057b(0x1eb)](_0x2065e6=>_0x2065e6[_0x84057b(0x260)]()):[_0x2a84fa];_0x10ed8d[_0x84057b(0x24d)](_0x56a273=>{const _0x5a924b=_0x84057b;let _0xa1b4c1,_0x928f74,_0xe50fa4;switch(_0x2af67c){case _0x5a924b(0x204):_0xa1b4c1=_0x2a84fa,_0x928f74=_0x2a84fa,_0xe50fa4=_0x2a84fa;break;case _0x5a924b(0x1df):_0xa1b4c1=_0x56a273,_0x928f74=_0x2a84fa,_0xe50fa4=_0x2a84fa;break;case'wildcard':_0xa1b4c1=_0x56a273,_0x928f74=_0x56a273+'.'+_0x2a84fa,_0xe50fa4=_0x56a273+'.'+_0x2a84fa;break;}const _0x587ec3=_0x2f8b2a[_0x5a924b(0x1ac)],_0x8c3a20=_0x2f8b2a['provider'];(_0x1f0a31==='vmess'||_0x1f0a31===_0x5a924b(0x239))&&_0x325b5f[_0x5a924b(0x230)]({'type':_0x5a924b(0x1b7),'name':'['+(_0x325b5f[_0x5a924b(0x23e)]+0x1)+_0x5a924b(0x21e)+_0x587ec3+')\x20'+_0x8c3a20+'\x20[VMESS-'+(_0x2a8e81?_0x5a924b(0x205):'NTLS')+']','server':_0xa1b4c1,'port':_0x5796b5,'uuid':_0x559e83,'tls':_0x2a8e81,'sni':_0xe50fa4,'wsHost':_0x928f74,'wsPath':_0x2a6cad}),(_0x1f0a31===_0x5a924b(0x238)||_0x1f0a31===_0x5a924b(0x239))&&_0x325b5f[_0x5a924b(0x230)]({'type':_0x5a924b(0x238),'name':'['+(_0x325b5f[_0x5a924b(0x23e)]+0x1)+_0x5a924b(0x21e)+_0x587ec3+')\x20'+_0x8c3a20+_0x5a924b(0x1fe)+(_0x2a8e81?_0x5a924b(0x205):_0x5a924b(0x222))+']','server':_0xa1b4c1,'port':_0x5796b5,'uuid':_0x559e83,'tls':_0x2a8e81,'sni':_0xe50fa4,'wsHost':_0x928f74,'wsPath':_0x2a6cad}),(_0x1f0a31===_0x5a924b(0x1dd)||_0x1f0a31===_0x5a924b(0x239))&&_0x325b5f[_0x5a924b(0x230)]({'type':_0x5a924b(0x1dd),'name':'['+(_0x325b5f[_0x5a924b(0x23e)]+0x1)+_0x5a924b(0x21e)+_0x587ec3+')\x20'+_0x8c3a20+_0x5a924b(0x228)+(_0x2a8e81?_0x5a924b(0x205):_0x5a924b(0x222))+']','server':_0xa1b4c1,'port':_0x5796b5,'password':_0x559e83,'tls':_0x2a8e81,'sni':_0xe50fa4,'wsHost':_0x928f74,'wsPath':_0x2a6cad}),(_0x1f0a31===_0x5a924b(0x25b)||_0x1f0a31===_0x5a924b(0x239))&&_0x325b5f[_0x5a924b(0x230)]({'type':'ss','name':'['+(_0x325b5f[_0x5a924b(0x23e)]+0x1)+_0x5a924b(0x21e)+_0x587ec3+')\x20'+_0x8c3a20+_0x5a924b(0x229)+(_0x2a8e81?_0x5a924b(0x205):'NTLS')+']','server':_0xa1b4c1,'port':_0x5796b5,'password':_0x559e83,'tls':_0x2a8e81,'wsHost':_0x928f74,'wsPath':_0x2a6cad});});});return generateNekoboxConfig(_0x325b5f);default:return'Unsupported\x20format\x20type';}}function generateV2rayLinks(_0x4ae1c6,_0x4b8e74,_0x29ed29,_0x229483,_0x40705a,_0x529635,_0x2014a9){const _0x3b3f92=_0xfc11a9,_0x307e59=[];let _0x225dcd=[];return _0x529635&&(_0x229483===_0x3b3f92(0x1df)||_0x229483==='wildcard')&&(_0x225dcd=_0x529635[_0x3b3f92(0x1bb)](',')[_0x3b3f92(0x1eb)](_0x300d17=>_0x300d17[_0x3b3f92(0x260)]())),_0x4b8e74[_0x3b3f92(0x24d)](_0x29873d=>{const _0x3f8fbd=_0x3b3f92,_0xf9d8cf=CONFIG[_0x3f8fbd(0x1db)][_0x3f8fbd(0x1f5)](_0x3f8fbd(0x1cc),_0x29873d['ip'])[_0x3f8fbd(0x1f5)]('{port}',_0x29873d[_0x3f8fbd(0x1e3)]),_0x197458=_0x2014a9?0x1bb:0x50,_0x56327b=_0x2014a9?_0x3f8fbd(0x1f4):'none';if(_0x4ae1c6===_0x3f8fbd(0x239)||_0x4ae1c6==='vmess'){if(_0x225dcd[_0x3f8fbd(0x23e)]>0x0)_0x225dcd[_0x3f8fbd(0x24d)]((_0x2da4e8,_0x417d68)=>{const _0x575267=_0x3f8fbd,_0x340864=_0x2da4e8,_0x1f2cbd=_0x229483==='wildcard'?_0x2da4e8+'.'+_0x40705a:_0x40705a,_0x2cf9bf=_0x229483===_0x575267(0x1f8)?_0x2da4e8+'.'+_0x40705a:_0x40705a,_0x3785bd={'v':'2','ps':'['+(_0x307e59[_0x575267(0x23e)]+0x1)+']\x20'+_0x29873d[_0x575267(0x1ac)]+'\x20-\x20'+_0x29873d['provider']+'\x20[VMess-'+(_0x2014a9?_0x575267(0x205):_0x575267(0x222))+']','add':_0x340864,'port':_0x197458,'id':_0x29ed29,'aid':'0','net':'ws','type':_0x575267(0x201),'host':_0x1f2cbd,'path':_0xf9d8cf,'tls':_0x56327b,'sni':_0x2cf9bf,'scy':_0x575267(0x214)};_0x307e59[_0x575267(0x230)](_0x575267(0x223)+safeBase64Encode(JSON[_0x575267(0x1e9)](_0x3785bd)));});else{const _0x914513={'v':'2','ps':'['+(_0x307e59['length']+0x1)+']\x20'+_0x29873d['country']+'\x20-\x20'+_0x29873d[_0x3f8fbd(0x1e4)]+_0x3f8fbd(0x23c)+(_0x2014a9?_0x3f8fbd(0x205):_0x3f8fbd(0x222))+']','add':_0x40705a,'port':_0x197458,'id':_0x29ed29,'aid':'0','net':'ws','type':_0x3f8fbd(0x201),'host':_0x40705a,'path':_0xf9d8cf,'tls':_0x56327b,'sni':_0x40705a,'scy':_0x3f8fbd(0x214)};_0x307e59['push']('vmess://'+safeBase64Encode(JSON[_0x3f8fbd(0x1e9)](_0x914513)));}}if(_0x4ae1c6==='mix'||_0x4ae1c6==='vless'){if(_0x225dcd['length']>0x0)_0x225dcd[_0x3f8fbd(0x24d)](_0xf1564c=>{const _0x445202=_0x3f8fbd,_0x312916=_0xf1564c,_0x491272=_0x229483===_0x445202(0x1f8)?_0xf1564c+'.'+_0x40705a:_0x40705a,_0x43542e=_0x229483==='wildcard'?_0xf1564c+'.'+_0x40705a:_0x40705a,_0x8e9d4e=encodeURIComponent('['+(_0x307e59[_0x445202(0x23e)]+0x1)+']\x20'+_0x29873d[_0x445202(0x1ac)]+_0x445202(0x243)+_0x29873d[_0x445202(0x1e4)]+_0x445202(0x1fe)+(_0x2014a9?'TLS':_0x445202(0x222))+']'),_0x52d677=encodeURIComponent(_0xf9d8cf);_0x307e59[_0x445202(0x230)](_0x445202(0x1c3)+_0x29ed29+'@'+_0x312916+':'+_0x197458+_0x445202(0x1b4)+_0x56327b+_0x445202(0x258)+_0x491272+_0x445202(0x240)+_0x52d677+'&sni='+_0x43542e+'#'+_0x8e9d4e);});else{const _0x48c1bc=encodeURIComponent('['+(_0x307e59[_0x3f8fbd(0x23e)]+0x1)+']\x20'+_0x29873d[_0x3f8fbd(0x1ac)]+_0x3f8fbd(0x243)+_0x29873d[_0x3f8fbd(0x1e4)]+_0x3f8fbd(0x1fe)+(_0x2014a9?_0x3f8fbd(0x205):_0x3f8fbd(0x222))+']'),_0x1b67b9=encodeURIComponent(_0xf9d8cf);_0x307e59['push']('vless://'+_0x29ed29+'@'+_0x40705a+':'+_0x197458+'?encryption=none&security='+_0x56327b+'&type=ws&host='+_0x40705a+_0x3f8fbd(0x240)+_0x1b67b9+_0x3f8fbd(0x1f7)+_0x40705a+'#'+_0x48c1bc);}}if(_0x4ae1c6===_0x3f8fbd(0x239)||_0x4ae1c6===_0x3f8fbd(0x1dd)){if(_0x225dcd[_0x3f8fbd(0x23e)]>0x0)_0x225dcd[_0x3f8fbd(0x24d)](_0x2f8766=>{const _0x1964d0=_0x3f8fbd,_0x3d8dbe=_0x2f8766,_0x53f2e4=_0x229483==='wildcard'?_0x2f8766+'.'+_0x40705a:_0x40705a,_0xcf00c9=_0x229483===_0x1964d0(0x1f8)?_0x2f8766+'.'+_0x40705a:_0x40705a,_0x57accd=encodeURIComponent('['+(_0x307e59[_0x1964d0(0x23e)]+0x1)+']\x20'+_0x29873d[_0x1964d0(0x1ac)]+_0x1964d0(0x243)+_0x29873d['provider']+_0x1964d0(0x261)+(_0x2014a9?'TLS':'NTLS')+']'),_0x38d016=encodeURIComponent(_0xf9d8cf);_0x307e59[_0x1964d0(0x230)](_0x1964d0(0x1a9)+_0x29ed29+'@'+_0x3d8dbe+':'+_0x197458+_0x1964d0(0x1c5)+_0x56327b+_0x1964d0(0x258)+_0x53f2e4+_0x1964d0(0x240)+_0x38d016+_0x1964d0(0x1f7)+_0xcf00c9+'#'+_0x57accd);});else{const _0x977f74=encodeURIComponent('['+(_0x307e59[_0x3f8fbd(0x23e)]+0x1)+']\x20'+_0x29873d[_0x3f8fbd(0x1ac)]+'\x20-\x20'+_0x29873d['provider']+'\x20[Trojan-'+(_0x2014a9?_0x3f8fbd(0x205):'NTLS')+']'),_0x163df0=encodeURIComponent(_0xf9d8cf);_0x307e59[_0x3f8fbd(0x230)]('trojan://'+_0x29ed29+'@'+_0x40705a+':'+_0x197458+'?security='+_0x56327b+_0x3f8fbd(0x258)+_0x40705a+_0x3f8fbd(0x240)+_0x163df0+_0x3f8fbd(0x1f7)+_0x40705a+'#'+_0x977f74);}}if(_0x4ae1c6===_0x3f8fbd(0x239)||_0x4ae1c6===_0x3f8fbd(0x25b)){if(_0x225dcd[_0x3f8fbd(0x23e)]>0x0)_0x225dcd[_0x3f8fbd(0x24d)](_0x1bb2ea=>{const _0xf5db3d=_0x3f8fbd,_0x18fe4d=_0x1bb2ea,_0xbfdd0f=_0x229483==='wildcard'?_0x1bb2ea+'.'+_0x40705a:_0x40705a,_0x23cc3c=_0x229483===_0xf5db3d(0x1f8)?_0x1bb2ea+'.'+_0x40705a:_0x40705a,_0x2151e0=encodeURIComponent('['+(_0x307e59[_0xf5db3d(0x23e)]+0x1)+']\x20'+_0x29873d[_0xf5db3d(0x1ac)]+_0xf5db3d(0x243)+_0x29873d[_0xf5db3d(0x1e4)]+'\x20[SS-'+(_0x2014a9?_0xf5db3d(0x205):_0xf5db3d(0x222))+']'),_0xe88bb=encodeURIComponent(_0xf9d8cf),_0x15201d=_0xf5db3d(0x201),_0x170849=safeBase64Encode(_0x15201d+':'+_0x29ed29);_0x307e59[_0xf5db3d(0x230)](_0xf5db3d(0x1b6)+_0x170849+'@'+_0x18fe4d+':'+_0x197458+_0xf5db3d(0x1c6)+_0xe88bb+'%3Bhost%3D'+_0xbfdd0f+'#'+_0x2151e0);});else{const _0x1ccb47=encodeURIComponent('['+(_0x307e59['length']+0x1)+']\x20'+_0x29873d[_0x3f8fbd(0x1ac)]+_0x3f8fbd(0x243)+_0x29873d[_0x3f8fbd(0x1e4)]+'\x20[SS-'+(_0x2014a9?'TLS':_0x3f8fbd(0x222))+']'),_0x122687=encodeURIComponent(_0xf9d8cf),_0x4da3cf='none',_0x34b2b4=safeBase64Encode(_0x4da3cf+':'+_0x29ed29);_0x307e59[_0x3f8fbd(0x230)]('ss://'+_0x34b2b4+'@'+_0x40705a+':'+_0x197458+_0x3f8fbd(0x202)+_0x122687+'%3Bhost%3D'+_0x40705a+'#'+_0x1ccb47);}}}),_0x307e59['join']('\x0a');}function generateClashConfig(_0x1786a5,_0x29feac,_0x5e4410,_0x2cde90,_0x2020a9,_0xdfe797,_0x20d327){const _0x4c44da=_0xfc11a9;let _0x8df0ee='#\x20Clash\x20Proxy\x20Provider\x20Configuration\x0a#\x20Generated\x20by\x20Inconigto-Mode\x0a#\x20Date:\x20'+new Date()['toLocaleString']('en-US',{'timeZone':_0x4c44da(0x1c7)})+_0x4c44da(0x216)+_0x1786a5[_0x4c44da(0x255)]()+'\x0a#\x20TLS:\x20'+(_0x20d327?_0x4c44da(0x252):_0x4c44da(0x24c))+_0x4c44da(0x1b1),_0x67ac19=[];return _0xdfe797&&(_0x2cde90===_0x4c44da(0x1df)||_0x2cde90===_0x4c44da(0x1f8))&&(_0x67ac19=_0xdfe797[_0x4c44da(0x1bb)](',')[_0x4c44da(0x1eb)](_0x457eae=>_0x457eae[_0x4c44da(0x260)]())),_0x29feac[_0x4c44da(0x24d)](_0x468e1e=>{const _0x2365f0=_0x4c44da,_0x3401f7=CONFIG[_0x2365f0(0x1db)][_0x2365f0(0x1f5)]('{ip}',_0x468e1e['ip'])[_0x2365f0(0x1f5)]('{port}',_0x468e1e[_0x2365f0(0x1e3)]),_0x5a3f41=_0x20d327?0x1bb:0x50,_0x562b46=_0x20d327;if(_0x1786a5===_0x2365f0(0x239)||_0x1786a5==='vmess'){if(_0x67ac19[_0x2365f0(0x23e)]>0x0)_0x67ac19[_0x2365f0(0x24d)]((_0x332f38,_0x4668c4)=>{const _0x56bfec=_0x2365f0,_0x3b9a2d=_0x332f38,_0x5309ac=_0x2cde90===_0x56bfec(0x1f8)?_0x332f38+'.'+_0x2020a9:_0x2020a9,_0x37865b=_0x2cde90===_0x56bfec(0x1f8)?_0x332f38+'.'+_0x2020a9:_0x2020a9,_0x1cc031='['+(_0x29feac[_0x56bfec(0x1ad)](_0x468e1e)*_0x67ac19[_0x56bfec(0x23e)]+_0x4668c4+0x1)+']\x20'+_0x468e1e['country']+_0x56bfec(0x243)+_0x468e1e[_0x56bfec(0x1e4)]+_0x56bfec(0x23c)+(_0x20d327?_0x56bfec(0x205):_0x56bfec(0x222))+']';_0x8df0ee+=_0x56bfec(0x219)+_0x1cc031+_0x56bfec(0x247)+_0x3b9a2d+_0x56bfec(0x246)+_0x5a3f41+_0x56bfec(0x22f)+_0x5e4410+'\x0a\x20\x20\x20\x20alterId:\x200\x0a\x20\x20\x20\x20cipher:\x20zero\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20tls:\x20'+_0x562b46+'\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20servername:\x20'+_0x37865b+_0x56bfec(0x1b8)+_0x3401f7+_0x56bfec(0x1d9)+_0x5309ac+'\x0a';});else{const _0x30709c='['+(_0x29feac[_0x2365f0(0x1ad)](_0x468e1e)+0x1)+']\x20'+_0x468e1e[_0x2365f0(0x1ac)]+'\x20-\x20'+_0x468e1e['provider']+'\x20[VMess-'+(_0x20d327?_0x2365f0(0x205):_0x2365f0(0x222))+']';_0x8df0ee+='\x0a\x20\x20-\x20name:\x20\x22'+_0x30709c+_0x2365f0(0x247)+_0x2020a9+_0x2365f0(0x246)+_0x5a3f41+_0x2365f0(0x22f)+_0x5e4410+_0x2365f0(0x1d7)+_0x562b46+_0x2365f0(0x1d0)+_0x2020a9+_0x2365f0(0x1b8)+_0x3401f7+'\x0a\x20\x20\x20\x20\x20\x20headers:\x0a\x20\x20\x20\x20\x20\x20\x20\x20Host:\x20'+_0x2020a9+'\x0a';}}if(_0x1786a5===_0x2365f0(0x239)||_0x1786a5==='vless'){if(_0x67ac19['length']>0x0)_0x67ac19[_0x2365f0(0x24d)]((_0x33d5b0,_0x9c795d)=>{const _0xd1ab46=_0x2365f0,_0xfc1d02=_0x33d5b0,_0x47f58f=_0x2cde90===_0xd1ab46(0x1f8)?_0x33d5b0+'.'+_0x2020a9:_0x2020a9,_0x3795c0=_0x2cde90===_0xd1ab46(0x1f8)?_0x33d5b0+'.'+_0x2020a9:_0x2020a9,_0x40df10='['+(_0x29feac[_0xd1ab46(0x1ad)](_0x468e1e)*_0x67ac19[_0xd1ab46(0x23e)]+_0x9c795d+0x1)+']\x20'+_0x468e1e[_0xd1ab46(0x1ac)]+_0xd1ab46(0x243)+_0x468e1e['provider']+'\x20[VLESS-'+(_0x20d327?_0xd1ab46(0x205):_0xd1ab46(0x222))+']';_0x8df0ee+=_0xd1ab46(0x219)+_0x40df10+_0xd1ab46(0x1e5)+_0xfc1d02+_0xd1ab46(0x246)+_0x5a3f41+_0xd1ab46(0x22f)+_0x5e4410+_0xd1ab46(0x220)+_0x562b46+_0xd1ab46(0x1d0)+_0x3795c0+'\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20'+_0x3401f7+_0xd1ab46(0x1d9)+_0x47f58f+'\x0a';});else{const _0x364eb7='['+(_0x29feac[_0x2365f0(0x1ad)](_0x468e1e)+0x1)+']\x20'+_0x468e1e['country']+_0x2365f0(0x243)+_0x468e1e[_0x2365f0(0x1e4)]+_0x2365f0(0x1fe)+(_0x20d327?_0x2365f0(0x205):_0x2365f0(0x222))+']';_0x8df0ee+=_0x2365f0(0x219)+_0x364eb7+_0x2365f0(0x1e5)+_0x2020a9+_0x2365f0(0x246)+_0x5a3f41+'\x0a\x20\x20\x20\x20uuid:\x20'+_0x5e4410+'\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20tls:\x20'+_0x562b46+'\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20servername:\x20'+_0x2020a9+'\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20'+_0x3401f7+_0x2365f0(0x1d9)+_0x2020a9+'\x0a';}}if(_0x1786a5===_0x2365f0(0x239)||_0x1786a5===_0x2365f0(0x1dd)){if(_0x67ac19[_0x2365f0(0x23e)]>0x0)_0x67ac19[_0x2365f0(0x24d)]((_0x5d5169,_0x1454cf)=>{const _0x38a069=_0x2365f0,_0x2a5bfa=_0x5d5169,_0x1a90ac=_0x2cde90===_0x38a069(0x1f8)?_0x5d5169+'.'+_0x2020a9:_0x2020a9,_0x201e92=_0x2cde90===_0x38a069(0x1f8)?_0x5d5169+'.'+_0x2020a9:_0x2020a9,_0x125b9e='['+(_0x29feac[_0x38a069(0x1ad)](_0x468e1e)*_0x67ac19[_0x38a069(0x23e)]+_0x1454cf+0x1)+']\x20'+_0x468e1e['country']+_0x38a069(0x243)+_0x468e1e[_0x38a069(0x1e4)]+'\x20[Trojan-'+(_0x20d327?_0x38a069(0x205):_0x38a069(0x222))+']';_0x8df0ee+=_0x38a069(0x219)+_0x125b9e+_0x38a069(0x22b)+_0x2a5bfa+_0x38a069(0x246)+_0x5a3f41+_0x38a069(0x213)+_0x5e4410+'\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20sni:\x20'+_0x201e92+_0x38a069(0x206)+_0x3401f7+_0x38a069(0x1d9)+_0x1a90ac+'\x0a';});else{const _0xbcdf4='['+(_0x29feac[_0x2365f0(0x1ad)](_0x468e1e)+0x1)+']\x20'+_0x468e1e[_0x2365f0(0x1ac)]+_0x2365f0(0x243)+_0x468e1e[_0x2365f0(0x1e4)]+_0x2365f0(0x261)+(_0x20d327?'TLS':_0x2365f0(0x222))+']';_0x8df0ee+=_0x2365f0(0x219)+_0xbcdf4+_0x2365f0(0x22b)+_0x2020a9+_0x2365f0(0x246)+_0x5a3f41+_0x2365f0(0x213)+_0x5e4410+'\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20sni:\x20'+_0x2020a9+'\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20'+_0x3401f7+_0x2365f0(0x1d9)+_0x2020a9+'\x0a';}}if(_0x1786a5==='mix'||_0x1786a5===_0x2365f0(0x25b)){if(_0x67ac19[_0x2365f0(0x23e)]>0x0)_0x67ac19['forEach']((_0x3c3645,_0x247523)=>{const _0x3a60e1=_0x2365f0,_0x25f5ab=_0x3c3645,_0x53eb18=_0x2cde90===_0x3a60e1(0x1f8)?_0x3c3645+'.'+_0x2020a9:_0x2020a9,_0x220730=_0x2cde90==='wildcard'?_0x3c3645+'.'+_0x2020a9:_0x2020a9,_0x907f67='['+(_0x29feac[_0x3a60e1(0x1ad)](_0x468e1e)*_0x67ac19['length']+_0x247523+0x1)+']\x20'+_0x468e1e['country']+_0x3a60e1(0x243)+_0x468e1e[_0x3a60e1(0x1e4)]+_0x3a60e1(0x229)+(_0x20d327?_0x3a60e1(0x205):_0x3a60e1(0x222))+']';_0x8df0ee+='\x0a\x20\x20-\x20name:\x20\x22'+_0x907f67+_0x3a60e1(0x1c0)+_0x25f5ab+_0x3a60e1(0x246)+_0x5a3f41+_0x3a60e1(0x1f2)+_0x5e4410+_0x3a60e1(0x207)+_0x562b46+'\x0a\x20\x20\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20\x20\x20host:\x20'+_0x53eb18+_0x3a60e1(0x263)+_0x3401f7+_0x3a60e1(0x20c);});else{const _0x5e7f61='['+(_0x29feac[_0x2365f0(0x1ad)](_0x468e1e)+0x1)+']\x20'+_0x468e1e[_0x2365f0(0x1ac)]+'\x20-\x20'+_0x468e1e[_0x2365f0(0x1e4)]+_0x2365f0(0x229)+(_0x20d327?_0x2365f0(0x205):_0x2365f0(0x222))+']';_0x8df0ee+=_0x2365f0(0x219)+_0x5e7f61+_0x2365f0(0x1c0)+_0x2020a9+_0x2365f0(0x246)+_0x5a3f41+'\x0a\x20\x20\x20\x20cipher:\x20none\x0a\x20\x20\x20\x20password:\x20'+_0x5e4410+_0x2365f0(0x207)+_0x562b46+_0x2365f0(0x212)+_0x2020a9+_0x2365f0(0x263)+_0x3401f7+_0x2365f0(0x20c);}}}),_0x8df0ee;}function generateNekoboxConfig(_0x1c508f){const _0x5c7904=_0xfc11a9;let _0x1885d1=_0x5c7904(0x1ea);const _0x213c2d=_0x1c508f[_0x5c7904(0x1eb)](_0x3becaf=>_0x5c7904(0x22a)+_0x3becaf[_0x5c7904(0x224)]+'\x22,')['join']('\x0a');_0x1885d1+=_0x213c2d+'\x0a',_0x1885d1+=_0x5c7904(0x1dc),_0x1885d1+=_0x213c2d+'\x0a',_0x1885d1+=_0x5c7904(0x1ca);const _0x2d2048=_0x1c508f[_0x5c7904(0x1eb)]((_0x1c8082,_0x2c7019)=>{const _0x342834=_0x5c7904;let _0x565893='';if(_0x1c8082[_0x342834(0x20a)]===_0x342834(0x1b7))_0x565893='\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22alter_id\x22:\x200,\x0a\x20\x20\x20\x20\x20\x20\x22packet_encoding\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22security\x22:\x20\x22zero\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22'+_0x1c8082[_0x342834(0x23a)]+_0x342834(0x1d2)+_0x1c8082['port']+','+(_0x1c8082['tls']?'\x0a\x20\x20\x20\x20\x20\x20\x22tls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22insecure\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22server_name\x22:\x20\x22'+(_0x1c8082[_0x342834(0x24f)]||_0x1c8082[_0x342834(0x23a)])+_0x342834(0x1b0):'')+_0x342834(0x25f)+(_0x1c8082['wsHost']||_0x1c8082[_0x342834(0x23a)])+_0x342834(0x245)+_0x1c8082[_0x342834(0x21d)]+'\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22ws\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22uuid\x22:\x20\x22'+_0x1c8082[_0x342834(0x1cf)]+_0x342834(0x225)+_0x1c8082[_0x342834(0x224)]+_0x342834(0x237);else{if(_0x1c8082[_0x342834(0x20a)]===_0x342834(0x238))_0x565893='\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x22flow\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22multiplex\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_streams\x22:\x2032,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22protocol\x22:\x20\x22smux\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22packet_encoding\x22:\x20\x22xudp\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22'+_0x1c8082[_0x342834(0x23a)]+_0x342834(0x1d2)+_0x1c8082[_0x342834(0x1e3)]+_0x342834(0x1cb)+_0x1c8082[_0x342834(0x224)]+'\x22,'+(_0x1c8082[_0x342834(0x1f4)]?'\x0a\x20\x20\x20\x20\x20\x20\x22tls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22insecure\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22server_name\x22:\x20\x22'+(_0x1c8082[_0x342834(0x24f)]||_0x1c8082[_0x342834(0x23a)])+'\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22utls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22fingerprint\x22:\x20\x22randomized\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20},':'')+'\x0a\x20\x20\x20\x20\x20\x20\x22transport\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22early_data_header_name\x22:\x20\x22Sec-WebSocket-Protocol\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22headers\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22Host\x22:\x20\x22'+(_0x1c8082[_0x342834(0x1af)]||_0x1c8082['server'])+_0x342834(0x1b3)+_0x1c8082[_0x342834(0x21d)]+'\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22ws\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22vless\x22,\x0a\x20\x20\x20\x20\x20\x20\x22uuid\x22:\x20\x22'+_0x1c8082[_0x342834(0x1cf)]+_0x342834(0x237);else{if(_0x1c8082[_0x342834(0x20a)]===_0x342834(0x1dd))_0x565893=_0x342834(0x1e8)+_0x1c8082[_0x342834(0x226)]+_0x342834(0x218)+_0x1c8082['server']+_0x342834(0x1d2)+_0x1c8082[_0x342834(0x1e3)]+_0x342834(0x1cb)+_0x1c8082['name']+'\x22,'+(_0x1c8082[_0x342834(0x1f4)]?_0x342834(0x1de)+(_0x1c8082[_0x342834(0x24f)]||_0x1c8082['server'])+'\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22utls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22fingerprint\x22:\x20\x22randomized\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20},':'')+_0x342834(0x21c)+(_0x1c8082['wsHost']||_0x1c8082[_0x342834(0x23a)])+'\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_early_data\x22:\x200,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22'+_0x1c8082['wsPath']+_0x342834(0x1ce);else _0x1c8082['type']==='ss'&&(_0x565893='\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22shadowsocks\x22,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22'+_0x1c8082['name']+_0x342834(0x218)+_0x1c8082[_0x342834(0x23a)]+_0x342834(0x1d2)+_0x1c8082[_0x342834(0x1e3)]+_0x342834(0x233)+_0x1c8082['password']+_0x342834(0x1d5)+_0x1c8082[_0x342834(0x21d)]+';host='+(_0x1c8082[_0x342834(0x1af)]||_0x1c8082[_0x342834(0x23a)])+_0x342834(0x254)+(_0x1c8082['tls']?'1':'0')+_0x342834(0x237));}}return _0x565893;})['join'](',\x0a');return _0x1885d1+=_0x2d2048,_0x1885d1+=_0x5c7904(0x23f),_0x1885d1;}function showLoading(_0x544805){const _0x35c23c=_0xfc11a9;loadingElement['style'][_0x35c23c(0x256)]=_0x35c23c(0x20f),loadingElement[_0x35c23c(0x1e0)](_0x35c23c(0x241))['textContent']=_0x544805,resultElement[_0x35c23c(0x1e1)][_0x35c23c(0x256)]=_0x35c23c(0x201),validationStatusElement[_0x35c23c(0x1e1)][_0x35c23c(0x256)]='none';}function _0x31f6(_0x2ae9de,_0x4fc6f9){const _0x43eb06=_0x43eb();return _0x31f6=function(_0x31f63e,_0x3b5ab7){_0x31f63e=_0x31f63e-0x1a9;let _0x163236=_0x43eb06[_0x31f63e];return _0x163236;},_0x31f6(_0x2ae9de,_0x4fc6f9);}function hideLoading(){const _0x200d23=_0xfc11a9;loadingElement[_0x200d23(0x1e1)][_0x200d23(0x256)]=_0x200d23(0x201);}function showError(_0x20bbbc){const _0x5a98b4=_0xfc11a9;errorMessageElement[_0x5a98b4(0x20e)]=_0x20bbbc,errorMessageElement[_0x5a98b4(0x1e1)][_0x5a98b4(0x256)]=_0x5a98b4(0x20f);}function _0x43eb(){const _0x3358a5=['tls','replace','width','&sni=','wildcard','loading','scrollIntoView','error-message','No\x20proxies\x20found\x20with\x20the\x20selected\x20criteria.','1688951CcLVAa','\x20[VLESS-','32354JSELYM','min','none','?plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath=','option','default','TLS','\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20','\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20plugin:\x20v2ray-plugin\x0a\x20\x20\x20\x20plugin-opts:\x0a\x20\x20\x20\x20\x20\x20mode:\x20websocket\x0a\x20\x20\x20\x20\x20\x20tls:\x20','Error\x20validating\x20proxy:','18178jjayxW','type','1428USzeoZ','\x0a\x20\x20\x20\x20\x20\x20mux:\x20false\x0a','getElementById','textContent','block','312ohlura','267OfHuQQ','\x0a\x20\x20\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20\x20\x20host:\x20','\x0a\x20\x20\x20\x20password:\x20','zero','submit','\x0a#\x20Protocol:\x20','createElement','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22','\x0a\x20\x20-\x20name:\x20\x22','includes','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20class=\x22copy-icon\x22\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<rect\x20x=\x229\x22\x20y=\x229\x22\x20width=\x2213\x22\x20height=\x2213\x22\x20rx=\x222\x22\x20ry=\x222\x22></rect>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M5\x2015H4a2\x202\x200\x200\x201-2-2V4a2\x202\x200\x200\x201\x202-2h9a2\x202\x200\x200\x201\x202\x202v1\x22></path>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20COPY\x20CONFIGURATION\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x22transport\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22early_data_header_name\x22:\x20\x22Sec-WebSocket-Protocol\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22headers\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22Host\x22:\x20\x22','wsPath',']\x20(','/Inconigto-Mode/{ip}-{port}','\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20tls:\x20','proxyListUrl','NTLS','vmess://','name','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22vmess\x22,\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22prefer_ipv4\x22,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22','password','Error\x20encoding\x20base64:','\x20[TROJAN-','\x20[SS-','\x20\x20\x20\x20\x20\x20\x20\x20\x22','\x22\x0a\x20\x20\x20\x20type:\x20trojan\x0a\x20\x20\x20\x20server:\x20','filter','Failed\x20to\x20fetch\x20proxy\x20list','result','\x0a\x20\x20\x20\x20uuid:\x20','push','Generating\x20configuration...','customBugContainer',',\x0a\x20\x20\x20\x20\x20\x20\x22method\x22:\x20\x22none\x22,\x0a\x20\x20\x20\x20\x20\x20\x22password\x22:\x20\x22','customBug','formatType','1370940wpOFMn','\x22\x0a\x20\x20\x20\x20}','vless','mix','server','13964440CrxiWQ','\x20[VMess-','isArray','length',',\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22direct\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22direct\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22bypass\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22direct\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22block\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22block\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-out\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22dns\x22\x0a\x20\x20\x20\x20}\x0a\x20\x20],\x0a\x20\x20\x22route\x22:\x20{\x0a\x20\x20\x20\x20\x22auto_detect_interface\x22:\x20true,\x0a\x20\x20\x20\x20\x22rules\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22dns-out\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22port\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2053\x0a\x20\x20\x20\x20\x20\x20\x20\x20]\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22inbound\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22dns-in\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22dns-out\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22network\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22udp\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22block\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22port\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20443\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22port_range\x22:\x20[]\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22ip_cidr\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22224.0.0.0/3\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22ff00::/8\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22outbound\x22:\x20\x22block\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22source_ip_cidr\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22224.0.0.0/3\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22ff00::/8\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20]\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20]\x0a\x20\x20}\x0a}','&path=','.loading-text','bugType','\x20-\x20','floor','\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22','\x0a\x20\x20\x20\x20port:\x20','\x22\x0a\x20\x20\x20\x20type:\x20vmess\x0a\x20\x20\x20\x20server:\x20','https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt','configType','clipboard','apiCheckUrl','Disabled','forEach','1107kiQXLO','sni','maxProxies','validateProxies','Enabled','innerHTML',';tls=','toUpperCase','display','error','&type=ws&host=','v2ray','proxyip','shadowsocks','addEventListener','sort','true','\x0a\x20\x20\x20\x20\x20\x20\x22transport\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22headers\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22Host\x22:\x20\x22','trim','\x20[Trojan-','Failed\x20to\x20copy:\x20','\x0a\x20\x20\x20\x20\x20\x20path:\x20','12CAlCIf','trojan://','output','text','country','indexOf','copyLink','wsHost','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22utls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22fingerprint\x22:\x20\x22randomized\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20},','\x0a\x0aproxies:\x0a','appendChild','\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_early_data\x22:\x200,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22','?encryption=none&security=','invalid-count','ss://','vmess','\x0a\x20\x20\x20\x20network:\x20ws\x0a\x20\x20\x20\x20ws-opts:\x0a\x20\x20\x20\x20\x20\x20path:\x20','DOMContentLoaded','subLinkForm','split','mainDomains','click','smooth','https://afrcloud.dpdns.org/','\x22\x0a\x20\x20\x20\x20type:\x20ss\x0a\x20\x20\x20\x20server:\x20','validation-count','validation-bar','vless://','Error\x20loading\x20proxy\x20list:','?security=','?plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath%3D','Asia/Jakarta','{port}','Proxy\x20count\x20must\x20be\x20between\x201\x20and\x20','\x20\x20\x20\x20\x20\x20\x20\x20\x22direct\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22Best\x20Latency\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22urltest\x22,\x0a\x20\x20\x20\x20\x20\x20\x22url\x22:\x20\x22https://detectportal.firefox.com/success.txt\x22\x0a\x20\x20\x20\x20},\x0a',',\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22','{ip}','catch','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22ws\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22trojan\x22\x0a\x20\x20\x20\x20}','uuid','\x0a\x20\x20\x20\x20skip-cert-verify:\x20true\x0a\x20\x20\x20\x20servername:\x20','random','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22server_port\x22:\x20','Please\x20enter\x20a\x20UUID.','stbwrt.web.id','\x22,\x0a\x20\x20\x20\x20\x20\x20\x22plugin\x22:\x20\x22v2ray-plugin\x22,\x0a\x20\x20\x20\x20\x20\x20\x22plugin_opts\x22:\x20\x22mux=0;path=','randomUUID','\x0a\x20\x20\x20\x20alterId:\x200\x0a\x20\x20\x20\x20cipher:\x20zero\x0a\x20\x20\x20\x20udp:\x20false\x0a\x20\x20\x20\x20tls:\x20','Fetching\x20proxy\x20list...','\x0a\x20\x20\x20\x20\x20\x20headers:\x0a\x20\x20\x20\x20\x20\x20\x20\x20Host:\x20','No\x20proxies\x20found\x20in\x20the\x20proxy\x20list.','pathTemplate','\x20\x20\x20\x20\x20\x20\x20\x20\x22direct\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22Internet\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22selector\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22interval\x22:\x20\x221m0s\x22,\x0a\x20\x20\x20\x20\x20\x20\x22outbounds\x22:\x20[\x0a','trojan','\x0a\x20\x20\x20\x20\x20\x20\x22tls\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22insecure\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22server_name\x22:\x20\x22','non-wildcard','querySelector','style','change','port','provider','\x22\x0a\x20\x20\x20\x20type:\x20vless\x0a\x20\x20\x20\x20server:\x20','nekobox','Failed\x20to\x20load\x20proxy\x20list.\x20Please\x20try\x20again\x20later.','\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x22multiplex\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22max_streams\x22:\x2032,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22protocol\x22:\x20\x22smux\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20\x22password\x22:\x20\x22','stringify','##INCONIGTO-MODE##\x0a{\x0a\x20\x20\x22dns\x22:\x20{\x0a\x20\x20\x20\x20\x22final\x22:\x20\x22dns-final\x22,\x0a\x20\x20\x20\x20\x22independent_cache\x22:\x20true,\x0a\x20\x20\x20\x20\x22rules\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22disable_cache\x22:\x20false,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22domain\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22family.cloudflare-dns.com\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22server\x22:\x20\x22direct-dns\x22\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x22servers\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22https://family.cloudflare-dns.com/dns-query\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address_resolver\x22:\x20\x22direct-dns\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22remote-dns\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22direct-dns\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address_resolver\x22:\x20\x22dns-local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22strategy\x22:\x20\x22ipv4_only\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-final\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22local\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-local\x22\x0a\x20\x20\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22address\x22:\x20\x22rcode://success\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-block\x22\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20]\x0a\x20\x20},\x0a\x20\x20\x22experimental\x22:\x20{\x0a\x20\x20\x20\x20\x22cache_file\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x22enabled\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22path\x22:\x20\x22../cache/clash.db\x22,\x0a\x20\x20\x20\x20\x20\x20\x22store_fakeip\x22:\x20true\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20\x22clash_api\x22:\x20{\x0a\x20\x20\x20\x20\x20\x20\x22external_controller\x22:\x20\x22127.0.0.1:9090\x22,\x0a\x20\x20\x20\x20\x20\x20\x22external_ui\x22:\x20\x22../files/yacd\x22\x0a\x20\x20\x20\x20}\x0a\x20\x20},\x0a\x20\x20\x22inbounds\x22:\x20[\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22listen\x22:\x20\x220.0.0.0\x22,\x0a\x20\x20\x20\x20\x20\x20\x22listen_port\x22:\x206450,\x0a\x20\x20\x20\x20\x20\x20\x22override_address\x22:\x20\x228.8.8.8\x22,\x0a\x20\x20\x20\x20\x20\x20\x22override_port\x22:\x2053,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22dns-in\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22direct\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22endpoint_independent_nat\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22inet4_address\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22172.19.0.1/28\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22mtu\x22:\x209000,\x0a\x20\x20\x20\x20\x20\x20\x22endpoint_independent_nat\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22inet4_address\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22172.19.0.1/28\x22\x0a\x20\x20\x20\x20\x20\x20],\x0a\x20\x20\x20\x20\x20\x20\x22mtu\x22:\x209000,\x0a\x20\x20\x20\x20\x20\x20\x22sniff\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22sniff_override_destination\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22stack\x22:\x20\x22system\x22,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22tun-in\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22tun\x22\x0a\x20\x20\x20\x20},\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22domain_strategy\x22:\x20\x22\x22,\x0a\x20\x20\x20\x20\x20\x20\x22listen\x22:\x20\x220.0.0.0\x22,\x0a\x20\x20\x20\x20\x20\x20\x22listen_port\x22:\x202080,\x0a\x20\x20\x20\x20\x20\x20\x22sniff\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22sniff_override_destination\x22:\x20true,\x0a\x20\x20\x20\x20\x20\x20\x22tag\x22:\x20\x22mixed-in\x22,\x0a\x20\x20\x20\x20\x20\x20\x22type\x22:\x20\x22mixed\x22\x0a\x20\x20\x20\x20}\x0a\x20\x20],\x0a\x20\x20\x22log\x22:\x20{\x0a\x20\x20\x20\x20\x22level\x22:\x20\x22info\x22\x0a\x20\x20},\x0a\x20\x20\x22outbounds\x22:\x20[\x0a\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x22outbounds\x22:\x20[\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x22Best\x20Latency\x22,\x0a','map','61990NZdnfE','all','value','then','slice','preventDefault','\x0a\x20\x20\x20\x20cipher:\x20none\x0a\x20\x20\x20\x20password:\x20','2705815khWLBw'];_0x43eb=function(){return _0x3358a5;};return _0x43eb();}function showResult(_0xcc5258){const _0x5698f6=_0xfc11a9;hideLoading(),validationStatusElement[_0x5698f6(0x1e1)][_0x5698f6(0x256)]=_0x5698f6(0x201),outputElement[_0x5698f6(0x1ee)]=_0xcc5258,resultElement['style'][_0x5698f6(0x256)]='block',resultElement[_0x5698f6(0x1fa)]({'behavior':_0x5698f6(0x1be)});}function shuffleArray(_0xd9add7){const _0x1610dc=_0xfc11a9;for(let _0x502beb=_0xd9add7['length']-0x1;_0x502beb>0x0;_0x502beb--){const _0x1d417d=Math[_0x1610dc(0x244)](Math[_0x1610dc(0x1d1)]()*(_0x502beb+0x1));[_0xd9add7[_0x502beb],_0xd9add7[_0x1d417d]]=[_0xd9add7[_0x1d417d],_0xd9add7[_0x502beb]];}return _0xd9add7;}
+const CONFIG = {
+  'proxyListUrl': "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt",
+  'apiCheckUrl': "https://afrcloud.dpdns.org/",
+  'mainDomains': ["stbwrt.biz.id"],
+  'defaultUuid': 'bbbbbbbb-cccc-4ddd-eeee-ffffffffffff',
+  'maxProxies': 0x32,
+  'defaultProxyCount': 0x5,
+  'pathTemplate': "/Inconigto-Mode/{ip}-{port}"
+};
+let proxyList = [];
+let filteredProxyList = [];
+let validatedProxies = [];
+let validationInProgress = false;
+let totalValidated = 0x0;
+let validCount = 0x0;
+let invalidCount = 0x0;
+const form = document.getElementById("subLinkForm");
+const configTypeSelect = document.getElementById("configType");
+const formatTypeSelect = document.getElementById("formatType");
+const uuidInput = document.getElementById('uuid');
+const generateUuidBtn = document.getElementById('generateUuid');
+const bugTypeSelect = document.getElementById("bugType");
+const mainDomainSelect = document.getElementById('mainDomain');
+const customBugContainer = document.getElementById("customBugContainer");
+const customBugInput = document.getElementById("customBug");
+const tlsSelect = document.getElementById("tls");
+const countrySelect = document.getElementById("country");
+const limitInput = document.getElementById('limit');
+const validateProxiesCheckbox = document.getElementById("validateProxies");
+const loadingElement = document.getElementById("loading");
+const validationStatusElement = document.getElementById('validation-status');
+const validationCountElement = document.getElementById("validation-count");
+const validationBarElement = document.getElementById("validation-bar");
+const validCountElement = document.getElementById('valid-count');
+const invalidCountElement = document.getElementById("invalid-count");
+const errorMessageElement = document.getElementById("error-message");
+const resultElement = document.getElementById("result");
+const outputElement = document.getElementById("output");
+const copyLinkBtn = document.getElementById("copyLink");
+function generateUUIDv4() {
+  return crypto.randomUUID();
+}
+async function copyToClipboard(_0x3a1862) {
+  try {
+    await navigator.clipboard.writeText(_0x3a1862);
+    return true;
+  } catch (_0x53b1ea) {
+    console.error("Failed to copy: ", _0x53b1ea);
+    return false;
+  }
+}
+function safeBase64Encode(_0x38f716) {
+  try {
+    return btoa(unescape(encodeURIComponent(_0x38f716)));
+  } catch (_0x84a36b) {
+    console.error("Error encoding base64:", _0x84a36b);
+    return '';
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  populateMainDomains();
+  setupEventListeners();
+  loadProxyList();
+});
+function populateMainDomains() {
+  CONFIG.mainDomains.forEach(_0x40b88c => {
+    const _0x111831 = document.createElement("option");
+    _0x111831.value = _0x40b88c;
+    _0x111831.textContent = _0x40b88c;
+    mainDomainSelect.appendChild(_0x111831);
+  });
+}
+function setupEventListeners() {
+  generateUuidBtn.addEventListener("click", () => {
+    uuidInput.value = crypto.randomUUID();
+  });
+  bugTypeSelect.addEventListener("change", () => {
+    if (bugTypeSelect.value === 'non-wildcard' || bugTypeSelect.value === "wildcard") {
+      customBugContainer.style.display = 'block';
+    } else {
+      customBugContainer.style.display = "none";
+    }
+  });
+  form.addEventListener("submit", handleFormSubmit);
+  copyLinkBtn.addEventListener("click", () => {
+    copyToClipboard(outputElement.value).then(_0xbf9f12 => {
+      if (_0xbf9f12) {
+        copyLinkBtn.innerHTML = "\n            <svg class=\"copy-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n              <polyline points=\"20 6 9 17 4 12\"></polyline>\n            </svg>\n            COPIED SUCCESSFULLY\n          ";
+        setTimeout(() => {
+          copyLinkBtn.innerHTML = "\n              <svg class=\"copy-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                <rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\" ry=\"2\"></rect>\n                <path d=\"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\"></path>\n              </svg>\n              COPY CONFIGURATION\n            ";
+        }, 0x7d0);
+      }
+    });
+  });
+}
+function loadProxyList() {
+  showLoading("Fetching proxy list...");
+  fetch("https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt").then(_0x4494de => {
+    if (!_0x4494de.ok) {
+      throw new Error("Failed to fetch proxy list");
+    }
+    return _0x4494de.text();
+  }).then(_0x139194 => {
+    processProxyData(_0x139194);
+    hideLoading();
+  })["catch"](_0x34db10 => {
+    console.error("Error loading proxy list:", _0x34db10);
+    showError("Failed to load proxy list. Please try again later.");
+    hideLoading();
+  });
+}
+function processProxyData(_0x33f045) {
+  const _0x4d6091 = _0x33f045.split(/\r?\n/).filter(_0xf68f4f => _0xf68f4f.trim() !== '');
+  if (_0x4d6091.length === 0x0) {
+    showError("No proxies found in the proxy list.");
+    return;
+  }
+  let _0x3777ca = ',';
+  const _0x1899eb = _0x4d6091[0x0];
+  if (_0x1899eb.includes("\t")) {
+    _0x3777ca = "\t";
+  } else {
+    if (_0x1899eb.includes('|')) {
+      _0x3777ca = '|';
+    } else if (_0x1899eb.includes(';')) {
+      _0x3777ca = ';';
+    }
+  }
+  proxyList = _0x4d6091.map(_0x94f33 => {
+    const _0x2dfee1 = _0x94f33.split(_0x3777ca);
+    if (_0x2dfee1.length >= 0x2) {
+      return {
+        'ip': _0x2dfee1[0x0].trim(),
+        'port': _0x2dfee1[0x1].trim(),
+        'country': _0x2dfee1.length >= 0x3 ? _0x2dfee1[0x2].trim() : 'Unknown',
+        'provider': _0x2dfee1.length >= 0x4 ? _0x2dfee1[0x3].trim() : "Unknown Provider"
+      };
+    }
+    return null;
+  }).filter(_0xdf2f5b => _0xdf2f5b && _0xdf2f5b.ip && _0xdf2f5b.port);
+  populateCountryDropdown();
+}
+function populateCountryDropdown() {
+  const _0x3712f3 = [...new Set(proxyList.map(_0x3cdc85 => _0x3cdc85.country))];
+  _0x3712f3.sort();
+  countrySelect.innerHTML = '';
+  const _0x47db50 = document.createElement("option");
+  _0x47db50.value = '';
+  _0x47db50.textContent = "All Countries";
+  countrySelect.appendChild(_0x47db50);
+  _0x3712f3.forEach(_0x547d71 => {
+    const _0x1f50f5 = document.createElement("option");
+    _0x1f50f5.value = _0x547d71;
+    _0x1f50f5.textContent = _0x547d71;
+    countrySelect.appendChild(_0x1f50f5);
+  });
+}
+async function handleFormSubmit(_0x242808) {
+  _0x242808.preventDefault();
+  errorMessageElement.textContent = '';
+  errorMessageElement.style.display = "none";
+  const _0x110b63 = configTypeSelect.value;
+  const _0x1e06b0 = formatTypeSelect.value;
+  const _0x521cbd = uuidInput.value;
+  const _0x46bcd6 = bugTypeSelect.value;
+  const _0x178670 = mainDomainSelect.value;
+  const _0x1a54a2 = customBugInput.value;
+  const _0x287a93 = tlsSelect.value === "true";
+  const _0x2b7f20 = countrySelect.value;
+  const _0x2365d1 = Number.parseInt(limitInput.value, 0xa);
+  const _0x287a10 = validateProxiesCheckbox.checked;
+  if (!_0x521cbd) {
+    showError("Please enter a UUID.");
+    return;
+  }
+  if (_0x2365d1 < 0x1 || _0x2365d1 > 0x32) {
+    showError("Proxy count must be between 1 and 50.");
+    return;
+  }
+  filteredProxyList = _0x2b7f20 ? proxyList.filter(_0x4b2ae4 => _0x4b2ae4.country === _0x2b7f20) : [...proxyList];
+  if (filteredProxyList.length === 0x0) {
+    showError("No proxies found with the selected criteria.");
+    return;
+  }
+  shuffleArray(filteredProxyList);
+  filteredProxyList = filteredProxyList.slice(0x0, _0x2365d1);
+  showLoading("Generating configuration...");
+  if (_0x287a10) {
+    await validateProxyList();
+  }
+  const _0x17bc8e = generateConfiguration(_0x110b63, _0x1e06b0, _0x521cbd, _0x46bcd6, _0x178670, _0x1a54a2, _0x287a93);
+  showResult(_0x17bc8e);
+}
+async function validateProxyList() {
+  validationInProgress = true;
+  validatedProxies = [];
+  totalValidated = 0x0;
+  validCount = 0x0;
+  invalidCount = 0x0;
+  validationStatusElement.style.display = "block";
+  validationCountElement.textContent = '0/' + filteredProxyList.length;
+  validationBarElement.style.width = '0%';
+  validCountElement.textContent = '0';
+  invalidCountElement.textContent = '0';
+  invalidCountElement.textContent = '0';
+  const _0x4332ef = [...filteredProxyList];
+  const _0x5b3e38 = Math.ceil(_0x4332ef.length / 0x5);
+  for (let _0x16a2da = 0x0; _0x16a2da < _0x5b3e38; _0x16a2da++) {
+    const _0x3a46c6 = _0x16a2da * 0x5;
+    const _0x3e4450 = Math.min(_0x3a46c6 + 0x5, _0x4332ef.length);
+    const _0xc8c08d = _0x4332ef.slice(_0x3a46c6, _0x3e4450);
+    await Promise.all(_0xc8c08d.map(async _0x5ec896 => {
+      const _0x592a51 = await validateProxy(_0x5ec896);
+      totalValidated++;
+      const _0x22ea5a = totalValidated / _0x4332ef.length * 0x64;
+      validationCountElement.textContent = totalValidated + '/' + _0x4332ef.length;
+      validationBarElement.style.width = _0x22ea5a + '%';
+      if (_0x592a51) {
+        validCount++;
+        validCountElement.textContent = validCount;
+        validatedProxies.push(_0x5ec896);
+      } else {
+        invalidCount++;
+        invalidCountElement.textContent = invalidCount;
+      }
+    }));
+  }
+  if (validatedProxies.length > 0x0) {
+    filteredProxyList = validatedProxies;
+  }
+  validationInProgress = false;
+}
+async function validateProxy(_0x40e0b1) {
+  try {
+    const _0x5084c5 = await fetch("https://afrcloud.dpdns.org/" + _0x40e0b1.ip + ':' + _0x40e0b1.port);
+    const _0x17509d = await _0x5084c5.json();
+    const _0x416052 = Array.isArray(_0x17509d) ? _0x17509d[0x0] : _0x17509d;
+    return _0x416052 && _0x416052.proxyip === true;
+  } catch (_0x1dc00e) {
+    console.error("Error validating proxy:", _0x1dc00e);
+    return false;
+  }
+}
+function generateConfiguration(_0x1f0a31, _0x142717, _0x559e83, _0x2af67c, _0x2a84fa, _0x306f9c, _0x2a8e81) {
+  const _0x26af7a = filteredProxyList;
+  switch (_0x142717) {
+    case "v2ray":
+      return generateV2rayLinks(_0x1f0a31, _0x26af7a, _0x559e83, _0x2af67c, _0x2a84fa, _0x306f9c, _0x2a8e81);
+    case 'clash':
+      return generateClashConfig(_0x1f0a31, _0x26af7a, _0x559e83, _0x2af67c, _0x2a84fa, _0x306f9c, _0x2a8e81);
+    case "nekobox":
+      const _0x325b5f = [];
+      _0x26af7a.forEach(_0x2f8b2a => {
+        const _0x2a6cad = "/Inconigto-Mode/{ip}-{port}".replace("{ip}", _0x2f8b2a.ip).replace("{port}", _0x2f8b2a.port);
+        const _0x5796b5 = _0x2a8e81 ? 0x1bb : 0x50;
+        const _0x10ed8d = _0x306f9c && (_0x2af67c === "non-wildcard" || _0x2af67c === "wildcard") ? _0x306f9c.split(',').map(_0x2065e6 => _0x2065e6.trim()) : [_0x2a84fa];
+        _0x10ed8d.forEach(_0x56a273 => {
+          let _0xa1b4c1;
+          let _0x928f74;
+          let _0xe50fa4;
+          switch (_0x2af67c) {
+            case "default":
+              _0xa1b4c1 = _0x2a84fa;
+              _0x928f74 = _0x2a84fa;
+              _0xe50fa4 = _0x2a84fa;
+              break;
+            case "non-wildcard":
+              _0xa1b4c1 = _0x56a273;
+              _0x928f74 = _0x2a84fa;
+              _0xe50fa4 = _0x2a84fa;
+              break;
+            case 'wildcard':
+              _0xa1b4c1 = _0x56a273;
+              _0x928f74 = _0x56a273 + '.' + _0x2a84fa;
+              _0xe50fa4 = _0x56a273 + '.' + _0x2a84fa;
+              break;
+          }
+          const _0x587ec3 = _0x2f8b2a.country;
+          const _0x8c3a20 = _0x2f8b2a.provider;
+          if (_0x1f0a31 === 'vmess' || _0x1f0a31 === "mix") {
+            _0x325b5f.push({
+              'type': "vmess",
+              'name': '[' + (_0x325b5f.length + 0x1) + "] (" + _0x587ec3 + ") " + _0x8c3a20 + " [VMESS-" + (_0x2a8e81 ? "TLS" : 'NTLS') + ']',
+              'server': _0xa1b4c1,
+              'port': _0x5796b5,
+              'uuid': _0x559e83,
+              'tls': _0x2a8e81,
+              'sni': _0xe50fa4,
+              'wsHost': _0x928f74,
+              'wsPath': _0x2a6cad
+            });
+          }
+          if (_0x1f0a31 === "vless" || _0x1f0a31 === "mix") {
+            _0x325b5f.push({
+              'type': "vless",
+              'name': '[' + (_0x325b5f.length + 0x1) + "] (" + _0x587ec3 + ") " + _0x8c3a20 + " [VLESS-" + (_0x2a8e81 ? "TLS" : "NTLS") + ']',
+              'server': _0xa1b4c1,
+              'port': _0x5796b5,
+              'uuid': _0x559e83,
+              'tls': _0x2a8e81,
+              'sni': _0xe50fa4,
+              'wsHost': _0x928f74,
+              'wsPath': _0x2a6cad
+            });
+          }
+          if (_0x1f0a31 === "trojan" || _0x1f0a31 === "mix") {
+            _0x325b5f.push({
+              'type': "trojan",
+              'name': '[' + (_0x325b5f.length + 0x1) + "] (" + _0x587ec3 + ") " + _0x8c3a20 + " [TROJAN-" + (_0x2a8e81 ? "TLS" : "NTLS") + ']',
+              'server': _0xa1b4c1,
+              'port': _0x5796b5,
+              'password': _0x559e83,
+              'tls': _0x2a8e81,
+              'sni': _0xe50fa4,
+              'wsHost': _0x928f74,
+              'wsPath': _0x2a6cad
+            });
+          }
+          if (_0x1f0a31 === "shadowsocks" || _0x1f0a31 === "mix") {
+            _0x325b5f.push({
+              'type': 'ss',
+              'name': '[' + (_0x325b5f.length + 0x1) + "] (" + _0x587ec3 + ") " + _0x8c3a20 + " [SS-" + (_0x2a8e81 ? "TLS" : 'NTLS') + ']',
+              'server': _0xa1b4c1,
+              'port': _0x5796b5,
+              'password': _0x559e83,
+              'tls': _0x2a8e81,
+              'wsHost': _0x928f74,
+              'wsPath': _0x2a6cad
+            });
+          }
+        });
+      });
+      return generateNekoboxConfig(_0x325b5f);
+    default:
+      return "Unsupported format type";
+  }
+}
+function generateV2rayLinks(_0x4ae1c6, _0x4b8e74, _0x29ed29, _0x229483, _0x40705a, _0x529635, _0x2014a9) {
+  const _0x307e59 = [];
+  let _0x225dcd = [];
+  if (_0x529635 && (_0x229483 === "non-wildcard" || _0x229483 === 'wildcard')) {
+    _0x225dcd = _0x529635.split(',').map(_0x300d17 => _0x300d17.trim());
+  }
+  _0x4b8e74.forEach(_0x29873d => {
+    const _0xf9d8cf = "/Inconigto-Mode/{ip}-{port}".replace("{ip}", _0x29873d.ip).replace('{port}', _0x29873d.port);
+    const _0x197458 = _0x2014a9 ? 0x1bb : 0x50;
+    const _0x56327b = _0x2014a9 ? "tls" : 'none';
+    if (_0x4ae1c6 === "mix" || _0x4ae1c6 === 'vmess') {
+      if (_0x225dcd.length > 0x0) {
+        _0x225dcd.forEach((_0x2da4e8, _0x417d68) => {
+          const _0x1f2cbd = _0x229483 === 'wildcard' ? _0x2da4e8 + '.' + _0x40705a : _0x40705a;
+          const _0x2cf9bf = _0x229483 === "wildcard" ? _0x2da4e8 + '.' + _0x40705a : _0x40705a;
+          const _0x3785bd = {
+            'v': '2',
+            'ps': '[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [VMess-" + (_0x2014a9 ? "TLS" : "NTLS") + ']',
+            'add': _0x2da4e8,
+            'port': _0x197458,
+            'id': _0x29ed29,
+            'aid': '0',
+            'net': 'ws',
+            'type': "none",
+            'host': _0x1f2cbd,
+            'path': _0xf9d8cf,
+            'tls': _0x56327b,
+            'sni': _0x2cf9bf,
+            'scy': "zero"
+          };
+          _0x307e59.push("vmess://" + safeBase64Encode(JSON.stringify(_0x3785bd)));
+        });
+      } else {
+        const _0x914513 = {
+          'v': '2',
+          'ps': '[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [VMess-" + (_0x2014a9 ? "TLS" : "NTLS") + ']',
+          'add': _0x40705a,
+          'port': _0x197458,
+          'id': _0x29ed29,
+          'aid': '0',
+          'net': 'ws',
+          'type': "none",
+          'host': _0x40705a,
+          'path': _0xf9d8cf,
+          'tls': _0x56327b,
+          'sni': _0x40705a,
+          'scy': "zero"
+        };
+        _0x307e59.push('vmess://' + safeBase64Encode(JSON.stringify(_0x914513)));
+      }
+    }
+    if (_0x4ae1c6 === 'mix' || _0x4ae1c6 === 'vless') {
+      if (_0x225dcd.length > 0x0) {
+        _0x225dcd.forEach(_0xf1564c => {
+          const _0x491272 = _0x229483 === "wildcard" ? _0xf1564c + '.' + _0x40705a : _0x40705a;
+          const _0x43542e = _0x229483 === 'wildcard' ? _0xf1564c + '.' + _0x40705a : _0x40705a;
+          const _0x8e9d4e = encodeURIComponent('[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [VLESS-" + (_0x2014a9 ? 'TLS' : "NTLS") + ']');
+          const _0x52d677 = encodeURIComponent(_0xf9d8cf);
+          _0x307e59.push("vless://" + _0x29ed29 + '@' + _0xf1564c + ':' + _0x197458 + "?encryption=none&security=" + _0x56327b + "&type=ws&host=" + _0x491272 + "&path=" + _0x52d677 + '&sni=' + _0x43542e + '#' + _0x8e9d4e);
+        });
+      } else {
+        const _0x48c1bc = encodeURIComponent('[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [VLESS-" + (_0x2014a9 ? "TLS" : "NTLS") + ']');
+        const _0x1b67b9 = encodeURIComponent(_0xf9d8cf);
+        _0x307e59.push('vless://' + _0x29ed29 + '@' + _0x40705a + ':' + _0x197458 + '?encryption=none&security=' + _0x56327b + '&type=ws&host=' + _0x40705a + "&path=" + _0x1b67b9 + "&sni=" + _0x40705a + '#' + _0x48c1bc);
+      }
+    }
+    if (_0x4ae1c6 === "mix" || _0x4ae1c6 === "trojan") {
+      if (_0x225dcd.length > 0x0) {
+        _0x225dcd.forEach(_0x2f8766 => {
+          const _0x53f2e4 = _0x229483 === 'wildcard' ? _0x2f8766 + '.' + _0x40705a : _0x40705a;
+          const _0xcf00c9 = _0x229483 === "wildcard" ? _0x2f8766 + '.' + _0x40705a : _0x40705a;
+          const _0x57accd = encodeURIComponent('[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [Trojan-" + (_0x2014a9 ? 'TLS' : 'NTLS') + ']');
+          const _0x38d016 = encodeURIComponent(_0xf9d8cf);
+          _0x307e59.push("trojan://" + _0x29ed29 + '@' + _0x2f8766 + ':' + _0x197458 + "?security=" + _0x56327b + "&type=ws&host=" + _0x53f2e4 + "&path=" + _0x38d016 + "&sni=" + _0xcf00c9 + '#' + _0x57accd);
+        });
+      } else {
+        const _0x977f74 = encodeURIComponent('[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [Trojan-" + (_0x2014a9 ? "TLS" : 'NTLS') + ']');
+        const _0x163df0 = encodeURIComponent(_0xf9d8cf);
+        _0x307e59.push('trojan://' + _0x29ed29 + '@' + _0x40705a + ':' + _0x197458 + '?security=' + _0x56327b + "&type=ws&host=" + _0x40705a + "&path=" + _0x163df0 + "&sni=" + _0x40705a + '#' + _0x977f74);
+      }
+    }
+    if (_0x4ae1c6 === "mix" || _0x4ae1c6 === "shadowsocks") {
+      if (_0x225dcd.length > 0x0) {
+        _0x225dcd.forEach(_0x1bb2ea => {
+          const _0xbfdd0f = _0x229483 === 'wildcard' ? _0x1bb2ea + '.' + _0x40705a : _0x40705a;
+          const _0x2151e0 = encodeURIComponent('[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [SS-" + (_0x2014a9 ? "TLS" : "NTLS") + ']');
+          const _0xe88bb = encodeURIComponent(_0xf9d8cf);
+          const _0x170849 = safeBase64Encode("none:" + _0x29ed29);
+          _0x307e59.push("ss://" + _0x170849 + '@' + _0x1bb2ea + ':' + _0x197458 + "?plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath%3D" + _0xe88bb + '%3Bhost%3D' + _0xbfdd0f + '#' + _0x2151e0);
+        });
+      } else {
+        const _0x1ccb47 = encodeURIComponent('[' + (_0x307e59.length + 0x1) + "] " + _0x29873d.country + " - " + _0x29873d.provider + " [SS-" + (_0x2014a9 ? 'TLS' : "NTLS") + ']');
+        const _0x122687 = encodeURIComponent(_0xf9d8cf);
+        const _0x34b2b4 = safeBase64Encode("none:" + _0x29ed29);
+        _0x307e59.push('ss://' + _0x34b2b4 + '@' + _0x40705a + ':' + _0x197458 + "?plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath=" + _0x122687 + '%3Bhost%3D' + _0x40705a + '#' + _0x1ccb47);
+      }
+    }
+  });
+  return _0x307e59.join("\n");
+}
+function generateClashConfig(_0x1786a5, _0x29feac, _0x5e4410, _0x2cde90, _0x2020a9, _0xdfe797, _0x20d327) {
+  let _0x8df0ee = "# Clash Proxy Provider Configuration\n# Generated by Inconigto-Mode\n# Date: " + new Date().toLocaleString('en-US', {
+    'timeZone': "Asia/Jakarta"
+  }) + "\n# Protocol: " + _0x1786a5.toUpperCase() + "\n# TLS: " + (_0x20d327 ? "Enabled" : "Disabled") + "\n\nproxies:\n";
+  let _0x67ac19 = [];
+  if (_0xdfe797 && (_0x2cde90 === "non-wildcard" || _0x2cde90 === "wildcard")) {
+    _0x67ac19 = _0xdfe797.split(',').map(_0x457eae => _0x457eae.trim());
+  }
+  _0x29feac.forEach(_0x468e1e => {
+    const _0x3401f7 = "/Inconigto-Mode/{ip}-{port}".replace('{ip}', _0x468e1e.ip).replace('{port}', _0x468e1e.port);
+    const _0x5a3f41 = _0x20d327 ? 0x1bb : 0x50;
+    if (_0x1786a5 === "mix" || _0x1786a5 === 'vmess') {
+      if (_0x67ac19.length > 0x0) {
+        _0x67ac19.forEach((_0x332f38, _0x4668c4) => {
+          const _0x5309ac = _0x2cde90 === "wildcard" ? _0x332f38 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x37865b = _0x2cde90 === "wildcard" ? _0x332f38 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x1cc031 = '[' + (_0x29feac.indexOf(_0x468e1e) * _0x67ac19.length + _0x4668c4 + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [VMess-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+          _0x8df0ee += "\n  - name: \"" + _0x1cc031 + "\"\n    type: vmess\n    server: " + _0x332f38 + "\n    port: " + _0x5a3f41 + "\n    uuid: " + _0x5e4410 + "\n    alterId: 0\n    cipher: zero\n    udp: false\n    tls: " + _0x20d327 + "\n    skip-cert-verify: true\n    servername: " + _0x37865b + "\n    network: ws\n    ws-opts:\n      path: " + _0x3401f7 + "\n      headers:\n        Host: " + _0x5309ac + "\n";
+        });
+      } else {
+        const _0x30709c = '[' + (_0x29feac.indexOf(_0x468e1e) + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [VMess-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+        _0x8df0ee += "\n  - name: \"" + _0x30709c + "\"\n    type: vmess\n    server: " + _0x2020a9 + "\n    port: " + _0x5a3f41 + "\n    uuid: " + _0x5e4410 + "\n    alterId: 0\n    cipher: zero\n    udp: false\n    tls: " + _0x20d327 + "\n    skip-cert-verify: true\n    servername: " + _0x2020a9 + "\n    network: ws\n    ws-opts:\n      path: " + _0x3401f7 + "\n      headers:\n        Host: " + _0x2020a9 + "\n";
+      }
+    }
+    if (_0x1786a5 === "mix" || _0x1786a5 === 'vless') {
+      if (_0x67ac19.length > 0x0) {
+        _0x67ac19.forEach((_0x33d5b0, _0x9c795d) => {
+          const _0x47f58f = _0x2cde90 === "wildcard" ? _0x33d5b0 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x3795c0 = _0x2cde90 === "wildcard" ? _0x33d5b0 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x40df10 = '[' + (_0x29feac.indexOf(_0x468e1e) * _0x67ac19.length + _0x9c795d + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [VLESS-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+          _0x8df0ee += "\n  - name: \"" + _0x40df10 + "\"\n    type: vless\n    server: " + _0x33d5b0 + "\n    port: " + _0x5a3f41 + "\n    uuid: " + _0x5e4410 + "\n    udp: false\n    tls: " + _0x20d327 + "\n    skip-cert-verify: true\n    servername: " + _0x3795c0 + "\n    network: ws\n    ws-opts:\n      path: " + _0x3401f7 + "\n      headers:\n        Host: " + _0x47f58f + "\n";
+        });
+      } else {
+        const _0x364eb7 = '[' + (_0x29feac.indexOf(_0x468e1e) + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [VLESS-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+        _0x8df0ee += "\n  - name: \"" + _0x364eb7 + "\"\n    type: vless\n    server: " + _0x2020a9 + "\n    port: " + _0x5a3f41 + "\n    uuid: " + _0x5e4410 + "\n    udp: false\n    tls: " + _0x20d327 + "\n    skip-cert-verify: true\n    servername: " + _0x2020a9 + "\n    network: ws\n    ws-opts:\n      path: " + _0x3401f7 + "\n      headers:\n        Host: " + _0x2020a9 + "\n";
+      }
+    }
+    if (_0x1786a5 === "mix" || _0x1786a5 === "trojan") {
+      if (_0x67ac19.length > 0x0) {
+        _0x67ac19.forEach((_0x5d5169, _0x1454cf) => {
+          const _0x1a90ac = _0x2cde90 === "wildcard" ? _0x5d5169 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x201e92 = _0x2cde90 === "wildcard" ? _0x5d5169 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x125b9e = '[' + (_0x29feac.indexOf(_0x468e1e) * _0x67ac19.length + _0x1454cf + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [Trojan-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+          _0x8df0ee += "\n  - name: \"" + _0x125b9e + "\"\n    type: trojan\n    server: " + _0x5d5169 + "\n    port: " + _0x5a3f41 + "\n    password: " + _0x5e4410 + "\n    udp: false\n    sni: " + _0x201e92 + "\n    skip-cert-verify: true\n    network: ws\n    ws-opts:\n      path: " + _0x3401f7 + "\n      headers:\n        Host: " + _0x1a90ac + "\n";
+        });
+      } else {
+        const _0xbcdf4 = '[' + (_0x29feac.indexOf(_0x468e1e) + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [Trojan-" + (_0x20d327 ? 'TLS' : "NTLS") + ']';
+        _0x8df0ee += "\n  - name: \"" + _0xbcdf4 + "\"\n    type: trojan\n    server: " + _0x2020a9 + "\n    port: " + _0x5a3f41 + "\n    password: " + _0x5e4410 + "\n    udp: false\n    sni: " + _0x2020a9 + "\n    skip-cert-verify: true\n    network: ws\n    ws-opts:\n      path: " + _0x3401f7 + "\n      headers:\n        Host: " + _0x2020a9 + "\n";
+      }
+    }
+    if (_0x1786a5 === 'mix' || _0x1786a5 === "shadowsocks") {
+      if (_0x67ac19.length > 0x0) {
+        _0x67ac19.forEach((_0x3c3645, _0x247523) => {
+          const _0x53eb18 = _0x2cde90 === "wildcard" ? _0x3c3645 + '.' + _0x2020a9 : _0x2020a9;
+          const _0x907f67 = '[' + (_0x29feac.indexOf(_0x468e1e) * _0x67ac19.length + _0x247523 + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [SS-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+          _0x8df0ee += "\n  - name: \"" + _0x907f67 + "\"\n    type: ss\n    server: " + _0x3c3645 + "\n    port: " + _0x5a3f41 + "\n    cipher: none\n    password: " + _0x5e4410 + "\n    udp: false\n    plugin: v2ray-plugin\n    plugin-opts:\n      mode: websocket\n      tls: " + _0x20d327 + "\n      skip-cert-verify: true\n      host: " + _0x53eb18 + "\n      path: " + _0x3401f7 + "\n      mux: false\n";
+        });
+      } else {
+        const _0x5e7f61 = '[' + (_0x29feac.indexOf(_0x468e1e) + 0x1) + "] " + _0x468e1e.country + " - " + _0x468e1e.provider + " [SS-" + (_0x20d327 ? "TLS" : "NTLS") + ']';
+        _0x8df0ee += "\n  - name: \"" + _0x5e7f61 + "\"\n    type: ss\n    server: " + _0x2020a9 + "\n    port: " + _0x5a3f41 + "\n    cipher: none\n    password: " + _0x5e4410 + "\n    udp: false\n    plugin: v2ray-plugin\n    plugin-opts:\n      mode: websocket\n      tls: " + _0x20d327 + "\n      skip-cert-verify: true\n      host: " + _0x2020a9 + "\n      path: " + _0x3401f7 + "\n      mux: false\n";
+      }
+    }
+  });
+  return _0x8df0ee;
+}
+function generateNekoboxConfig(_0x1c508f) {
+  let _0x1885d1 = "##INCONIGTO-MODE##\n{\n  \"dns\": {\n    \"final\": \"dns-final\",\n    \"independent_cache\": true,\n    \"rules\": [\n      {\n        \"disable_cache\": false,\n        \"domain\": [\n          \"family.cloudflare-dns.com\"\n        ],\n        \"server\": \"direct-dns\"\n      }\n    ],\n    \"servers\": [\n      {\n        \"address\": \"https://family.cloudflare-dns.com/dns-query\",\n        \"address_resolver\": \"direct-dns\",\n        \"strategy\": \"ipv4_only\",\n        \"tag\": \"remote-dns\"\n      },\n      {\n        \"address\": \"local\",\n        \"strategy\": \"ipv4_only\",\n        \"tag\": \"direct-dns\"\n      },\n      {\n        \"address\": \"local\",\n        \"address_resolver\": \"dns-local\",\n        \"strategy\": \"ipv4_only\",\n        \"tag\": \"dns-final\"\n      },\n      {\n        \"address\": \"local\",\n        \"tag\": \"dns-local\"\n      },\n      {\n        \"address\": \"rcode://success\",\n        \"tag\": \"dns-block\"\n      }\n    ]\n  },\n  \"experimental\": {\n    \"cache_file\": {\n      \"enabled\": true,\n      \"path\": \"../cache/clash.db\",\n      \"store_fakeip\": true\n    },\n    \"clash_api\": {\n      \"external_controller\": \"127.0.0.1:9090\",\n      \"external_ui\": \"../files/yacd\"\n    }\n  },\n  \"inbounds\": [\n    {\n      \"listen\": \"0.0.0.0\",\n      \"listen_port\": 6450,\n      \"override_address\": \"8.8.8.8\",\n      \"override_port\": 53,\n      \"tag\": \"dns-in\",\n      \"type\": \"direct\"\n    },\n    {\n      \"domain_strategy\": \"\",\n      \"endpoint_independent_nat\": true,\n      \"inet4_address\": [\n        \"172.19.0.1/28\"\n      ],\n      \"mtu\": 9000,\n      \"endpoint_independent_nat\": true,\n      \"inet4_address\": [\n        \"172.19.0.1/28\"\n      ],\n      \"mtu\": 9000,\n      \"sniff\": true,\n      \"sniff_override_destination\": true,\n      \"stack\": \"system\",\n      \"tag\": \"tun-in\",\n      \"type\": \"tun\"\n    },\n    {\n      \"domain_strategy\": \"\",\n      \"listen\": \"0.0.0.0\",\n      \"listen_port\": 2080,\n      \"sniff\": true,\n      \"sniff_override_destination\": true,\n      \"tag\": \"mixed-in\",\n      \"type\": \"mixed\"\n    }\n  ],\n  \"log\": {\n    \"level\": \"info\"\n  },\n  \"outbounds\": [\n    {\n      \"outbounds\": [\n        \"Best Latency\",\n";
+  const _0x213c2d = _0x1c508f.map(_0x3becaf => "        \"" + _0x3becaf.name + "\",").join("\n");
+  _0x1885d1 += _0x213c2d + "\n";
+  _0x1885d1 += "        \"direct\"\n      ],\n      \"tag\": \"Internet\",\n      \"type\": \"selector\"\n    },\n    {\n      \"interval\": \"1m0s\",\n      \"outbounds\": [\n";
+  _0x1885d1 += _0x213c2d + "\n";
+  _0x1885d1 += "        \"direct\"\n      ],\n      \"tag\": \"Best Latency\",\n      \"type\": \"urltest\",\n      \"url\": \"https://detectportal.firefox.com/success.txt\"\n    },\n";
+  const _0x2d2048 = _0x1c508f.map((_0x1c8082, _0x2c7019) => {
+    let _0x565893 = '';
+    if (_0x1c8082.type === "vmess") {
+      _0x565893 = "    {\n      \"alter_id\": 0,\n      \"packet_encoding\": \"\",\n      \"security\": \"zero\",\n      \"server\": \"" + _0x1c8082.server + "\",\n      \"server_port\": " + _0x1c8082.port + ',' + (_0x1c8082.tls ? "\n      \"tls\": {\n        \"enabled\": true,\n        \"insecure\": false,\n        \"server_name\": \"" + (_0x1c8082.sni || _0x1c8082.server) + "\",\n        \"utls\": {\n          \"enabled\": true,\n          \"fingerprint\": \"randomized\"\n        }\n      }," : '') + "\n      \"transport\": {\n        \"headers\": {\n          \"Host\": \"" + (_0x1c8082.wsHost || _0x1c8082.server) + "\"\n        },\n        \"path\": \"" + _0x1c8082.wsPath + "\",\n        \"type\": \"ws\"\n      },\n      \"uuid\": \"" + _0x1c8082.uuid + "\",\n      \"type\": \"vmess\",\n      \"domain_strategy\": \"prefer_ipv4\",\n      \"tag\": \"" + _0x1c8082.name + "\"\n    }";
+    } else {
+      if (_0x1c8082.type === "vless") {
+        _0x565893 = "    {\n      \"domain_strategy\": \"ipv4_only\",\n      \"flow\": \"\",\n      \"multiplex\": {\n        \"enabled\": false,\n        \"max_streams\": 32,\n        \"protocol\": \"smux\"\n      },\n      \"packet_encoding\": \"xudp\",\n      \"server\": \"" + _0x1c8082.server + "\",\n      \"server_port\": " + _0x1c8082.port + ",\n      \"tag\": \"" + _0x1c8082.name + "\"," + (_0x1c8082.tls ? "\n      \"tls\": {\n        \"enabled\": true,\n        \"insecure\": false,\n        \"server_name\": \"" + (_0x1c8082.sni || _0x1c8082.server) + "\",\n        \"utls\": {\n          \"enabled\": true,\n          \"fingerprint\": \"randomized\"\n        }\n      }," : '') + "\n      \"transport\": {\n        \"early_data_header_name\": \"Sec-WebSocket-Protocol\",\n        \"headers\": {\n          \"Host\": \"" + (_0x1c8082.wsHost || _0x1c8082.server) + "\"\n        },\n        \"max_early_data\": 0,\n        \"path\": \"" + _0x1c8082.wsPath + "\",\n        \"type\": \"ws\"\n      },\n      \"type\": \"vless\",\n      \"uuid\": \"" + _0x1c8082.uuid + "\"\n    }";
+      } else {
+        if (_0x1c8082.type === "trojan") {
+          _0x565893 = "    {\n      \"domain_strategy\": \"ipv4_only\",\n      \"multiplex\": {\n        \"enabled\": false,\n        \"max_streams\": 32,\n        \"protocol\": \"smux\"\n      },\n      \"password\": \"" + _0x1c8082.password + "\",\n      \"server\": \"" + _0x1c8082.server + "\",\n      \"server_port\": " + _0x1c8082.port + ",\n      \"tag\": \"" + _0x1c8082.name + "\"," + (_0x1c8082.tls ? "\n      \"tls\": {\n        \"enabled\": true,\n        \"insecure\": false,\n        \"server_name\": \"" + (_0x1c8082.sni || _0x1c8082.server) + "\",\n        \"utls\": {\n          \"enabled\": true,\n          \"fingerprint\": \"randomized\"\n        }\n      }," : '') + "\n      \"transport\": {\n        \"early_data_header_name\": \"Sec-WebSocket-Protocol\",\n        \"headers\": {\n          \"Host\": \"" + (_0x1c8082.wsHost || _0x1c8082.server) + "\"\n        },\n        \"max_early_data\": 0,\n        \"path\": \"" + _0x1c8082.wsPath + "\",\n        \"type\": \"ws\"\n      },\n      \"type\": \"trojan\"\n    }";
+        } else if (_0x1c8082.type === 'ss') {
+          _0x565893 = "    {\n      \"type\": \"shadowsocks\",\n      \"tag\": \"" + _0x1c8082.name + "\",\n      \"server\": \"" + _0x1c8082.server + "\",\n      \"server_port\": " + _0x1c8082.port + ",\n      \"method\": \"none\",\n      \"password\": \"" + _0x1c8082.password + "\",\n      \"plugin\": \"v2ray-plugin\",\n      \"plugin_opts\": \"mux=0;path=" + _0x1c8082.wsPath + ';host=' + (_0x1c8082.wsHost || _0x1c8082.server) + ";tls=" + (_0x1c8082.tls ? '1' : '0') + "\"\n    }";
+        }
+      }
+    }
+    return _0x565893;
+  }).join(",\n");
+  _0x1885d1 += _0x2d2048;
+  _0x1885d1 += ",\n    {\n      \"tag\": \"direct\",\n      \"type\": \"direct\"\n    },\n    {\n      \"tag\": \"bypass\",\n      \"type\": \"direct\"\n    },\n    {\n      \"tag\": \"block\",\n      \"type\": \"block\"\n    },\n    {\n      \"tag\": \"dns-out\",\n      \"type\": \"dns\"\n    }\n  ],\n  \"route\": {\n    \"auto_detect_interface\": true,\n    \"rules\": [\n      {\n        \"outbound\": \"dns-out\",\n        \"port\": [\n          53\n        ]\n      },\n      {\n        \"inbound\": [\n          \"dns-in\"\n        ],\n        \"outbound\": \"dns-out\"\n      },\n      {\n        \"network\": [\n          \"udp\"\n        ],\n        \"outbound\": \"block\",\n        \"port\": [\n          443\n        ],\n        \"port_range\": []\n      },\n      {\n        \"ip_cidr\": [\n          \"224.0.0.0/3\",\n          \"ff00::/8\"\n        ],\n        \"outbound\": \"block\",\n        \"source_ip_cidr\": [\n          \"224.0.0.0/3\",\n          \"ff00::/8\"\n        ]\n      }\n    ]\n  }\n}";
+  return _0x1885d1;
+}
+function showLoading(_0x544805) {
+  loadingElement.style.display = "block";
+  loadingElement.querySelector(".loading-text").textContent = _0x544805;
+  resultElement.style.display = "none";
+  validationStatusElement.style.display = 'none';
+}
+function hideLoading() {
+  loadingElement.style.display = "none";
+}
+function showError(_0x20bbbc) {
+  errorMessageElement.textContent = _0x20bbbc;
+  errorMessageElement.style.display = "block";
+}
+function showResult(_0xcc5258) {
+  hideLoading();
+  validationStatusElement.style.display = "none";
+  outputElement.value = _0xcc5258;
+  resultElement.style.display = 'block';
+  resultElement.scrollIntoView({
+    'behavior': "smooth"
+  });
+}
+function shuffleArray(_0xd9add7) {
+  for (let _0x502beb = _0xd9add7.length - 0x1; _0x502beb > 0x0; _0x502beb--) {
+    const _0x1d417d = Math.floor(Math.random() * (_0x502beb + 0x1));
+    [_0xd9add7[_0x502beb], _0xd9add7[_0x1d417d]] = [_0xd9add7[_0x1d417d], _0xd9add7[_0x502beb]];
+  }
+  return _0xd9add7;
+}
