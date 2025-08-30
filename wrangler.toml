@@ -6,7 +6,6 @@ workers_dev = true
 routes = [
 
   { pattern = "ouzora.dpdns.org", custom_domain = true },
-  { pattern = "balckwolf.dpdns.org", custom_domain = true },
   { pattern = "ava.game.naver.com.balckwolf.dpdns.org", custom_domain = true },
   { pattern = "demo.appsflyer.com.balckwolf.dpdns.org", custom_domain = true },
   { pattern = "quiz.int.vidio.com.balckwolf.dpdns.org", custom_domain = true },
