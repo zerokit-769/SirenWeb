@@ -9,15 +9,15 @@ const QRCode = window.QRCode
 let proxyList = []
 let filteredProxyList = []
 let selectedProxy = null
-const defaultProxyUrl = "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt"
+const defaultProxyUrl = "https://raw.githubusercontent.com/zerokit-769/testt/refs/heads/main/ProxyList%20(1).txt"
 
-const serverDomains = ["stbwrt.biz.id","stbwrt.web.id"]
+const serverDomains = ["ouzora.dpdns.org","balckwolf.dpdns.org"]
 let selectedServerDomain = serverDomains[0] // Default to first domain
-const defaultUUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
+const defaultUUID = "aacac2d2-cac8-442a-9f2c-4e4f807065f5"
 const itemsPerPage = 10
 let currentPage = 1
 
-const pathTemplate = "/Inconigto-Mode/{ip}-{port}"
+const pathTemplate = "/Benxx-Project/{ip}-{port}"
 
 // Array of bug options for easy management
 const bugOptions = [
