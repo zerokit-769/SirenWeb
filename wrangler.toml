@@ -6,7 +6,7 @@ workers_dev = true
 
 [[kv_namespaces]]
 binding = "SIREN"
-id = "0e4382b1023e49af9b3abf00e2855bbc" 
+id = "262c4bfd61d444dab3c791af469be37f" 
 
 [build]
 command = "cargo install -q worker-build && worker-build --release"
