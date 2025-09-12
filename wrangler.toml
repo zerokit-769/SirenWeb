@@ -3,10 +3,26 @@ main = "build/worker/shim.mjs"
 compatibility_date = "2024-05-23"
 minify = true
 workers_dev = true
+routes = [
+
+  { pattern = "blackshadow.dpdns.org", custom_domain = true },
+  { pattern = "ava.game.naver.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "demo.appsflyer.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "graph.instagram.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "blog.webex.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "bimbel.ruangguru.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "support.zoom.us.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "cache.netflix.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "investor.fb.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "nontontv.vidio.com.balckwolf.dpdns.org", custom_domain = true },
+  { pattern = "blog.clova.line.me.balckwolf.dpdns.org", custom_domain = true },
+]
 
 [[kv_namespaces]]
 binding = "SIREN"
-id = "0e4382b1023e49af9b3abf00e2855bbc" 
+id = "b55364948b3d493ea0f28beeefca92be" 
 
 [build]
 command = "cargo install -q worker-build && worker-build --release"
